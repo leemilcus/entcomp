@@ -1,0 +1,1915 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A&A Entertainment | Find Entertainment Acts</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #8a2be2;
+            --secondary: #ff6b6b;
+            --dark: #333;
+            --light: #f8f9fa;
+            --accent: #ffd700;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #f5f5f5;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #7a1fd1;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary);
+        }
+
+        .btn-secondary:hover {
+            background-color: #ff5252;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            position: relative;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 1001;
+        }
+
+        .logo-img {
+            height: 50px;
+            width: auto;
+        }
+
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .logo-text span {
+            color: var(--secondary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            transition: color 0.3s ease;
+            padding: 5px 0;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: var(--primary);
+            z-index: 1001;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./images/hero.png');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 150px 0;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-img {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .service-content {
+            padding: 20px;
+        }
+
+        .service-content h3 {
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        .view-more-container {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        /* How It Works */
+        .how-it-works {
+            background-color: var(--light);
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .step {
+            text-align: center;
+            padding: 30px 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            line-height: 50px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        /* Testimonials */
+        .testimonials-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonials-slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .testimonial-slide {
+            min-width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .testimonial {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .testimonial-content {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .author-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #ddd;
+            margin-right: 15px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .testimonial-controls {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        .testimonial-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #ddd;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .testimonial-dot.active {
+            background-color: var(--primary);
+        }
+
+        /* Contact Form */
+        .contact-form {
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        select.form-control {
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 15px center;
+            background-size: 16px;
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .view-more-link {
+            color: var(--accent);
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        /* Page-specific Styles */
+        .page-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./images/other-hero.png');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        .page-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .acts-filter {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 40px;
+        }
+
+        .filter-btn {
+            padding: 8px 16px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background-color: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        /* Acts Grid Layout */
+        .acts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .act-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .act-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .act-card-img {
+            height: 220px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .act-card-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.3));
+            display: flex;
+            align-items: flex-end;
+            padding: 15px;
+            color: white;
+        }
+
+        .act-card-content {
+            padding: 20px;
+        }
+
+        .act-card-content h3 {
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        .view-gallery-btn {
+            background-color: rgba(255, 255, 255, 0.9);
+            color: var(--primary);
+            border: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .view-gallery-btn:hover {
+            background-color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Gallery Modal */
+        .gallery-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            overflow: hidden;
+        }
+
+        .gallery-modal.active {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gallery-header {
+            width: 90%;
+            max-width: 1000px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            color: white;
+        }
+
+        .gallery-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .close-gallery {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .gallery-main-image {
+            width: 90%;
+            max-width: 1000px;
+            height: 60vh;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin-bottom: 20px;
+        }
+
+        .gallery-thumbnails {
+            display: flex;
+            gap: 10px;
+            padding: 20px;
+            overflow-x: auto;
+            max-width: 1000px;
+            width: 90%;
+        }
+
+        .gallery-thumbnail {
+            width: 100px;
+            height: 80px;
+            background-size: cover;
+            background-position: center;
+            cursor: pointer;
+            border: 2px solid transparent;
+            border-radius: 4px;
+            transition: border-color 0.3s ease;
+        }
+
+        .gallery-thumbnail.active {
+            border-color: var(--primary);
+        }
+
+        .gallery-thumbnail:hover {
+            border-color: var(--secondary);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-img {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Join Our Team Section */
+        .join-team {
+            background-color: var(--light);
+        }
+
+        .join-form {
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* ========== RESPONSIVE STYLES ========== */
+
+        /* Large Desktop */
+        @media (max-width: 1400px) {
+            .container {
+                max-width: 1200px;
+            }
+        }
+
+        /* Desktop */
+        @media (max-width: 1200px) {
+            .acts-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            }
+            
+            .hero h1 {
+                font-size: 3rem;
+            }
+        }
+
+        /* Tablet Landscape */
+        @media (max-width: 992px) {
+            .hero h1, .page-hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .acts-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+            
+            .hero {
+                padding: 120px 0;
+            }
+            
+            .page-hero {
+                padding: 80px 0;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+        }
+
+        /* Tablet Portrait */
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 80%;
+                max-width: 300px;
+                height: 100vh;
+                background-color: white;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+                padding: 100px 30px 30px;
+                transition: left 0.3s ease;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+                z-index: 1000;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin-bottom: 25px;
+                width: 100%;
+            }
+            
+            .nav-links a {
+                display: block;
+                padding: 12px 15px;
+                border-radius: 5px;
+                transition: all 0.3s ease;
+            }
+            
+            .nav-links a:hover {
+                background-color: var(--light);
+                color: var(--primary);
+            }
+            
+            .hero, .page-hero {
+                padding: 100px 0;
+            }
+            
+            .hero h1, .page-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .acts-grid {
+                grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+                gap: 20px;
+            }
+
+            .gallery-main-image {
+                height: 50vh;
+            }
+
+            .gallery-thumbnail {
+                width: 80px;
+                height: 60px;
+            }
+            
+            .steps {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .service-card {
+                margin-bottom: 20px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        /* Mobile Landscape */
+        @media (max-width: 576px) {
+            .hero h1, .page-hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+            
+            section {
+                padding: 50px 0;
+            }
+            
+            .contact-form, .join-form {
+                padding: 25px 20px;
+            }
+
+            .gallery-main-image {
+                height: 40vh;
+            }
+
+            .gallery-thumbnail {
+                width: 70px;
+                height: 50px;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title p {
+                font-size: 1rem;
+            }
+            
+            .hero p, .page-hero p {
+                font-size: 1rem;
+            }
+            
+            .logo-text {
+                font-size: 1.5rem;
+            }
+            
+            .logo-img {
+                height: 40px;
+            }
+            
+            .acts-filter {
+                gap: 8px;
+            }
+            
+            .filter-btn {
+                padding: 6px 12px;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Small Mobile */
+        @media (max-width: 480px) {
+            .hero h1, .page-hero h1 {
+                font-size: 1.6rem;
+            }
+            
+            .hero {
+                padding: 80px 0;
+            }
+            
+            .page-hero {
+                padding: 60px 0;
+            }
+            
+            .container {
+                width: 95%;
+                padding: 0 10px;
+            }
+            
+            .service-img {
+                height: 180px;
+            }
+            
+            .act-card-img {
+                height: 200px;
+            }
+            
+            .testimonial {
+                padding: 20px;
+            }
+            
+            .gallery-header {
+                padding: 15px;
+            }
+            
+            .gallery-title {
+                font-size: 1.2rem;
+            }
+            
+            .close-gallery {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Extra Small Mobile */
+        @media (max-width: 360px) {
+            .hero h1, .page-hero h1 {
+                font-size: 1.4rem;
+            }
+            
+            .btn {
+                padding: 8px 16px;
+                font-size: 0.85rem;
+            }
+            
+            .logo-text {
+                font-size: 1.3rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.6rem;
+            }
+            
+            .service-content, .act-card-content {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo-container">
+                    <!-- Replace with your logo image -->
+                     <div class="nav__logo">
+            <a href="./index.php">
+              <img src="./images/" alt="logo" />
+            </a>
+          </div>
+                    <div class="logo-img" style="background-color: var(--primary); width: 50px; height: 50px; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">EC</div>
+                    <div class="logo-text">A&A<span> Entertainment</span></div>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="acts.html">Find Acts</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="join.html">Join Our Team</a></li>
+                </ul>
+                <button class="mobile-menu-btn" id="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content - This changes based on the page -->
+    <main id="main-content">
+        <!-- Home Page Content -->
+        <div id="home-page" class="page-content">
+            <!-- Hero Section -->
+            <section class="hero">
+                <div class="container">
+                    <h1>Connect with Amazing Entertainment Acts</h1>
+                    <p>From African drummers to fire dancers, choirs to photographers - find the perfect entertainment for your event in Cape Town and beyond.</p>
+                    <a href="#!" class="btn" id="browse-acts-btn">Browse Acts</a>
+                    <a href="#!" class="btn btn-secondary" id="get-quote-btn">Get a Quote</a>
+                </div>
+            </section>
+
+            <!-- Services Section -->
+            <section id="services">
+                <div class="container">
+                    <div class="section-title">
+                        <h2>Our Entertainment Acts</h2>
+                        <p>We offer a diverse range of entertainment options to make your event unforgettable</p>
+                    </div>
+                    <div class="services-grid" id="acts-grid">
+                        <!-- Only 6 acts will be loaded here -->
+                    </div>
+                    <div class="view-more-container">
+                        <a href="#!" class="btn" id="view-more-btn">View All Acts</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- How It Works -->
+            <section class="how-it-works">
+                <div class="container">
+                    <div class="section-title">
+                        <h2>How It Works</h2>
+                        <p>Simple steps to find and book the perfect entertainment for your event</p>
+                    </div>
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <h3>Browse Acts</h3>
+                            <p>Explore our diverse range of entertainment acts and find what suits your event.</p>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <h3>Request Quote</h3>
+                            <p>Contact us with details about your event and the acts you're interested in.</p>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <h3>Confirm Booking</h3>
+                            <p>Review our proposal, confirm details, and secure your booking with a deposit.</p>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">4</div>
+                            <h3>Enjoy Your Event</h3>
+                            <p>Sit back and enjoy amazing entertainment that will make your event memorable.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Testimonials -->
+            <section id="testimonials">
+                <div class="container">
+                    <div class="section-title">
+                        <h2>What Our Clients Say</h2>
+                        <p>Hear from event planners and companies who have used our services</p>
+                    </div>
+                    <div class="testimonials-container">
+                        <div class="testimonials-slider" id="testimonials-slider">
+                            <!-- Testimonial slides will be dynamically loaded here -->
+                        </div>
+                        <div class="testimonial-controls" id="testimonial-controls">
+                            <!-- Dots will be dynamically added here -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact CTA -->
+            <section style="background-color: var(--primary); color: white; text-align: center;">
+                <div class="container">
+                    <h2 style="margin-bottom: 20px;">Ready to Book Your Entertainment?</h2>
+                    <p style="margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto;">Contact us today for a customized quote based on your event needs and preferences.</p>
+                    <a href="#!" class="btn" id="cta-get-quote-btn" style="background-color: white; color: var(--primary);">Get a Quote</a>
+                </div>
+            </section>
+        </div>
+
+        <!-- Acts Page Content (Hidden by default) -->
+        <div id="acts-page" class="page-content" style="display: none;">
+            <!-- Page Hero -->
+            <section class="page-hero">
+                <div class="container">
+                    <h1>Find Your Perfect Entertainment Act</h1>
+                    <p>Browse our diverse selection of entertainment acts for any occasion</p>
+                </div>
+            </section>
+
+            <!-- Acts Filter -->
+            <section>
+                <div class="container">
+                    <div class="acts-filter">
+                        <button class="filter-btn active" data-filter="all">All Acts</button>
+                        <button class="filter-btn" data-filter="music">Music</button>
+                        <button class="filter-btn" data-filter="dance">Dance</button>
+                        <button class="filter-btn" data-filter="visual">Visual</button>
+                        <button class="filter-btn" data-filter="other">Other</button>
+                    </div>
+
+                    <div class="acts-grid" id="acts-list">
+                        <!-- All acts will be dynamically loaded here in grid format -->
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- About Page Content (Hidden by default) -->
+        <div id="about-page" class="page-content" style="display: none;">
+            <!-- Page Hero -->
+            <section class="page-hero">
+                <div class="container">
+                    <h1>About A&A Entertainment </h1>
+                    <p>Connecting exceptional talent with unforgettable events since 2025</p>
+                </div>
+            </section>
+
+            <!-- About Content -->
+            <section>
+                <div class="container">
+                    <div class="about-content">
+                        <div>
+                            <h2>Our Story</h2>
+                            <p>A&A Entertainment was founded with a simple mission: to make it easy for event planners, companies, and individuals to find exceptional entertainment acts in Cape Town and beyond.</p>
+                            <p>What started as a small directory of local performers has grown into a comprehensive platform connecting clients with hundreds of talented acts across multiple categories.</p>
+                            <p>We pride ourselves on our curated selection process, ensuring that every act in our network meets our high standards for professionalism, talent, and reliability.</p>
+                            <a href="#!" class="btn" id="about-contact-btn" style="margin-top: 20px;">Get In Touch</a>
+                        </div>
+                        <div class="about-img">
+                            <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Our team">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Values Section -->
+            <section style="background-color: var(--light);">
+                <div class="container">
+                    <div class="section-title">
+                        <h2>Our Values</h2>
+                        <p>The principles that guide everything we do</p>
+                    </div>
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-number">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h3>Quality</h3>
+                            <p>We carefully vet every act to ensure they meet our high standards for performance and professionalism.</p>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <h3>Reliability</h3>
+                            <p>We understand that events can't wait, so we guarantee that our acts will arrive on time and prepared.</p>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <h3>Passion</h3>
+                            <p>We're passionate about connecting people with entertainment that creates memorable experiences.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Contact Page Content (Hidden by default) -->
+        <div id="contact-page" class="page-content" style="display: none;">
+            <!-- Page Hero -->
+            <section class="page-hero">
+                <div class="container">
+                    <h1>Get In Touch</h1>
+                    <p>Ready to book entertainment for your event? Contact us for a quote</p>
+                </div>
+            </section>
+
+            <!-- Contact Form -->
+            <section>
+                <div class="container">
+                    <div class="contact-form">
+                        <h2 style="text-align: center; margin-bottom: 30px;">Request a Quote</h2>
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <input type="text" id="name" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="event-type">Event Type</label>
+                                <select id="event-type" class="form-control" required>
+                                    <option value="">Select Event Type</option>
+                                    <option value="wedding">Wedding</option>
+                                    <option value="corporate">Corporate Event</option>
+                                    <option value="birthday">Birthday Party</option>
+                                    <option value="festival">Festival</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="event-date">Event Date</label>
+                                <input type="date" id="event-date" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="act-type">Type of Act</label>
+                                <select id="act-type" class="form-control" required>
+                                    <option value="">Select an Act</option>
+                                    <!-- Options will be dynamically populated -->
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Additional Details</label>
+                                <textarea id="message" class="form-control" placeholder="Tell us more about your event and requirements..."></textarea>
+                            </div>
+                            <button type="submit" class="btn" style="width: 100%;">Submit Request</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Info -->
+            <section style="background-color: var(--light);">
+                <div class="container">
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-number">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <h3>Visit Us</h3>
+                            <p>123 Entertainment Street<br>Cape Town, 8001<br>South Africa</p>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <h3>Call Us</h3>
+                            <p>+27 21 123 4567<br>Mon-Fri: 9am-5pm</p>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <h3>Email Us</h3>
+                            <p>info@ayae.co.za<br>We respond within 24 hours</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Join Our Team Page Content (Hidden by default) -->
+        <div id="join-page" class="page-content" style="display: none;">
+            <!-- Page Hero -->
+            <section class="page-hero">
+                <div class="container">
+                    <h1>Join Our Team</h1>
+                    <p>Are you a talented performer? Apply to join our network of entertainment acts</p>
+                </div>
+            </section>
+
+            <!-- Join Form -->
+            <section class="join-team">
+                <div class="container">
+                    <div class="join-form">
+                        <h2 style="text-align: center; margin-bottom: 30px;">Performer Application</h2>
+                        <form id="joinForm">
+                            <div class="form-group">
+                                <label for="performer-name">Your Name</label>
+                                <input type="text" id="performer-name" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="performer-email">Email Address</label>
+                                <input type="email" id="performer-email" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="performer-phone">Phone Number</label>
+                                <input type="tel" id="performer-phone" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="act-type-text">Type of Act</label>
+                                <input type="text" id="act-type-text" class="form-control" placeholder="Describe your act (e.g., African drummer, fire dancer, singer, etc.)" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="experience">Years of Experience</label>
+                                <input type="number" id="experience" class="form-control" min="0" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="portfolio-link">Portfolio Link (Website, YouTube, etc.)</label>
+                                <input type="url" id="portfolio-link" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="performer-message">Tell us about yourself and your act</label>
+                                <textarea id="performer-message" class="form-control" placeholder="Describe your performance style, previous experience, and what makes your act unique..." required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="photo-upload">Upload a Photo of Your Act</label>
+                                <input type="file" id="photo-upload" class="form-control" accept="image/*">
+                            </div>
+                            <button type="submit" class="btn" style="width: 100%;">Submit Application</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Gallery Modal -->
+    <div class="gallery-modal" id="gallery-modal">
+        <div class="gallery-header">
+            <h2 class="gallery-title" id="gallery-title">Act Gallery</h2>
+            <button class="close-gallery" id="close-gallery">&times;</button>
+        </div>
+        <div class="gallery-main-image" id="gallery-main-image"></div>
+        <div class="gallery-thumbnails" id="gallery-thumbnails">
+            <!-- Thumbnails will be dynamically loaded here -->
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>A&A Entertainment</h3>
+                    <p>Connecting event planners, companies, and individuals with exceptional entertainment acts across Cape Town and worldwide.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="acts.html">Find Acts</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="join.html">Join Our Team</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Our Acts</h3>
+                    <ul class="footer-links" id="footer-acts">
+                        <!-- Only 4 acts will be loaded here -->
+                    </ul>
+                    <a href="acts.html" class="view-more-link">View More Acts →</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Entertainment St, Cape Town</li>
+                        <li><i class="fas fa-phone"></i> +27 21 123 4567</li>
+                        <li><i class="fas fa-envelope"></i> info@entertainmentconnect.co.za</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 A&A Entertainment . All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Entertainment Acts Data - Now with multiple images per act
+        const entertainmentActs = [
+            {
+                id: "african-drummers",
+                title: "African Drummers",
+                category: "music",
+                description: "Traditional and contemporary African drumming performances that bring energy and rhythm to any event.",
+                image: "https://images.unsplash.com/photo-1516280440614-37939bbacd81?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+                images: [
+                    "https://images.unsplash.com/photo-1516280440614-37939bbacd81?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+                    "https://images.unsplash.com/photo-1516280440614-37939bbacd81?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+                    "https://images.unsplash.com/photo-1516280440614-37939bbacd81?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                ],
+                features: [
+                    "Group sizes from 3-10 performers",
+                    "Traditional and contemporary repertoire",
+                    "Audience participation encouraged",
+                    "Indoor and outdoor performances"
+                ],
+                icon: "fas fa-drum"
+            },
+            {
+                id: "marimba-band",
+                title: "Marimba Band",
+                category: "music",
+                description: "Vibrant marimba music that creates an uplifting and celebratory atmosphere for any occasion.",
+                image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+                images: [
+                    "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+                    "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                ],
+                features: [
+                    "Traditional Zimbabwean marimba",
+                    "Upbeat and festive music",
+                    "Various group sizes available",
+                    "Perfect for celebrations"
+                ],
+                icon: "fas fa-music"
+            },
+            {
+                id: "fire-dancers",
+                title: "Fire Dancers",
+                category: "dance",
+                description: "Mesmerizing fire performances that will captivate your audience and create unforgettable moments.",
+                image: "https://images.unsplash.com/photo-1543946608-33f238d0e1b8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+                images: [
+                    "https://images.unsplash.com/photo-1543946608-33f238d0e1b8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+                    "https://images.unsplash.com/photo-1543946608-33f238d0e1b8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+                    "https://images.unsplash.com/photo-1543946608-33f238d0e1b8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                ],
+                features: [
+                    "Fully insured and safety compliant",
+                    "Solo and group performances",
+                    "Custom choreography available",
+                    "Outdoor performances recommended"
+                ],
+                icon: "fas fa-fire"
+            },
+            {
+                id: "zulu-dancers",
+                title: "Zulu Dancers",
+                category: "dance",
+                description: "Energetic traditional Zulu dancing showcasing rich cultural heritage and vibrant costumes.",
+                image: "https://images.unsplash.com/photo-1547153760-18fc86324498?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80",
+                images: [
+                    "https://images.unsplash.com/photo-1547153760-18fc86324498?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80",
+                    "https://images.unsplash.com/photo-1547153760-18fc86324498?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80"
+                ],
+                features: [
+                    "Traditional Zulu costumes",
+                    "High-energy performances",
+                    "Cultural storytelling",
+                    "Group performances"
+                ],
+                icon: "fas fa-users"
+            },
+            {
+                id: "gospel-choir",
+                title: "Gospel Choir",
+                category: "music",
+                description: "Inspiring gospel music that brings spiritual upliftment and powerful harmonies to your event.",
+                image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+                images: [
+                    "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                ],
+                features: [
+                    "Powerful vocal harmonies",
+                    "Inspirational performances",
+                    "Various choir sizes",
+                    "Perfect for ceremonies"
+                ],
+                icon: "fas fa-church"
+            },
+            {
+                id: "photographers",
+                title: "Photographers",
+                category: "visual",
+                description: "Professional photographers to capture the special moments of your event.",
+                image: "https://images.unsplash.com/photo-1554048612-b6a482bc67e5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+                images: [
+                    "https://images.unsplash.com/photo-1554048612-b6a482bc67e5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                ],
+                features: [
+                    "Event photography specialists",
+                    "High-quality equipment",
+                    "Digital delivery of images",
+                    "Custom packages available"
+                ],
+                icon: "fas fa-camera"
+            }
+        ];
+
+        // Testimonials Data
+        const testimonials = [
+            {
+                content: "The Zulu dancers we booked through Entertainment Connect were absolutely phenomenal! They brought so much energy to our corporate event and received a standing ovation.",
+                author: "Sarah Johnson",
+                role: "Event Manager, TechCorp Africa",
+                image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80"
+            },
+            {
+                content: "I was planning a wedding in Cape Town from overseas, and Entertainment Connect made the process so easy. The choir they recommended was perfect for our ceremony, and the photographer captured beautiful moments we'll treasure forever.",
+                author: "Michael & Chloe",
+                role: "Wedding Clients",
+                image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+            },
+            {
+                content: "Our company's annual gala was transformed by the fire dancers we hired. The performance was breathtaking and our guests are still talking about it months later. Highly recommended!",
+                author: "David Thompson",
+                role: "Marketing Director, Global Corp",
+                image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+            },
+            {
+                content: "The marimba band created such a joyful atmosphere at our festival. They were professional, punctual, and incredibly talented. We'll definitely be booking them again next year.",
+                author: "Lisa Chen",
+                role: "Festival Organizer",
+                image: "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80"
+            },
+            {
+                content: "Entertainment Connect helped us find the perfect MC for our product launch. He kept the event flowing smoothly and engaged our audience perfectly. The service was exceptional from start to finish.",
+                author: "Robert Williams",
+                role: "Product Manager, TechStart",
+                image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80"
+            }
+        ];
+
+        // Simple Single Page Application functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load acts into the page
+            loadActs();
+            // Load testimonials
+            loadTestimonials();
+            
+            // Mobile Menu Functionality
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const navLinks = document.querySelector('.nav-links');
+            const body = document.body;
+
+            // Toggle mobile menu
+            mobileMenuBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                navLinks.classList.toggle('active');
+                mobileMenuBtn.innerHTML = navLinks.classList.contains('active') ? 
+                    '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+                preventBodyScroll();
+            });
+
+            // Close mobile menu when clicking on a link
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    preventBodyScroll();
+                });
+            });
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!navLinks.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                    navLinks.classList.remove('active');
+                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    preventBodyScroll();
+                }
+            });
+
+            // Close mobile menu on escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    preventBodyScroll();
+                }
+            });
+
+            // Prevent body scroll when mobile menu is open
+            function preventBodyScroll() {
+                if (navLinks.classList.contains('active')) {
+                    body.style.overflow = 'hidden';
+                } else {
+                    body.style.overflow = '';
+                }
+            }
+
+            // Update body scroll on window resize
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 768) {
+                    navLinks.classList.remove('active');
+                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    body.style.overflow = '';
+                }
+            });
+
+            // Navigation between pages (SPA functionality)
+            function showPage(pageId) {
+                // Hide all pages
+                document.querySelectorAll('.page-content').forEach(page => {
+                    page.style.display = 'none';
+                });
+                
+                // Show the selected page
+                document.getElementById(pageId).style.display = 'block';
+                
+                // Update active nav link
+                document.querySelectorAll('.nav-links a').forEach(link => {
+                    link.classList.remove('active');
+                });
+                
+                // Set the active nav link based on the page
+                const activeLink = document.querySelector(`.nav-links a[href="${pageId.replace('-page', '')}.html"]`);
+                if (activeLink) {
+                    activeLink.classList.add('active');
+                }
+            }
+
+            // Set up navigation
+            document.querySelectorAll('.nav-links a, .logo-container').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const href = this.getAttribute('href');
+                    
+                    if (href === 'index.html') {
+                        showPage('home-page');
+                    } else if (href === 'acts.html') {
+                        showPage('acts-page');
+                    } else if (href === 'about.html') {
+                        showPage('about-page');
+                    } else if (href === 'contact.html') {
+                        showPage('contact-page');
+                    } else if (href === 'join.html') {
+                        showPage('join-page');
+                    }
+                    
+                    // Scroll to top
+                    window.scrollTo(0, 0);
+                });
+            });
+
+            // Fix for Get a Quote buttons
+            document.getElementById('get-quote-btn').addEventListener('click', function(e) {
+                e.preventDefault();
+                showPage('contact-page');
+                window.scrollTo(0, 0);
+            });
+
+            document.getElementById('cta-get-quote-btn').addEventListener('click', function(e) {
+                e.preventDefault();
+                showPage('contact-page');
+                window.scrollTo(0, 0);
+            });
+
+            document.getElementById('browse-acts-btn').addEventListener('click', function(e) {
+                e.preventDefault();
+                showPage('acts-page');
+                window.scrollTo(0, 0);
+            });
+
+            document.getElementById('view-more-btn').addEventListener('click', function(e) {
+                e.preventDefault();
+                showPage('acts-page');
+                window.scrollTo(0, 0);
+            });
+
+            document.getElementById('about-contact-btn').addEventListener('click', function(e) {
+                e.preventDefault();
+                showPage('contact-page');
+                window.scrollTo(0, 0);
+            });
+
+            // Filter functionality for acts page
+            document.querySelectorAll('.filter-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    // Update active filter button
+                    document.querySelectorAll('.filter-btn').forEach(btn => {
+                        btn.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                    
+                    const filter = this.getAttribute('data-filter');
+                    const acts = document.querySelectorAll('.act-card');
+                    
+                    acts.forEach(act => {
+                        if (filter === 'all' || act.getAttribute('data-category') === filter) {
+                            act.style.display = 'block';
+                        } else {
+                            act.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // Form submission handling
+            document.getElementById('contactForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                // In a real application, you would send the form data to a server here
+                alert('Thank you for your inquiry! We will get back to you soon.');
+                this.reset();
+            });
+
+            // Join form submission handling
+            document.getElementById('joinForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                // In a real application, you would send the form data to a server here
+                alert('Thank you for your application! We will review it and get back to you soon.');
+                this.reset();
+            });
+
+            // Gallery functionality
+            document.getElementById('close-gallery').addEventListener('click', function() {
+                document.getElementById('gallery-modal').classList.remove('active');
+            });
+
+            // Close gallery when clicking outside the content
+            document.getElementById('gallery-modal').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    this.classList.remove('active');
+                }
+            });
+
+            // Show home page by default
+            showPage('home-page');
+        });
+
+        // Function to load acts into the page
+        function loadActs() {
+            const actsGrid = document.getElementById('acts-grid');
+            const actsList = document.getElementById('acts-list');
+            const footerActs = document.getElementById('footer-acts');
+            const actTypeSelect = document.getElementById('act-type');
+            
+            // Clear existing content
+            actsGrid.innerHTML = '';
+            actsList.innerHTML = '';
+            footerActs.innerHTML = '';
+            actTypeSelect.innerHTML = '<option value="">Select an Act</option>';
+            
+            // Add only 6 acts to home page grid
+            const homePageActs = entertainmentActs.slice(0, 6);
+            
+            homePageActs.forEach(act => {
+                // Home page grid
+                const actCard = document.createElement('div');
+                actCard.className = 'service-card';
+                actCard.innerHTML = `
+                    <div class="service-img" style="background-image: url('${act.image}');"></div>
+                    <div class="service-content">
+                        <h3>${act.title}</h3>
+                        <p>${act.description}</p>
+                        <a href="#!" class="btn learn-more-btn" data-act="${act.id}" style="margin-top: 15px; padding: 8px 16px;">Learn More</a>
+                    </div>
+                `;
+                actsGrid.appendChild(actCard);
+            });
+            
+            // Add only 4 acts to footer
+            const footerPageActs = entertainmentActs.slice(0, 4);
+            
+            footerPageActs.forEach(act => {
+                // Footer links
+                const footerLink = document.createElement('li');
+                footerLink.innerHTML = `<a href="acts.html#${act.id}">${act.title}</a>`;
+                footerActs.appendChild(footerLink);
+            });
+            
+            // Add all acts to acts page in grid format
+            entertainmentActs.forEach(act => {
+                // Acts page grid card
+                const actCard = document.createElement('div');
+                actCard.className = 'act-card';
+                actCard.setAttribute('data-category', act.category);
+                actCard.id = act.id;
+                actCard.innerHTML = `
+                    <div class="act-card-img" style="background-image: url('${act.image}');">
+                        <div class="act-card-overlay">
+                            <div>
+                                <h3>${act.title}</h3>
+                                ${act.images.length > 1 ? `<button class="view-gallery-btn" data-act="${act.id}">View Gallery (${act.images.length})</button>` : ''}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="act-card-content">
+                        <h3>${act.title}</h3>
+                        <p>${act.description}</p>
+                        <div class="act-features" style="margin: 15px 0;">
+                            ${act.features.slice(0, 2).map(feature => `
+                                <div class="act-feature">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>${feature}</span>
+                                </div>
+                            `).join('')}
+                        </div>
+                        <a href="#!" class="btn request-quote-btn" data-act="${act.id}" style="padding: 8px 16px;">Request Quote</a>
+                    </div>
+                `;
+                actsList.appendChild(actCard);
+                
+                // Contact form options
+                const option = document.createElement('option');
+                option.value = act.id;
+                option.textContent = act.title;
+                actTypeSelect.appendChild(option);
+            });
+            
+            // Add event listeners for dynamically created buttons
+            document.querySelectorAll('.learn-more-btn').forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const act = this.getAttribute('data-act');
+                    showPage('acts-page');
+                    // Scroll to the specific act
+                    setTimeout(() => {
+                        document.getElementById(act).scrollIntoView({ behavior: 'smooth' });
+                    }, 100);
+                });
+            });
+            
+            document.querySelectorAll('.request-quote-btn').forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const act = this.getAttribute('data-act');
+                    showPage('contact-page');
+                    // Set the act type in the form
+                    setTimeout(() => {
+                        document.getElementById('act-type').value = act;
+                    }, 100);
+                });
+            });
+
+            // Add event listeners for gallery buttons
+            document.querySelectorAll('.view-gallery-btn').forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const actId = this.getAttribute('data-act');
+                    openGallery(actId);
+                });
+            });
+
+            // Add click event to act cards to open gallery
+            document.querySelectorAll('.act-card').forEach(card => {
+                card.addEventListener('click', function(e) {
+                    if (!e.target.closest('.view-gallery-btn') && !e.target.closest('.request-quote-btn')) {
+                        const actId = this.id;
+                        openGallery(actId);
+                    }
+                });
+            });
+        }
+
+        // Function to open gallery for an act
+        function openGallery(actId) {
+            const act = entertainmentActs.find(a => a.id === actId);
+            if (!act) return;
+
+            const galleryModal = document.getElementById('gallery-modal');
+            const galleryTitle = document.getElementById('gallery-title');
+            const galleryMainImage = document.getElementById('gallery-main-image');
+            const galleryThumbnails = document.getElementById('gallery-thumbnails');
+
+            // Set gallery title
+            galleryTitle.textContent = `${act.title} Gallery`;
+
+            // Clear existing thumbnails
+            galleryThumbnails.innerHTML = '';
+
+            // Add thumbnails
+            act.images.forEach((image, index) => {
+                const thumbnail = document.createElement('div');
+                thumbnail.className = 'gallery-thumbnail';
+                if (index === 0) thumbnail.classList.add('active');
+                thumbnail.style.backgroundImage = `url('${image}')`;
+                thumbnail.addEventListener('click', function() {
+                    // Update main image
+                    galleryMainImage.style.backgroundImage = `url('${image}')`;
+                    
+                    // Update active thumbnail
+                    document.querySelectorAll('.gallery-thumbnail').forEach(thumb => {
+                        thumb.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                });
+                galleryThumbnails.appendChild(thumbnail);
+            });
+
+            // Set initial main image
+            galleryMainImage.style.backgroundImage = `url('${act.images[0]}')`;
+
+            // Show gallery
+            galleryModal.classList.add('active');
+        }
+
+        // Function to load testimonials with slider
+        function loadTestimonials() {
+            const testimonialsSlider = document.getElementById('testimonials-slider');
+            const testimonialControls = document.getElementById('testimonial-controls');
+            
+            // Clear existing content
+            testimonialsSlider.innerHTML = '';
+            testimonialControls.innerHTML = '';
+            
+            // Group testimonials into slides (2 per slide)
+            const slides = [];
+            for (let i = 0; i < testimonials.length; i += 2) {
+                slides.push(testimonials.slice(i, i + 2));
+            }
+            
+            // Create slides
+            slides.forEach((slideTestimonials, index) => {
+                const slide = document.createElement('div');
+                slide.className = 'testimonial-slide';
+                
+                slideTestimonials.forEach(testimonial => {
+                    const testimonialElement = document.createElement('div');
+                    testimonialElement.className = 'testimonial';
+                    testimonialElement.innerHTML = `
+                        <div class="testimonial-content">
+                            "${testimonial.content}"
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-img" style="background-image: url('${testimonial.image}');"></div>
+                            <div>
+                                <h4>${testimonial.author}</h4>
+                                <p>${testimonial.role}</p>
+                            </div>
+                        </div>
+                    `;
+                    slide.appendChild(testimonialElement);
+                });
+                
+                testimonialsSlider.appendChild(slide);
+                
+                // Create dot for this slide
+                const dot = document.createElement('div');
+                dot.className = 'testimonial-dot';
+                if (index === 0) dot.classList.add('active');
+                dot.setAttribute('data-slide', index);
+                testimonialControls.appendChild(dot);
+                
+                // Add click event to dot
+                dot.addEventListener('click', function() {
+                    goToSlide(index);
+                });
+            });
+            
+            // Auto slide functionality
+            let currentSlide = 0;
+            const totalSlides = slides.length;
+            
+            function goToSlide(slideIndex) {
+                currentSlide = slideIndex;
+                testimonialsSlider.style.transform = `translateX(-${currentSlide * 100}%)`;
+                
+                // Update active dot
+                document.querySelectorAll('.testimonial-dot').forEach((dot, index) => {
+                    if (index === currentSlide) {
+                        dot.classList.add('active');
+                    } else {
+                        dot.classList.remove('active');
+                    }
+                });
+            }
+            
+            // Auto advance slides every 5 seconds
+            setInterval(() => {
+                currentSlide = (currentSlide + 1) % totalSlides;
+                goToSlide(currentSlide);
+            }, 5000);
+        }
+    </script>
+</body>
+</html>
