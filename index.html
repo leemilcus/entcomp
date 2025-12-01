@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A&A Entertainment | Find Entertainment Acts</title>
+    <title>UPEO Event & Entertainment | Find Entertainment Acts</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Reset and Base Styles */
@@ -105,7 +105,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 0;
+            padding: 15px 0;
             position: relative;
         }
 
@@ -117,18 +117,29 @@
         }
 
         .logo-img {
-            height: 50px;
+            height: 100px;
             width: auto;
+            object-fit: contain;
         }
 
         .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+
+        .logo-main {
             font-size: 1.8rem;
-            font-weight: 700;
+            font-weight: 800;
+            letter-spacing: 1px;
             color: var(--primary);
         }
 
-        .logo-text span {
+        .logo-tagline {
+            font-size: 0.85rem;
+            font-weight: 500;
             color: var(--secondary);
+            letter-spacing: 0.5px;
         }
 
         .nav-links {
@@ -141,10 +152,26 @@
             font-weight: 500;
             transition: color 0.3s ease;
             padding: 5px 0;
+            position: relative;
         }
 
         .nav-links a:hover {
             color: var(--primary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
         }
 
         .mobile-menu-btn {
@@ -159,7 +186,7 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./images/hero.png');
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
             background-size: cover;
             background-position: center;
             color: white;
@@ -429,7 +456,7 @@
 
         /* Page-specific Styles */
         .page-hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./images/other-hero.png');
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
             background-size: cover;
             background-position: center;
             color: white;
@@ -646,6 +673,19 @@
             margin: 0 auto;
         }
 
+        /* Logo Image Base64 - Replace with your actual logo URL */
+        .logo-placeholder {
+            background-color: #f0f0f0;
+            width: 200px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
         /* ========== RESPONSIVE STYLES ========== */
 
         /* Large Desktop */
@@ -695,6 +735,10 @@
             
             section {
                 padding: 60px 0;
+            }
+
+            .logo-img {
+                height: 60px;
             }
         }
 
@@ -781,6 +825,10 @@
                 grid-template-columns: 1fr;
                 gap: 30px;
             }
+
+            .logo-img {
+                height: 50px;
+            }
         }
 
         /* Mobile Landscape */
@@ -823,14 +871,6 @@
                 font-size: 1rem;
             }
             
-            .logo-text {
-                font-size: 1.5rem;
-            }
-            
-            .logo-img {
-                height: 40px;
-            }
-            
             .acts-filter {
                 gap: 8px;
             }
@@ -838,6 +878,10 @@
             .filter-btn {
                 padding: 6px 12px;
                 font-size: 0.9rem;
+            }
+
+            .logo-img {
+                height: 45px;
             }
         }
 
@@ -883,6 +927,10 @@
             .close-gallery {
                 font-size: 1.5rem;
             }
+
+            .logo-img {
+                height: 40px;
+            }
         }
 
         /* Extra Small Mobile */
@@ -896,16 +944,16 @@
                 font-size: 0.85rem;
             }
             
-            .logo-text {
-                font-size: 1.3rem;
-            }
-            
             .section-title h2 {
                 font-size: 1.6rem;
             }
             
             .service-content, .act-card-content {
                 padding: 15px;
+            }
+
+            .logo-img {
+                height: 35px;
             }
         }
     </style>
@@ -915,22 +963,17 @@
     <header>
         <div class="container">
             <nav class="navbar">
-                <a href="index.html" class="logo-container">
-                    <!-- Replace with your logo image -->
-                     <div class="nav__logo">
-            <a href="./index.php">
-              <img src="./images/" alt="logo" />
-            </a>
-          </div>
-                    <div class="logo-img" style="background-color: var(--primary); width: 50px; height: 50px; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">EC</div>
-                    <div class="logo-text">A&A<span> Entertainment</span></div>
+                <a href="#home" class="logo-container">
+                    <!-- Logo Image - Replace the src with your actual logo image URL -->
+                    <img src="images/moyana creative group.png " alt="UPEO Event & Entertainment Logo" class="logo-img">
+                    
                 </a>
                 <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="acts.html">Find Acts</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="join.html">Join Our Team</a></li>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#acts">Find Acts</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#join">Join Our Team</a></li>
                 </ul>
                 <button class="mobile-menu-btn" id="mobile-menu-btn">
                     <i class="fas fa-bars"></i>
@@ -939,17 +982,17 @@
         </div>
     </header>
 
-    <!-- Main Content - This changes based on the page -->
+    <!-- Main Content -->
     <main id="main-content">
         <!-- Home Page Content -->
         <div id="home-page" class="page-content">
             <!-- Hero Section -->
-            <section class="hero">
+            <section class="hero" id="home">
                 <div class="container">
                     <h1>Connect with Amazing Entertainment Acts</h1>
                     <p>From African drummers to fire dancers, choirs to photographers - find the perfect entertainment for your event in Cape Town and beyond.</p>
-                    <a href="#!" class="btn" id="browse-acts-btn">Browse Acts</a>
-                    <a href="#!" class="btn btn-secondary" id="get-quote-btn">Get a Quote</a>
+                    <a href="#acts" class="btn" id="browse-acts-btn">Browse Acts</a>
+                    <a href="#contact" class="btn btn-secondary" id="get-quote-btn">Get a Quote</a>
                 </div>
             </section>
 
@@ -964,7 +1007,7 @@
                         <!-- Only 6 acts will be loaded here -->
                     </div>
                     <div class="view-more-container">
-                        <a href="#!" class="btn" id="view-more-btn">View All Acts</a>
+                        <a href="#acts" class="btn" id="view-more-btn">View All Acts</a>
                     </div>
                 </div>
             </section>
@@ -1024,7 +1067,7 @@
                 <div class="container">
                     <h2 style="margin-bottom: 20px;">Ready to Book Your Entertainment?</h2>
                     <p style="margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto;">Contact us today for a customized quote based on your event needs and preferences.</p>
-                    <a href="#!" class="btn" id="cta-get-quote-btn" style="background-color: white; color: var(--primary);">Get a Quote</a>
+                    <a href="#contact" class="btn" id="cta-get-quote-btn" style="background-color: white; color: var(--primary);">Get a Quote</a>
                 </div>
             </section>
         </div>
@@ -1032,7 +1075,7 @@
         <!-- Acts Page Content (Hidden by default) -->
         <div id="acts-page" class="page-content" style="display: none;">
             <!-- Page Hero -->
-            <section class="page-hero">
+            <section class="page-hero" id="acts">
                 <div class="container">
                     <h1>Find Your Perfect Entertainment Act</h1>
                     <p>Browse our diverse selection of entertainment acts for any occasion</p>
@@ -1060,9 +1103,9 @@
         <!-- About Page Content (Hidden by default) -->
         <div id="about-page" class="page-content" style="display: none;">
             <!-- Page Hero -->
-            <section class="page-hero">
+            <section class="page-hero" id="about">
                 <div class="container">
-                    <h1>About A&A Entertainment </h1>
+                    <h1>About Moyana Creative Group </h1>
                     <p>Connecting exceptional talent with unforgettable events since 2025</p>
                 </div>
             </section>
@@ -1073,10 +1116,10 @@
                     <div class="about-content">
                         <div>
                             <h2>Our Story</h2>
-                            <p>A&A Entertainment was founded with a simple mission: to make it easy for event planners, companies, and individuals to find exceptional entertainment acts in Cape Town and beyond.</p>
+                            <p>Moyana Creative Group mission: to make it easy for event planners, companies, and individuals to find exceptional entertainment acts in Cape Town and beyond.</p>
                             <p>What started as a small directory of local performers has grown into a comprehensive platform connecting clients with hundreds of talented acts across multiple categories.</p>
                             <p>We pride ourselves on our curated selection process, ensuring that every act in our network meets our high standards for professionalism, talent, and reliability.</p>
-                            <a href="#!" class="btn" id="about-contact-btn" style="margin-top: 20px;">Get In Touch</a>
+                            <a href="#contact" class="btn" id="about-contact-btn" style="margin-top: 20px;">Get In Touch</a>
                         </div>
                         <div class="about-img">
                             <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Our team">
@@ -1122,7 +1165,7 @@
         <!-- Contact Page Content (Hidden by default) -->
         <div id="contact-page" class="page-content" style="display: none;">
             <!-- Page Hero -->
-            <section class="page-hero">
+            <section class="page-hero" id="contact">
                 <div class="container">
                     <h1>Get In Touch</h1>
                     <p>Ready to book entertainment for your event? Contact us for a quote</p>
@@ -1202,7 +1245,7 @@
                                 <i class="fas fa-envelope"></i>
                             </div>
                             <h3>Email Us</h3>
-                            <p>info@ayae.co.za<br>We respond within 24 hours</p>
+                            <p>info@upeoevents.co.za<br>We respond within 24 hours</p>
                         </div>
                     </div>
                 </div>
@@ -1212,7 +1255,7 @@
         <!-- Join Our Team Page Content (Hidden by default) -->
         <div id="join-page" class="page-content" style="display: none;">
             <!-- Page Hero -->
-            <section class="page-hero">
+            <section class="page-hero" id="join">
                 <div class="container">
                     <h1>Join Our Team</h1>
                     <p>Are you a talented performer? Apply to join our network of entertainment acts</p>
@@ -1282,7 +1325,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3>A&A Entertainment</h3>
+                    <h3>UPEO Event & Entertainment</h3>
                     <p>Connecting event planners, companies, and individuals with exceptional entertainment acts across Cape Town and worldwide.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -1294,11 +1337,11 @@
                 <div class="footer-column">
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="acts.html">Find Acts</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li><a href="join.html">Join Our Team</a></li>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#acts">Find Acts</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#join">Join Our Team</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -1306,19 +1349,19 @@
                     <ul class="footer-links" id="footer-acts">
                         <!-- Only 4 acts will be loaded here -->
                     </ul>
-                    <a href="acts.html" class="view-more-link">View More Acts →</a>
+                    <a href="#acts" class="view-more-link">View More Acts →</a>
                 </div>
                 <div class="footer-column">
                     <h3>Contact Info</h3>
                     <ul class="footer-links">
                         <li><i class="fas fa-map-marker-alt"></i> 123 Entertainment St, Cape Town</li>
                         <li><i class="fas fa-phone"></i> +27 21 123 4567</li>
-                        <li><i class="fas fa-envelope"></i> info@entertainmentconnect.co.za</li>
+                        <li><i class="fas fa-envelope"></i> info@upeoevents.co.za</li>
                     </ul>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2025 A&A Entertainment . All rights reserved.</p>
+                <p>&copy; 2025 UPEO Event & Entertainment. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -1334,8 +1377,8 @@
                 image: "https://images.unsplash.com/photo-1516280440614-37939bbacd81?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
                 images: [
                     "https://images.unsplash.com/photo-1516280440614-37939bbacd81?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-                    "https://images.unsplash.com/photo-1516280440614-37939bbacd81?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-                    "https://images.unsplash.com/photo-1516280440614-37939bbacd81?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                    "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+                    "https://images.unsplash.com/photo-1547153760-18fc86324498?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80"
                 ],
                 features: [
                     "Group sizes from 3-10 performers",
@@ -1353,7 +1396,7 @@
                 image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
                 images: [
                     "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-                    "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                    "https://images.unsplash.com/photo-1598485240910-890b8f166912?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1950&q=80"
                 ],
                 features: [
                     "Traditional Zimbabwean marimba",
@@ -1371,8 +1414,7 @@
                 image: "https://images.unsplash.com/photo-1543946608-33f238d0e1b8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
                 images: [
                     "https://images.unsplash.com/photo-1543946608-33f238d0e1b8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-                    "https://images.unsplash.com/photo-1543946608-33f238d0e1b8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-                    "https://images.unsplash.com/photo-1543946608-33f238d0e1b8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                    "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1950&q=80"
                 ],
                 features: [
                     "Fully insured and safety compliant",
@@ -1390,7 +1432,7 @@
                 image: "https://images.unsplash.com/photo-1547153760-18fc86324498?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80",
                 images: [
                     "https://images.unsplash.com/photo-1547153760-18fc86324498?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80",
-                    "https://images.unsplash.com/photo-1547153760-18fc86324498?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80"
+                    "https://images.unsplash.com/photo-1545154782-8db0a2f0e5b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1950&q=80"
                 ],
                 features: [
                     "Traditional Zulu costumes",
@@ -1439,13 +1481,13 @@
         // Testimonials Data
         const testimonials = [
             {
-                content: "The Zulu dancers we booked through Entertainment Connect were absolutely phenomenal! They brought so much energy to our corporate event and received a standing ovation.",
+                content: "The Zulu dancers we booked through UPEO Event & Entertainment were absolutely phenomenal! They brought so much energy to our corporate event and received a standing ovation.",
                 author: "Sarah Johnson",
                 role: "Event Manager, TechCorp Africa",
                 image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80"
             },
             {
-                content: "I was planning a wedding in Cape Town from overseas, and Entertainment Connect made the process so easy. The choir they recommended was perfect for our ceremony, and the photographer captured beautiful moments we'll treasure forever.",
+                content: "I was planning a wedding in Cape Town from overseas, and UPEO Event & Entertainment made the process so easy. The choir they recommended was perfect for our ceremony, and the photographer captured beautiful moments we'll treasure forever.",
                 author: "Michael & Chloe",
                 role: "Wedding Clients",
                 image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
@@ -1463,7 +1505,7 @@
                 image: "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80"
             },
             {
-                content: "Entertainment Connect helped us find the perfect MC for our product launch. He kept the event flowing smoothly and engaged our audience perfectly. The service was exceptional from start to finish.",
+                content: "UPEO Event & Entertainment helped us find the perfect MC for our product launch. He kept the event flowing smoothly and engaged our audience perfectly. The service was exceptional from start to finish.",
                 author: "Robert Williams",
                 role: "Product Manager, TechStart",
                 image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80"
@@ -1552,7 +1594,15 @@
                 });
                 
                 // Set the active nav link based on the page
-                const activeLink = document.querySelector(`.nav-links a[href="${pageId.replace('-page', '')}.html"]`);
+                const pageMap = {
+                    'home-page': '#home',
+                    'acts-page': '#acts',
+                    'about-page': '#about',
+                    'contact-page': '#contact',
+                    'join-page': '#join'
+                };
+                
+                const activeLink = document.querySelector(`.nav-links a[href="${pageMap[pageId]}"]`);
                 if (activeLink) {
                     activeLink.classList.add('active');
                 }
@@ -1564,15 +1614,15 @@
                     e.preventDefault();
                     const href = this.getAttribute('href');
                     
-                    if (href === 'index.html') {
+                    if (href === '#home') {
                         showPage('home-page');
-                    } else if (href === 'acts.html') {
+                    } else if (href === '#acts') {
                         showPage('acts-page');
-                    } else if (href === 'about.html') {
+                    } else if (href === '#about') {
                         showPage('about-page');
-                    } else if (href === 'contact.html') {
+                    } else if (href === '#contact') {
                         showPage('contact-page');
-                    } else if (href === 'join.html') {
+                    } else if (href === '#join') {
                         showPage('join-page');
                     }
                     
@@ -1703,7 +1753,7 @@
             footerPageActs.forEach(act => {
                 // Footer links
                 const footerLink = document.createElement('li');
-                footerLink.innerHTML = `<a href="acts.html#${act.id}">${act.title}</a>`;
+                footerLink.innerHTML = `<a href="#acts" class="footer-act-link" data-act="${act.id}">${act.title}</a>`;
                 footerActs.appendChild(footerLink);
             });
             
@@ -1767,6 +1817,18 @@
                     // Set the act type in the form
                     setTimeout(() => {
                         document.getElementById('act-type').value = act;
+                    }, 100);
+                });
+            });
+            
+            document.querySelectorAll('.footer-act-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const act = this.getAttribute('data-act');
+                    showPage('acts-page');
+                    // Scroll to the specific act
+                    setTimeout(() => {
+                        document.getElementById(act).scrollIntoView({ behavior: 'smooth' });
                     }, 100);
                 });
             });
