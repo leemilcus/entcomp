@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UPEO Event & Entertainment | Find Entertainment Acts</title>
+    <title> Kumusha Events & Entertainment | Find Entertainment Acts</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Reset and Base Styles */
@@ -15,11 +15,11 @@
         }
 
         :root {
-            --primary: #8a2be2;
-            --secondary: #ff6b6b;
+            --primary: #ff9900;
+            --secondary: #05ab11;
             --dark: #333;
             --light: #f8f9fa;
-            --accent: #ffd700;
+            --accent:  #05ab11;
         }
 
         body {
@@ -58,7 +58,7 @@
         }
 
         .btn:hover {
-            background-color: #7a1fd1;
+            background-color:  #05ab11;
             transform: translateY(-2px);
         }
 
@@ -67,7 +67,7 @@
         }
 
         .btn-secondary:hover {
-            background-color: #ff5252;
+            background-color:  #05ab11;
         }
 
         section {
@@ -94,8 +94,8 @@
 
         /* Header Styles */
         header {
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background-color: rgb(5, 5, 5);
+            box-shadow: 0 2px 10px rgba(141, 139, 139, 0.1);
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -146,6 +146,7 @@
             display: flex;
             gap: 30px;
             align-items: center;
+            color: white;
         }
 
         .nav-links a {
@@ -673,6 +674,102 @@
             margin: 0 auto;
         }
 
+        /* Add these new styles for video upload */
+        .upload-area {
+            border: 2px dashed #ddd;
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .upload-area:hover {
+            border-color: var(--primary);
+            background-color: rgba(255, 153, 0, 0.05);
+        }
+        
+        .upload-area.dragover {
+            border-color: var(--primary);
+            background-color: rgba(255, 153, 0, 0.1);
+        }
+        
+        .upload-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .upload-hint {
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+        
+        .file-list {
+            margin-top: 20px;
+        }
+        
+        .file-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #f5f5f5;
+            padding: 10px 15px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        
+        .file-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .file-icon {
+            color: var(--primary);
+        }
+        
+        .remove-file {
+            background: none;
+            border: none;
+            color: #ff4444;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+        
+        .video-preview {
+            max-width: 100%;
+            margin-top: 15px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .upload-progress {
+            width: 100%;
+            height: 5px;
+            background-color: #eee;
+            border-radius: 3px;
+            margin-top: 10px;
+            overflow: hidden;
+        }
+        
+        .progress-bar {
+            height: 100%;
+            background-color: var(--primary);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+        
+        .form-note {
+            font-size: 0.85rem;
+            color: #666;
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+        
+
         /* Logo Image Base64 - Replace with your actual logo URL */
         .logo-placeholder {
             background-color: #f0f0f0;
@@ -956,6 +1053,13 @@
                 height: 35px;
             }
         }
+        .brand-name {
+            color: rgb(9, 255, 0);
+            transition: color 0.3s ease;
+        }
+        .brand-name:hover {
+            color: rgb(255, 255, 255);
+        }
     </style>
 </head>
 <body>
@@ -965,7 +1069,7 @@
             <nav class="navbar">
                 <a href="#home" class="logo-container">
                     <!-- Logo Image - Replace the src with your actual logo image URL -->
-                    <img src="images/moyana creative group.png " alt="UPEO Event & Entertainment Logo" class="logo-img">
+                    <img src="./images/Kumusha logo white.png" alt="Kumusha Events & Entertainment Logo" class="logo-img">
                     
                 </a>
                 <ul class="nav-links">
@@ -989,8 +1093,8 @@
             <!-- Hero Section -->
             <section class="hero" id="home">
                 <div class="container">
-                    <h1>Connect with Amazing Entertainment Acts</h1>
-                    <p>From African drummers to fire dancers, choirs to photographers - find the perfect entertainment for your event in Cape Town and beyond.</p>
+                    <h1>Connecting you with Africa's finest Entertainment Acts</h1>
+                    <p>From Zulu Dancers to Fire Dancers, Choirs to Photographers - find the perfect entertainment for your event in Cape Town and beyond.</p>
                     <a href="#acts" class="btn" id="browse-acts-btn">Browse Acts</a>
                     <a href="#contact" class="btn btn-secondary" id="get-quote-btn">Get a Quote</a>
                 </div>
@@ -1105,7 +1209,7 @@
             <!-- Page Hero -->
             <section class="page-hero" id="about">
                 <div class="container">
-                    <h1>About Moyana Creative Group </h1>
+                    <h1>About Kumusha Events & Entertainment </h1>
                     <p>Connecting exceptional talent with unforgettable events since 2025</p>
                 </div>
             </section>
@@ -1116,7 +1220,7 @@
                     <div class="about-content">
                         <div>
                             <h2>Our Story</h2>
-                            <p>Moyana Creative Group mission: to make it easy for event planners, companies, and individuals to find exceptional entertainment acts in Cape Town and beyond.</p>
+                            <p>At Kumusha Events & Entertainment, our mission is to make it easy for event planners, companies, and individuals to find exceptional entertainment acts in Cape Town and beyond.</p>
                             <p>What started as a small directory of local performers has grown into a comprehensive platform connecting clients with hundreds of talented acts across multiple categories.</p>
                             <p>We pride ourselves on our curated selection process, ensuring that every act in our network meets our high standards for professionalism, talent, and reliability.</p>
                             <a href="#contact" class="btn" id="about-contact-btn" style="margin-top: 20px;">Get In Touch</a>
@@ -1230,82 +1334,119 @@
                             <div class="step-number">
                                 <i class="fas fa-map-marker-alt"></i>
                             </div>
-                            <h3>Visit Us</h3>
-                            <p>123 Entertainment Street<br>Cape Town, 8001<br>South Africa</p>
-                        </div>
+                            <h3>Visit Us</h3> </div>
                         <div class="step">
                             <div class="step-number">
                                 <i class="fas fa-phone"></i>
                             </div>
                             <h3>Call Us</h3>
-                            <p>+27 21 123 4567<br>Mon-Fri: 9am-5pm</p>
+                            <p>+27 68 077 9760<br>Mon-Fri: 9am-5pm</p>
                         </div>
                         <div class="step">
                             <div class="step-number">
                                 <i class="fas fa-envelope"></i>
                             </div>
                             <h3>Email Us</h3>
-                            <p>info@upeoevents.co.za<br>We respond within 24 hours</p>
+                            <p>info@kumushaevents.co.za<br>We respond within 24 hours</p>
                         </div>
                     </div>
                 </div>
             </section>
         </div>
 
-        <!-- Join Our Team Page Content (Hidden by default) -->
-        <div id="join-page" class="page-content" style="display: none;">
-            <!-- Page Hero -->
-            <section class="page-hero" id="join">
-                <div class="container">
-                    <h1>Join Our Team</h1>
-                    <p>Are you a talented performer? Apply to join our network of entertainment acts</p>
-                </div>
-            </section>
+  <!-- Join Our Team Page Content (Hidden by default) -->
+    <div id="join-page" class="page-content" style="display: none;">
+        <!-- Page Hero -->
+        <section class="page-hero" id="join">
+            <div class="container">
+                <h1>Join Our Team</h1>
+                <p>Are you a talented performer? Apply to join our network of entertainment acts</p>
+            </div>
+        </section>
 
-            <!-- Join Form -->
-            <section class="join-team">
-                <div class="container">
-                    <div class="join-form">
-                        <h2 style="text-align: center; margin-bottom: 30px;">Performer Application</h2>
-                        <form id="joinForm">
-                            <div class="form-group">
-                                <label for="performer-name">Your Name</label>
-                                <input type="text" id="performer-name" class="form-control" required>
+        <!-- Join Form -->
+        <section class="join-team">
+            <div class="container">
+                <div class="join-form">
+                    <h2 style="text-align: center; margin-bottom: 30px;">Performer Application</h2>
+                    <form id="joinForm">
+                        <div class="form-group">
+                            <label for="performer-name">Your Name *</label>
+                            <input type="text" id="performer-name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="performer-email">Email Address *</label>
+                            <input type="email" id="performer-email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="performer-phone">Phone Number *</label>
+                            <input type="tel" id="performer-phone" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="act-type-text">Type of Act *</label>
+                            <input type="text" id="act-type-text" class="form-control" placeholder="Describe your act (e.g., African drummer, fire dancer, singer, etc.)" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="experience">Years of Experience *</label>
+                            <input type="number" id="experience" class="form-control" min="0" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="portfolio-link">Facebook Page Link</label>
+                            <input type="url" id="portfolio-link" class="form-control" placeholder="https://facebook.com/your-page">
+                        </div>
+                        <div class="form-group">
+                            <label for="portfolio-link">Instagram Link </label>
+                            <input type="url" id="portfolio-link" class="form-control" placeholder="https://instagram.com/your-handle">
+                        </div>
+                        <div class="form-group">
+                            <label for="portfolio-link">Portfolio Link (Website, YouTube, etc.)</label>
+                            <input type="url" id="portfolio-link" class="form-control" placeholder="https://youtube.com/your-channel">
+                        </div>
+                        
+                        <!-- Video Upload Section -->
+                        <div class="form-group">
+                            <label>Upload Your Performance Video </label>
+                            <p class="form-note">Show us your talent! Upload a video of your performance (max 50MB, MP4, MOV, or AVI format)</p>
+                            
+                            <div class="upload-area" id="videoUploadArea">
+                                <div class="upload-icon">
+                                    <i class="fas fa-video"></i>
+                                </div>
+                                <h4>Drag & Drop Your Video Here</h4>
+                                <p>or click to browse files</p>
+                                <p class="upload-hint">Supported formats: MP4, MOV, AVI (Max 50MB)</p>
+                                <input type="file" id="video-upload" class="form-control" accept="video/*" style="display: none;">
+                                <div class="upload-progress" id="uploadProgress" style="display: none;">
+                                    <div class="progress-bar" id="progressBar"></div>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label for="performer-email">Email Address</label>
-                                <input type="email" id="performer-email" class="form-control" required>
+                            
+                            <div class="file-list" id="fileList"></div>
+                        </div>
+                        
+                        <!-- Photo Upload Section (Optional) -->
+                        <div class="form-group">
+                            <label for="photo-upload">Upload Photos of Your Act (Optional)</label>
+                            <p class="form-note">You can upload up to 5 photos (JPEG or PNG, max 10MB each)</p>
+                            <input type="file" id="photo-upload" class="form-control" accept="image/*" multiple>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="performer-message">Tell us about yourself and your act *</label>
+                            <textarea id="performer-message" class="form-control" placeholder="Describe your performance style, previous experience, and what makes your act unique..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn" style="width: 100%;" id="submitApplicationBtn">
+                            <span id="submitBtnText">Submit Application</span>
+                            <div id="submitSpinner" style="display: none;">
+                                <i class="fas fa-spinner fa-spin"></i> Sending...
                             </div>
-                            <div class="form-group">
-                                <label for="performer-phone">Phone Number</label>
-                                <input type="tel" id="performer-phone" class="form-control" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="act-type-text">Type of Act</label>
-                                <input type="text" id="act-type-text" class="form-control" placeholder="Describe your act (e.g., African drummer, fire dancer, singer, etc.)" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="experience">Years of Experience</label>
-                                <input type="number" id="experience" class="form-control" min="0" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="portfolio-link">Portfolio Link (Website, YouTube, etc.)</label>
-                                <input type="url" id="portfolio-link" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label for="performer-message">Tell us about yourself and your act</label>
-                                <textarea id="performer-message" class="form-control" placeholder="Describe your performance style, previous experience, and what makes your act unique..." required></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label for="photo-upload">Upload a Photo of Your Act</label>
-                                <input type="file" id="photo-upload" class="form-control" accept="image/*">
-                            </div>
-                            <button type="submit" class="btn" style="width: 100%;">Submit Application</button>
-                        </form>
-                    </div>
+                        </button>
+                    </form>
                 </div>
-            </section>
-        </div>
+            </div>
+        </section>
+    </div>
     </main>
 
     <!-- Gallery Modal -->
@@ -1325,14 +1466,12 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3>UPEO Event & Entertainment</h3>
+                    <h3> Kumusha Events  </h3>
                     <p>Connecting event planners, companies, and individuals with exceptional entertainment acts across Cape Town and worldwide.</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
+                        <a href="https://web.facebook.com/kumushaevents/"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/kumushaevents/"><i class="fab fa-instagram"></i></a>
+                        </div>
                 </div>
                 <div class="footer-column">
                     <h3>Quick Links</h3>
@@ -1353,625 +1492,1016 @@
                 </div>
                 <div class="footer-column">
                     <h3>Contact Info</h3>
-                    <ul class="footer-links">
-                        <li><i class="fas fa-map-marker-alt"></i> 123 Entertainment St, Cape Town</li>
-                        <li><i class="fas fa-phone"></i> +27 21 123 4567</li>
-                        <li><i class="fas fa-envelope"></i> info@upeoevents.co.za</li>
+                    <ul class="footer-links"> <li><i class="fas fa-phone"></i> +27 68 077 9760</li>
+                        <li><i class="fas fa-envelope"></i> info@kumushaevents.co.za</li>
                     </ul>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2025 UPEO Event & Entertainment. All rights reserved.</p>
+                <strong><p>&copy; 2025 Kumusha Events & Entertainment.</strong> All rights reserved. | Crafted by   <a href="https://www.shailendralm.co.za">
+                        <strong><span class="brand-name">Shailendra Visuals.</span> </strong>
+                    </a>
+                </p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Entertainment Acts Data - Now with multiple images per act
-        const entertainmentActs = [
-            {
-                id: "african-drummers",
-                title: "African Drummers",
-                category: "music",
-                description: "Traditional and contemporary African drumming performances that bring energy and rhythm to any event.",
-                image: "https://images.unsplash.com/photo-1516280440614-37939bbacd81?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-                images: [
-                    "https://images.unsplash.com/photo-1516280440614-37939bbacd81?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-                    "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-                    "https://images.unsplash.com/photo-1547153760-18fc86324498?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80"
-                ],
-                features: [
-                    "Group sizes from 3-10 performers",
-                    "Traditional and contemporary repertoire",
-                    "Audience participation encouraged",
-                    "Indoor and outdoor performances"
-                ],
-                icon: "fas fa-drum"
-            },
-            {
-                id: "marimba-band",
-                title: "Marimba Band",
-                category: "music",
-                description: "Vibrant marimba music that creates an uplifting and celebratory atmosphere for any occasion.",
-                image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-                images: [
-                    "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-                    "https://images.unsplash.com/photo-1598485240910-890b8f166912?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1950&q=80"
-                ],
-                features: [
-                    "Traditional Zimbabwean marimba",
-                    "Upbeat and festive music",
-                    "Various group sizes available",
-                    "Perfect for celebrations"
-                ],
-                icon: "fas fa-music"
-            },
-            {
-                id: "fire-dancers",
-                title: "Fire Dancers",
-                category: "dance",
-                description: "Mesmerizing fire performances that will captivate your audience and create unforgettable moments.",
-                image: "https://images.unsplash.com/photo-1543946608-33f238d0e1b8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-                images: [
-                    "https://images.unsplash.com/photo-1543946608-33f238d0e1b8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-                    "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1950&q=80"
-                ],
-                features: [
-                    "Fully insured and safety compliant",
-                    "Solo and group performances",
-                    "Custom choreography available",
-                    "Outdoor performances recommended"
-                ],
-                icon: "fas fa-fire"
-            },
-            {
-                id: "zulu-dancers",
-                title: "Zulu Dancers",
-                category: "dance",
-                description: "Energetic traditional Zulu dancing showcasing rich cultural heritage and vibrant costumes.",
-                image: "https://images.unsplash.com/photo-1547153760-18fc86324498?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80",
-                images: [
-                    "https://images.unsplash.com/photo-1547153760-18fc86324498?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80",
-                    "https://images.unsplash.com/photo-1545154782-8db0a2f0e5b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1950&q=80"
-                ],
-                features: [
-                    "Traditional Zulu costumes",
-                    "High-energy performances",
-                    "Cultural storytelling",
-                    "Group performances"
-                ],
-                icon: "fas fa-users"
-            },
-            {
-                id: "gospel-choir",
-                title: "Gospel Choir",
-                category: "music",
-                description: "Inspiring gospel music that brings spiritual upliftment and powerful harmonies to your event.",
-                image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-                images: [
-                    "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-                ],
-                features: [
-                    "Powerful vocal harmonies",
-                    "Inspirational performances",
-                    "Various choir sizes",
-                    "Perfect for ceremonies"
-                ],
-                icon: "fas fa-church"
-            },
-            {
-                id: "photographers",
-                title: "Photographers",
-                category: "visual",
-                description: "Professional photographers to capture the special moments of your event.",
-                image: "https://images.unsplash.com/photo-1554048612-b6a482bc67e5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-                images: [
-                    "https://images.unsplash.com/photo-1554048612-b6a482bc67e5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-                ],
-                features: [
-                    "Event photography specialists",
-                    "High-quality equipment",
-                    "Digital delivery of images",
-                    "Custom packages available"
-                ],
-                icon: "fas fa-camera"
-            }
-        ];
+    // Entertainment Acts Data - Now with multiple images per act
+    const entertainmentActs = [
+        {
+            id: "african-drummers",
+            title: "African Drummers",
+            category: "music",
+            description: "Traditional and contemporary African drumming performances that bring energy and rhythm to any event.",
+            image: "./images/Djembe-Drum-playing-1.jpg ",
+            images: [
+                "https://images.unsplash.com/photo-1516280440614-37939bbacd81?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+                "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+                "https://images.unsplash.com/photo-1547153760-18fc86324498?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80"
+            ],
+            features: [
+                "Group sizes from 3-10 performers",
+                "Traditional and contemporary repertoire",
+                "Audience participation encouraged",
+                "Indoor and outdoor performances"
+            ],
+            icon: "fas fa-drum"
+        },
+        {
+            id: "marimba-band",
+            title: "Marimba Band",
+            category: "music",
+            description: "Vibrant marimba music that creates an uplifting and celebratory atmosphere for any occasion.",
+            image: "./images/marimba.png ",
+            images: [
+                "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+                "https://images.unsplash.com/photo-1598485240910-890b8f166912?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1950&q=80"
+            ],
+            features: [
+                "Traditional Zimbabwean marimba",
+                "Upbeat and festive music",
+                "Various group sizes available",
+                "Perfect for celebrations"
+            ],
+            icon: "fas fa-music"
+        },
+        {
+            id: "Violinist",
+            title: "Violinist",
+            category: "music",
+            description: "Mesmerizing musical performances that will captivate your audience and create unforgettable moments.",
+            image: "./images/violinist.jpg",
+            images: [
+                "https://images.unsplash.com/photo-1543946608-33f238d0e1b8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+                "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1950&q=80"
+            ],
+            features: [
+                "Fully insured and safety compliant",
+                "Solo and group performances",
+                "Custom choreography available",
+                "Outdoor performances recommended"
+            ],
+            icon: "fas fa-fire"
+        },
+        {
+            id: "zulu-dancers",
+            title: "Zulu Dancers",
+            category: "dance",
+            description: "Energetic traditional Zulu dancing showcasing rich cultural heritage and vibrant costumes.",
+            image: "./images/zulu dancers.jpg ",
+            images: [
+                "https://images.unsplash.com/photo-1547153760-18fc86324498?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80",
+                "https://images.unsplash.com/photo-1545154782-8db0a2f0e5b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1950&q=80"
+            ],
+            features: [
+                "Traditional Zulu costumes",
+                "High-energy performances",
+                "Cultural storytelling",
+                "Group performances"
+            ],
+            icon: "fas fa-users"
+        },
+        {
+            id: "models",
+            title: "Models",
+            category: "other",
+            description: "Inspiring gospel music that brings spiritual upliftment and powerful harmonies to your event.",
+            image: "./images/cee.jpg ",
+            images: [
+                "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+            ],
+            features: [
+                "Powerful vocal harmonies",
+                "Inspirational performances",
+                "Various choir sizes",
+                "Perfect for ceremonies"
+            ],
+            icon: "fas fa-church"
+        },
+        {
+            id: "photographers",
+            title: "Photographers",
+            category: "visual",
+            description: "Professional photographers to capture the special moments of your event.",
+            image: "https://images.unsplash.com/photo-1554048612-b6a482bc67e5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+            images: [
+                "https://images.unsplash.com/photo-1554048612-b6a482bc67e5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+            ],
+            features: [
+                "Event photography specialists",
+                "High-quality equipment",
+                "Digital delivery of images",
+                "Custom packages available"
+            ],
+            icon: "fas fa-camera"
+        },
+        {
+            id: "cars",
+            title: "Vintage Cars",
+            category: "other",
+            description: "Classic vintage cars for special occasions.",
+            image: "./images/vintage cars.jpg ",
+            images: [
+                "https://images.unsplash.com/photo-1554048612-b6a482bc67e5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+            ],
+            features: [
+                "Birthdays, matric dance, weddings etc.",
+                "Professional drivers available", 
+            ],
+            icon: "fas fa-camera"
+        },
+          {
+            id: "art",
+            title: "Caricature Artist",
+            category: "other",
+            description: "Bring memorable humor to your event with our caricature artists.",
+            image: "./images/caricature artists.jpg ",
+            images: [
+                "https://images.unsplash.com/photo-1554048612-b6a482bc67e5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+            ],
+            features: [
+                "Perfect Birthdays, office events, weddings etc.", 
+            ],
+            icon: "fas fa-camera"
+        },
+         {
+            id: "art",
+            title: "Portrait Artist",
+            category: "other",
+            description: "Perfect gift for every occasions.",
+            image: "./images/portrait artist.jpeg ",
+            images: [
+                "https://images.unsplash.com/photo-1554048612-b6a482bc67e5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+            ],
+            features: [
+                "Perfect Birthdays, matric dance, weddings etc.",
+                "Delivery available", 
+            ],
+            icon: "fas fa-camera"
+        },
+         {
+            id: "art",
+            title: "Poets",
+            category: "other",
+            description: "Perfect gift for every occasions.",
+            image: "./images/article-act-out-a-poem.jpg ",
+            images: [
+                "https://images.unsplash.com/photo-1554048612-b6a482bc67e5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+            ],
+            features: [
+                "Perfect Birthdays, matric dance, weddings etc.",
+                "Delivery available", 
+            ],
+            icon: "fas fa-camera"
+        },
+          {
+            id: "accessories",
+            title: "African Accessories",
+            category: "other",
+            description: "African beaded accessories.",
+            image: "./images/beaded accesories.jpg ",
+            images: [
+                "https://images.unsplash.com/photo-1554048612-b6a482bc67e5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+            ],
+            features: [
+                "Perfect Birthdays, matric dance, weddings etc.",
+                "Delivery available", 
+            ],
+            icon: "fas fa-camera"
+        }
+    ];
 
-        // Testimonials Data
-        const testimonials = [
-            {
-                content: "The Zulu dancers we booked through UPEO Event & Entertainment were absolutely phenomenal! They brought so much energy to our corporate event and received a standing ovation.",
-                author: "Sarah Johnson",
-                role: "Event Manager, TechCorp Africa",
-                image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80"
-            },
-            {
-                content: "I was planning a wedding in Cape Town from overseas, and UPEO Event & Entertainment made the process so easy. The choir they recommended was perfect for our ceremony, and the photographer captured beautiful moments we'll treasure forever.",
-                author: "Michael & Chloe",
-                role: "Wedding Clients",
-                image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-            },
-            {
-                content: "Our company's annual gala was transformed by the fire dancers we hired. The performance was breathtaking and our guests are still talking about it months later. Highly recommended!",
-                author: "David Thompson",
-                role: "Marketing Director, Global Corp",
-                image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-            },
-            {
-                content: "The marimba band created such a joyful atmosphere at our festival. They were professional, punctual, and incredibly talented. We'll definitely be booking them again next year.",
-                author: "Lisa Chen",
-                role: "Festival Organizer",
-                image: "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80"
-            },
-            {
-                content: "UPEO Event & Entertainment helped us find the perfect MC for our product launch. He kept the event flowing smoothly and engaged our audience perfectly. The service was exceptional from start to finish.",
-                author: "Robert Williams",
-                role: "Product Manager, TechStart",
-                image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80"
-            }
-        ];
+    // Testimonials Data
+    const testimonials = [
+        {
+            content: "The Zulu dancers we booked through Kumusha Events & Entertainment were absolutely phenomenal! They brought so much energy to our corporate event and received a standing ovation.",
+            author: "Sarah Johnson",
+            role: "Event Manager, TechCorp Africa",
+            image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80"
+        },
+        {
+            content: "I was planning a wedding in Cape Town from overseas, and Kumusha Events & Entertainment made the process so easy. The choir they recommended was perfect for our ceremony, and the photographer captured beautiful moments we'll treasure forever.",
+            author: "Michael & Chloe",
+            role: "Wedding Clients",
+            image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+        },
+        {
+            content: "Our company's annual gala was transformed by the fire dancers we hired. The performance was breathtaking and our guests are still talking about it months later. Highly recommended!",
+            author: "David Thompson",
+            role: "Marketing Director, Global Corp",
+            image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+        },
+        {
+            content: "The marimba band created such a joyful atmosphere at our festival. They were professional, punctual, and incredibly talented. We'll definitely be booking them again next year.",
+            author: "Lisa Chen",
+            role: "Festival Organizer",
+            image: "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80"
+        },
+        {
+            content: "Kumusha Events & Entertainment helped us find the perfect MC for our product launch. He kept the event flowing smoothly and engaged our audience perfectly. The service was exceptional from start to finish.",
+            author: "Robert Williams",
+            role: "Product Manager, TechStart",
+            image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80"
+        }
+    ];
 
-        // Simple Single Page Application functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            // Load acts into the page
-            loadActs();
-            // Load testimonials
-            loadTestimonials();
-            
-            // Mobile Menu Functionality
-            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-            const navLinks = document.querySelector('.nav-links');
-            const body = document.body;
+    // Video upload variables
+    let selectedVideo = null;
+    let uploadInProgress = false;
 
-            // Toggle mobile menu
-            mobileMenuBtn.addEventListener('click', function(e) {
-                e.stopPropagation();
-                navLinks.classList.toggle('active');
-                mobileMenuBtn.innerHTML = navLinks.classList.contains('active') ? 
-                    '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
-                preventBodyScroll();
-            });
+    // Simple Single Page Application functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        // Load acts into the page
+        loadActs();
+        // Load testimonials
+        loadTestimonials();
+        
+        // Mobile Menu Functionality
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        const body = document.body;
 
-            // Close mobile menu when clicking on a link
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                link.addEventListener('click', () => {
-                    navLinks.classList.remove('active');
-                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-                    preventBodyScroll();
-                });
-            });
-
-            // Close mobile menu when clicking outside
-            document.addEventListener('click', function(e) {
-                if (!navLinks.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
-                    navLinks.classList.remove('active');
-                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-                    preventBodyScroll();
-                }
-            });
-
-            // Close mobile menu on escape key
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape' && navLinks.classList.contains('active')) {
-                    navLinks.classList.remove('active');
-                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-                    preventBodyScroll();
-                }
-            });
-
-            // Prevent body scroll when mobile menu is open
-            function preventBodyScroll() {
-                if (navLinks.classList.contains('active')) {
-                    body.style.overflow = 'hidden';
-                } else {
-                    body.style.overflow = '';
-                }
-            }
-
-            // Update body scroll on window resize
-            window.addEventListener('resize', function() {
-                if (window.innerWidth > 768) {
-                    navLinks.classList.remove('active');
-                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-                    body.style.overflow = '';
-                }
-            });
-
-            // Navigation between pages (SPA functionality)
-            function showPage(pageId) {
-                // Hide all pages
-                document.querySelectorAll('.page-content').forEach(page => {
-                    page.style.display = 'none';
-                });
-                
-                // Show the selected page
-                document.getElementById(pageId).style.display = 'block';
-                
-                // Update active nav link
-                document.querySelectorAll('.nav-links a').forEach(link => {
-                    link.classList.remove('active');
-                });
-                
-                // Set the active nav link based on the page
-                const pageMap = {
-                    'home-page': '#home',
-                    'acts-page': '#acts',
-                    'about-page': '#about',
-                    'contact-page': '#contact',
-                    'join-page': '#join'
-                };
-                
-                const activeLink = document.querySelector(`.nav-links a[href="${pageMap[pageId]}"]`);
-                if (activeLink) {
-                    activeLink.classList.add('active');
-                }
-            }
-
-            // Set up navigation
-            document.querySelectorAll('.nav-links a, .logo-container').forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const href = this.getAttribute('href');
-                    
-                    if (href === '#home') {
-                        showPage('home-page');
-                    } else if (href === '#acts') {
-                        showPage('acts-page');
-                    } else if (href === '#about') {
-                        showPage('about-page');
-                    } else if (href === '#contact') {
-                        showPage('contact-page');
-                    } else if (href === '#join') {
-                        showPage('join-page');
-                    }
-                    
-                    // Scroll to top
-                    window.scrollTo(0, 0);
-                });
-            });
-
-            // Fix for Get a Quote buttons
-            document.getElementById('get-quote-btn').addEventListener('click', function(e) {
-                e.preventDefault();
-                showPage('contact-page');
-                window.scrollTo(0, 0);
-            });
-
-            document.getElementById('cta-get-quote-btn').addEventListener('click', function(e) {
-                e.preventDefault();
-                showPage('contact-page');
-                window.scrollTo(0, 0);
-            });
-
-            document.getElementById('browse-acts-btn').addEventListener('click', function(e) {
-                e.preventDefault();
-                showPage('acts-page');
-                window.scrollTo(0, 0);
-            });
-
-            document.getElementById('view-more-btn').addEventListener('click', function(e) {
-                e.preventDefault();
-                showPage('acts-page');
-                window.scrollTo(0, 0);
-            });
-
-            document.getElementById('about-contact-btn').addEventListener('click', function(e) {
-                e.preventDefault();
-                showPage('contact-page');
-                window.scrollTo(0, 0);
-            });
-
-            // Filter functionality for acts page
-            document.querySelectorAll('.filter-btn').forEach(button => {
-                button.addEventListener('click', function() {
-                    // Update active filter button
-                    document.querySelectorAll('.filter-btn').forEach(btn => {
-                        btn.classList.remove('active');
-                    });
-                    this.classList.add('active');
-                    
-                    const filter = this.getAttribute('data-filter');
-                    const acts = document.querySelectorAll('.act-card');
-                    
-                    acts.forEach(act => {
-                        if (filter === 'all' || act.getAttribute('data-category') === filter) {
-                            act.style.display = 'block';
-                        } else {
-                            act.style.display = 'none';
-                        }
-                    });
-                });
-            });
-
-            // Form submission handling
-            document.getElementById('contactForm').addEventListener('submit', function(e) {
-                e.preventDefault();
-                // In a real application, you would send the form data to a server here
-                alert('Thank you for your inquiry! We will get back to you soon.');
-                this.reset();
-            });
-
-            // Join form submission handling
-            document.getElementById('joinForm').addEventListener('submit', function(e) {
-                e.preventDefault();
-                // In a real application, you would send the form data to a server here
-                alert('Thank you for your application! We will review it and get back to you soon.');
-                this.reset();
-            });
-
-            // Gallery functionality
-            document.getElementById('close-gallery').addEventListener('click', function() {
-                document.getElementById('gallery-modal').classList.remove('active');
-            });
-
-            // Close gallery when clicking outside the content
-            document.getElementById('gallery-modal').addEventListener('click', function(e) {
-                if (e.target === this) {
-                    this.classList.remove('active');
-                }
-            });
-
-            // Show home page by default
-            showPage('home-page');
+        // Toggle mobile menu
+        mobileMenuBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+            preventBodyScroll();
         });
 
-        // Function to load acts into the page
-        function loadActs() {
-            const actsGrid = document.getElementById('acts-grid');
-            const actsList = document.getElementById('acts-list');
-            const footerActs = document.getElementById('footer-acts');
-            const actTypeSelect = document.getElementById('act-type');
-            
-            // Clear existing content
-            actsGrid.innerHTML = '';
-            actsList.innerHTML = '';
-            footerActs.innerHTML = '';
-            actTypeSelect.innerHTML = '<option value="">Select an Act</option>';
-            
-            // Add only 6 acts to home page grid
-            const homePageActs = entertainmentActs.slice(0, 6);
-            
-            homePageActs.forEach(act => {
-                // Home page grid
-                const actCard = document.createElement('div');
-                actCard.className = 'service-card';
-                actCard.innerHTML = `
-                    <div class="service-img" style="background-image: url('${act.image}');"></div>
-                    <div class="service-content">
-                        <h3>${act.title}</h3>
-                        <p>${act.description}</p>
-                        <a href="#!" class="btn learn-more-btn" data-act="${act.id}" style="margin-top: 15px; padding: 8px 16px;">Learn More</a>
-                    </div>
-                `;
-                actsGrid.appendChild(actCard);
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                preventBodyScroll();
+            });
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!navLinks.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                preventBodyScroll();
+            }
+        });
+
+        // Close mobile menu on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                preventBodyScroll();
+            }
+        });
+
+        // Prevent body scroll when mobile menu is open
+        function preventBodyScroll() {
+            if (navLinks.classList.contains('active')) {
+                body.style.overflow = 'hidden';
+            } else {
+                body.style.overflow = '';
+            }
+        }
+
+        // Update body scroll on window resize
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768) {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                body.style.overflow = '';
+            }
+        });
+
+        // Navigation between pages (SPA functionality)
+        function showPage(pageId) {
+            // Hide all pages
+            document.querySelectorAll('.page-content').forEach(page => {
+                page.style.display = 'none';
             });
             
-            // Add only 4 acts to footer
-            const footerPageActs = entertainmentActs.slice(0, 4);
+            // Show the selected page
+            document.getElementById(pageId).style.display = 'block';
             
-            footerPageActs.forEach(act => {
-                // Footer links
-                const footerLink = document.createElement('li');
-                footerLink.innerHTML = `<a href="#acts" class="footer-act-link" data-act="${act.id}">${act.title}</a>`;
-                footerActs.appendChild(footerLink);
+            // Update active nav link
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.classList.remove('active');
             });
             
-            // Add all acts to acts page in grid format
-            entertainmentActs.forEach(act => {
-                // Acts page grid card
-                const actCard = document.createElement('div');
-                actCard.className = 'act-card';
-                actCard.setAttribute('data-category', act.category);
-                actCard.id = act.id;
-                actCard.innerHTML = `
-                    <div class="act-card-img" style="background-image: url('${act.image}');">
-                        <div class="act-card-overlay">
-                            <div>
-                                <h3>${act.title}</h3>
-                                ${act.images.length > 1 ? `<button class="view-gallery-btn" data-act="${act.id}">View Gallery (${act.images.length})</button>` : ''}
-                            </div>
-                        </div>
-                    </div>
-                    <div class="act-card-content">
-                        <h3>${act.title}</h3>
-                        <p>${act.description}</p>
-                        <div class="act-features" style="margin: 15px 0;">
-                            ${act.features.slice(0, 2).map(feature => `
-                                <div class="act-feature">
-                                    <i class="fas fa-check-circle"></i>
-                                    <span>${feature}</span>
-                                </div>
-                            `).join('')}
-                        </div>
-                        <a href="#!" class="btn request-quote-btn" data-act="${act.id}" style="padding: 8px 16px;">Request Quote</a>
-                    </div>
-                `;
-                actsList.appendChild(actCard);
+            // Set the active nav link based on the page
+            const pageMap = {
+                'home-page': '#home',
+                'acts-page': '#acts',
+                'about-page': '#about',
+                'contact-page': '#contact',
+                'join-page': '#join'
+            };
+            
+            const activeLink = document.querySelector(`.nav-links a[href="${pageMap[pageId]}"]`);
+            if (activeLink) {
+                activeLink.classList.add('active');
+            }
+        }
+
+        // Set up navigation
+        document.querySelectorAll('.nav-links a, .logo-container').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const href = this.getAttribute('href');
                 
-                // Contact form options
-                const option = document.createElement('option');
-                option.value = act.id;
-                option.textContent = act.title;
-                actTypeSelect.appendChild(option);
-            });
-            
-            // Add event listeners for dynamically created buttons
-            document.querySelectorAll('.learn-more-btn').forEach(button => {
-                button.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const act = this.getAttribute('data-act');
+                if (href === '#home') {
+                    showPage('home-page');
+                } else if (href === '#acts') {
                     showPage('acts-page');
-                    // Scroll to the specific act
-                    setTimeout(() => {
-                        document.getElementById(act).scrollIntoView({ behavior: 'smooth' });
-                    }, 100);
-                });
-            });
-            
-            document.querySelectorAll('.request-quote-btn').forEach(button => {
-                button.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const act = this.getAttribute('data-act');
+                } else if (href === '#about') {
+                    showPage('about-page');
+                } else if (href === '#contact') {
                     showPage('contact-page');
-                    // Set the act type in the form
-                    setTimeout(() => {
-                        document.getElementById('act-type').value = act;
-                    }, 100);
-                });
-            });
-            
-            document.querySelectorAll('.footer-act-link').forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const act = this.getAttribute('data-act');
-                    showPage('acts-page');
-                    // Scroll to the specific act
-                    setTimeout(() => {
-                        document.getElementById(act).scrollIntoView({ behavior: 'smooth' });
-                    }, 100);
-                });
-            });
-
-            // Add event listeners for gallery buttons
-            document.querySelectorAll('.view-gallery-btn').forEach(button => {
-                button.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                    const actId = this.getAttribute('data-act');
-                    openGallery(actId);
-                });
-            });
-
-            // Add click event to act cards to open gallery
-            document.querySelectorAll('.act-card').forEach(card => {
-                card.addEventListener('click', function(e) {
-                    if (!e.target.closest('.view-gallery-btn') && !e.target.closest('.request-quote-btn')) {
-                        const actId = this.id;
-                        openGallery(actId);
-                    }
-                });
-            });
-        }
-
-        // Function to open gallery for an act
-        function openGallery(actId) {
-            const act = entertainmentActs.find(a => a.id === actId);
-            if (!act) return;
-
-            const galleryModal = document.getElementById('gallery-modal');
-            const galleryTitle = document.getElementById('gallery-title');
-            const galleryMainImage = document.getElementById('gallery-main-image');
-            const galleryThumbnails = document.getElementById('gallery-thumbnails');
-
-            // Set gallery title
-            galleryTitle.textContent = `${act.title} Gallery`;
-
-            // Clear existing thumbnails
-            galleryThumbnails.innerHTML = '';
-
-            // Add thumbnails
-            act.images.forEach((image, index) => {
-                const thumbnail = document.createElement('div');
-                thumbnail.className = 'gallery-thumbnail';
-                if (index === 0) thumbnail.classList.add('active');
-                thumbnail.style.backgroundImage = `url('${image}')`;
-                thumbnail.addEventListener('click', function() {
-                    // Update main image
-                    galleryMainImage.style.backgroundImage = `url('${image}')`;
-                    
-                    // Update active thumbnail
-                    document.querySelectorAll('.gallery-thumbnail').forEach(thumb => {
-                        thumb.classList.remove('active');
-                    });
-                    this.classList.add('active');
-                });
-                galleryThumbnails.appendChild(thumbnail);
-            });
-
-            // Set initial main image
-            galleryMainImage.style.backgroundImage = `url('${act.images[0]}')`;
-
-            // Show gallery
-            galleryModal.classList.add('active');
-        }
-
-        // Function to load testimonials with slider
-        function loadTestimonials() {
-            const testimonialsSlider = document.getElementById('testimonials-slider');
-            const testimonialControls = document.getElementById('testimonial-controls');
-            
-            // Clear existing content
-            testimonialsSlider.innerHTML = '';
-            testimonialControls.innerHTML = '';
-            
-            // Group testimonials into slides (2 per slide)
-            const slides = [];
-            for (let i = 0; i < testimonials.length; i += 2) {
-                slides.push(testimonials.slice(i, i + 2));
-            }
-            
-            // Create slides
-            slides.forEach((slideTestimonials, index) => {
-                const slide = document.createElement('div');
-                slide.className = 'testimonial-slide';
+                } else if (href === '#join') {
+                    showPage('join-page');
+                }
                 
-                slideTestimonials.forEach(testimonial => {
-                    const testimonialElement = document.createElement('div');
-                    testimonialElement.className = 'testimonial';
-                    testimonialElement.innerHTML = `
-                        <div class="testimonial-content">
-                            "${testimonial.content}"
-                        </div>
-                        <div class="testimonial-author">
-                            <div class="author-img" style="background-image: url('${testimonial.image}');"></div>
-                            <div>
-                                <h4>${testimonial.author}</h4>
-                                <p>${testimonial.role}</p>
-                            </div>
-                        </div>
-                    `;
-                    slide.appendChild(testimonialElement);
-                });
-                
-                testimonialsSlider.appendChild(slide);
-                
-                // Create dot for this slide
-                const dot = document.createElement('div');
-                dot.className = 'testimonial-dot';
-                if (index === 0) dot.classList.add('active');
-                dot.setAttribute('data-slide', index);
-                testimonialControls.appendChild(dot);
-                
-                // Add click event to dot
-                dot.addEventListener('click', function() {
-                    goToSlide(index);
-                });
+                // Scroll to top
+                window.scrollTo(0, 0);
             });
-            
-            // Auto slide functionality
-            let currentSlide = 0;
-            const totalSlides = slides.length;
-            
-            function goToSlide(slideIndex) {
-                currentSlide = slideIndex;
-                testimonialsSlider.style.transform = `translateX(-${currentSlide * 100}%)`;
+        });
+
+        // Fix for Get a Quote buttons
+        document.getElementById('get-quote-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            showPage('contact-page');
+            window.scrollTo(0, 0);
+        });
+
+        document.getElementById('cta-get-quote-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            showPage('contact-page');
+            window.scrollTo(0, 0);
+        });
+
+        document.getElementById('browse-acts-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            showPage('acts-page');
+            window.scrollTo(0, 0);
+        });
+
+        document.getElementById('view-more-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            showPage('acts-page');
+            window.scrollTo(0, 0);
+        });
+
+        document.getElementById('about-contact-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            showPage('contact-page');
+            window.scrollTo(0, 0);
+        });
+
+        // Filter functionality for acts page
+        document.querySelectorAll('.filter-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                // Update active filter button
+                document.querySelectorAll('.filter-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                this.classList.add('active');
                 
-                // Update active dot
-                document.querySelectorAll('.testimonial-dot').forEach((dot, index) => {
-                    if (index === currentSlide) {
-                        dot.classList.add('active');
+                const filter = this.getAttribute('data-filter');
+                const acts = document.querySelectorAll('.act-card');
+                
+                acts.forEach(act => {
+                    if (filter === 'all' || act.getAttribute('data-category') === filter) {
+                        act.style.display = 'block';
                     } else {
-                        dot.classList.remove('active');
+                        act.style.display = 'none';
                     }
                 });
+            });
+        });
+
+        // Form submission handling for contact form
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // In a real application, you would send the form data to a server here
+            alert('Thank you for your inquiry! We will get back to you soon.');
+            this.reset();
+        });
+
+        // ==================== VIDEO UPLOAD FUNCTIONALITY ====================
+        
+        // Video Upload Functionality
+        const videoUploadArea = document.getElementById('videoUploadArea');
+        const videoUploadInput = document.getElementById('video-upload');
+        const fileList = document.getElementById('fileList');
+        const uploadProgress = document.getElementById('uploadProgress');
+        const progressBar = document.getElementById('progressBar');
+        const submitBtn = document.getElementById('submitApplicationBtn');
+        const submitBtnText = document.getElementById('submitBtnText');
+        const submitSpinner = document.getElementById('submitSpinner');
+
+        // Click to upload
+        videoUploadArea.addEventListener('click', () => {
+            if (!uploadInProgress) {
+                videoUploadInput.click();
+            }
+        });
+
+        // Drag and drop functionality
+        videoUploadArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            if (!uploadInProgress) {
+                videoUploadArea.classList.add('dragover');
+            }
+        });
+
+        videoUploadArea.addEventListener('dragleave', () => {
+            videoUploadArea.classList.remove('dragover');
+        });
+
+        videoUploadArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            videoUploadArea.classList.remove('dragover');
+            
+            if (uploadInProgress) return;
+            
+            if (e.dataTransfer.files.length > 0) {
+                const file = e.dataTransfer.files[0];
+                if (isValidVideoFile(file)) {
+                    handleVideoFile(file);
+                } else {
+                    alert('Please upload a valid video file (MP4, MOV, or AVI, max 50MB)');
+                }
+            }
+        });
+
+        // File input change
+        videoUploadInput.addEventListener('change', (e) => {
+            if (e.target.files.length > 0) {
+                const file = e.target.files[0];
+                if (isValidVideoFile(file)) {
+                    handleVideoFile(file);
+                } else {
+                    alert('Please upload a valid video file (MP4, MOV, or AVI, max 50MB)');
+                    videoUploadInput.value = '';
+                }
+            }
+        });
+
+        // Join form submission handling
+        document.getElementById('joinForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // Validate required fields
+            if (!validateJoinForm()) {
+                return;
             }
             
-            // Auto advance slides every 5 seconds
-            setInterval(() => {
-                currentSlide = (currentSlide + 1) % totalSlides;
-                goToSlide(currentSlide);
-            }, 5000);
+            // Disable submit button and show spinner
+            submitBtn.disabled = true;
+            submitBtnText.style.display = 'none';
+            submitSpinner.style.display = 'block';
+            
+            try {
+                // Collect form data
+                const formData = {
+                    name: document.getElementById('performer-name').value,
+                    email: document.getElementById('performer-email').value,
+                    phone: document.getElementById('performer-phone').value,
+                    actType: document.getElementById('act-type-text').value,
+                    experience: document.getElementById('experience').value,
+                    portfolioLink: document.getElementById('portfolio-link').value || 'Not provided',
+                    message: document.getElementById('performer-message').value,
+                    photos: document.getElementById('photo-upload').files,
+                    video: selectedVideo
+                };
+                
+                // Send application via email (simulated for now)
+                await sendApplication(formData);
+                
+                // Show success message
+                alert('Thank you for your application! We have received your video and will review your submission soon. We will contact you at ' + formData.email);
+                
+                // Reset form
+                this.reset();
+                selectedVideo = null;
+                fileList.innerHTML = '';
+                uploadProgress.style.display = 'none';
+                
+            } catch (error) {
+                console.error('Error submitting application:', error);
+                alert('Sorry, there was an error submitting your application. Please try again or contact us directly at info@kumushaevents.co.za');
+            } finally {
+                // Re-enable submit button
+                submitBtn.disabled = false;
+                submitBtnText.style.display = 'inline';
+                submitSpinner.style.display = 'none';
+            }
+        });
+
+        // Show home page by default
+        showPage('home-page');
+    });
+
+    // Function to validate join form
+    function validateJoinForm() {
+        const name = document.getElementById('performer-name').value.trim();
+        const email = document.getElementById('performer-email').value.trim();
+        const phone = document.getElementById('performer-phone').value.trim();
+        const actType = document.getElementById('act-type-text').value.trim();
+        const experience = document.getElementById('experience').value;
+        const message = document.getElementById('performer-message').value.trim();
+        
+        // Basic validation
+        if (!name || !email || !phone || !actType || !experience || !message) {
+            alert('Please fill in all required fields marked with *');
+            return false;
         }
+        
+        // Email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            alert('Please enter a valid email address');
+            return false;
+        }
+        
+        // Phone validation (basic)
+        if (phone.length < 10) {
+            alert('Please enter a valid phone number');
+            return false;
+        }
+        
+        // Video validation
+        if (!selectedVideo) {
+            alert('Please upload a video of your performance');
+            return false;
+        }
+        
+        return true;
+    }
+
+    // Function to check if file is a valid video
+    function isValidVideoFile(file) {
+        const validTypes = ['video/mp4', 'video/quicktime', 'video/x-msvideo', 'video/webm'];
+        const validExtensions = ['.mp4', '.mov', '.avi', '.webm'];
+        const maxSize = 50 * 1024 * 1024; // 50MB in bytes
+        
+        // Check file type
+        if (!validTypes.includes(file.type)) {
+            // Check file extension as fallback
+            const fileName = file.name.toLowerCase();
+            const hasValidExtension = validExtensions.some(ext => fileName.endsWith(ext));
+            if (!hasValidExtension) {
+                return false;
+            }
+        }
+        
+        // Check file size
+        if (file.size > maxSize) {
+            alert('File is too large. Maximum size is 50MB.');
+            return false;
+        }
+        
+        return true;
+    }
+
+    // Function to handle video file selection
+    function handleVideoFile(file) {
+        selectedVideo = file;
+        
+        // Show upload progress
+        uploadProgress.style.display = 'block';
+        progressBar.style.width = '0%';
+        
+        // Simulate upload progress
+        uploadInProgress = true;
+        let progress = 0;
+        const interval = setInterval(() => {
+            progress += 10;
+            progressBar.style.width = progress + '%';
+            
+            if (progress >= 100) {
+                clearInterval(interval);
+                uploadInProgress = false;
+                
+                // Show file in list
+                displayFileInList(file);
+            }
+        }, 100);
+    }
+
+    // Function to display file in list
+    function displayFileInList(file) {
+        const fileItem = document.createElement('div');
+        fileItem.className = 'file-item';
+        fileItem.innerHTML = `
+            <div class="file-info">
+                <i class="fas fa-video file-icon"></i>
+                <div>
+                    <strong>${file.name}</strong>
+                    <div>${formatFileSize(file.size)} • ${file.type.split('/')[1].toUpperCase()}</div>
+                </div>
+            </div>
+            <button type="button" class="remove-file" onclick="removeVideoFile()">
+                <i class="fas fa-times"></i>
+            </button>
+        `;
+        
+        fileList.innerHTML = '';
+        fileList.appendChild(fileItem);
+        
+        // Hide progress bar
+        setTimeout(() => {
+            uploadProgress.style.display = 'none';
+        }, 500);
+    }
+
+    // Function to remove video file
+    function removeVideoFile() {
+        selectedVideo = null;
+        fileList.innerHTML = '';
+        document.getElementById('video-upload').value = '';
+    }
+
+    // Function to format file size
+    function formatFileSize(bytes) {
+        if (bytes === 0) return '0 Bytes';
+        const k = 1024;
+        const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+        const i = Math.floor(Math.log(bytes) / Math.log(k));
+        return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+    }
+
+    // Function to send application via email
+    async function sendApplication(formData) {
+        // Create email body with all application details
+        const emailBody = `
+NEW PERFORMER APPLICATION - KUMUSHA EVENTS & ENTERTAINMENT
+===========================================================
+
+APPLICANT DETAILS:
+-----------------
+Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone}
+
+PERFORMANCE DETAILS:
+-------------------
+Act Type: ${formData.actType}
+Years of Experience: ${formData.experience}
+Portfolio Link: ${formData.portfolioLink}
+
+VIDEO SUBMISSION:
+----------------
+Video File: ${formData.video ? formData.video.name : 'No video uploaded'}
+Video Size: ${formData.video ? formatFileSize(formData.video.size) : 'N/A'}
+Video Type: ${formData.video ? formData.video.type : 'N/A'}
+
+PHOTOS SUBMITTED:
+----------------
+Number of Photos: ${formData.photos.length}
+${formData.photos.length > 0 ? Array.from(formData.photos).map((photo, i) => `Photo ${i+1}: ${photo.name} (${formatFileSize(photo.size)})`).join('\n') : 'No photos uploaded'}
+
+APPLICANT'S MESSAGE:
+-------------------
+${formData.message}
+
+TECHNICAL DETAILS:
+-----------------
+Submitted on: ${new Date().toLocaleString()}
+User Agent: ${navigator.userAgent}
+Platform: ${navigator.platform}
+
+===========================================================
+This application was submitted through the Kumusha Events & Entertainment website.
+Please respond to the applicant within 48 hours.
+
+**NOTE: The video file is attached separately or available for download.**
+        `;
+        
+        // Simulate sending email (in production, this would use EmailJS or similar)
+        console.log('📧 SENDING APPLICATION TO: info@kumushaevents.co.za');
+        console.log('📁 Application details:', {
+            name: formData.name,
+            email: formData.email,
+            video: formData.video ? formData.video.name : 'None'
+        });
+        
+        // In a real implementation, you would use EmailJS like this:
+        /*
+        // Uncomment and configure with your EmailJS credentials
+        emailjs.init("YOUR_PUBLIC_KEY");
+        
+        const templateParams = {
+            to_email: 'info@kumushaevents.co.za',
+            from_name: formData.name,
+            from_email: formData.email,
+            subject: 'New Performer Application - ' + formData.name,
+            message: emailBody,
+            phone: formData.phone,
+            act_type: formData.actType,
+            experience: formData.experience,
+            portfolio: formData.portfolioLink,
+            video_info: formData.video ? `${formData.video.name} (${formatFileSize(formData.video.size)})` : 'No video'
+        };
+        
+        return await emailjs.send(
+            'YOUR_SERVICE_ID',
+            'YOUR_TEMPLATE_ID',
+            templateParams
+        );
+        */
+        
+        // Simulate network delay
+        await new Promise(resolve => setTimeout(resolve, 2000));
+        
+        // For video attachments in production, you would need:
+        // 1. Upload to cloud storage (Google Drive, Dropbox, S3)
+        // 2. Include download link in email
+        // 3. Or use a service that supports file attachments
+        
+        console.log('✅ Application submitted successfully');
+        return { status: 'success', message: 'Application sent' };
+    }
+
+    // Function to load acts into the page
+    function loadActs() {
+        const actsGrid = document.getElementById('acts-grid');
+        const actsList = document.getElementById('acts-list');
+        const footerActs = document.getElementById('footer-acts');
+        const actTypeSelect = document.getElementById('act-type');
+        
+        // Clear existing content
+        actsGrid.innerHTML = '';
+        actsList.innerHTML = '';
+        footerActs.innerHTML = '';
+        actTypeSelect.innerHTML = '<option value="">Select an Act</option>';
+        
+        // Add only 6 acts to home page grid
+        const homePageActs = entertainmentActs.slice(0, 6);
+        
+        homePageActs.forEach(act => {
+            // Home page grid
+            const actCard = document.createElement('div');
+            actCard.className = 'service-card';
+            actCard.innerHTML = `
+                <div class="service-img" style="background-image: url('${act.image}');"></div>
+                <div class="service-content">
+                    <h3>${act.title}</h3>
+                    <p>${act.description}</p>
+                    <a href="#!" class="btn learn-more-btn" data-act="${act.id}" style="margin-top: 15px; padding: 8px 16px;">Learn More</a>
+                </div>
+            `;
+            actsGrid.appendChild(actCard);
+        });
+        
+        // Add only 4 acts to footer
+        const footerPageActs = entertainmentActs.slice(0, 4);
+        
+        footerPageActs.forEach(act => {
+            // Footer links
+            const footerLink = document.createElement('li');
+            footerLink.innerHTML = `<a href="#acts" class="footer-act-link" data-act="${act.id}">${act.title}</a>`;
+            footerActs.appendChild(footerLink);
+        });
+        
+        // Add all acts to acts page in grid format
+        entertainmentActs.forEach(act => {
+            // Acts page grid card
+            const actCard = document.createElement('div');
+            actCard.className = 'act-card';
+            actCard.setAttribute('data-category', act.category);
+            actCard.id = act.id;
+            actCard.innerHTML = `
+                <div class="act-card-img" style="background-image: url('${act.image}');">
+                    <div class="act-card-overlay">
+                        <div>
+                            <h3>${act.title}</h3>
+                            ${act.images.length > 1 ? `<button class="view-gallery-btn" data-act="${act.id}">View Gallery (${act.images.length})</button>` : ''}
+                        </div>
+                    </div>
+                </div>
+                <div class="act-card-content">
+                    <h3>${act.title}</h3>
+                    <p>${act.description}</p>
+                    <div class="act-features" style="margin: 15px 0;">
+                        ${act.features.slice(0, 2).map(feature => `
+                            <div class="act-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>${feature}</span>
+                            </div>
+                        `).join('')}
+                    </div>
+                    <a href="#!" class="btn request-quote-btn" data-act="${act.id}" style="padding: 8px 16px;">Request Quote</a>
+                </div>
+            `;
+            actsList.appendChild(actCard);
+            
+            // Contact form options
+            const option = document.createElement('option');
+            option.value = act.id;
+            option.textContent = act.title;
+            actTypeSelect.appendChild(option);
+        });
+        
+        // Add event listeners for dynamically created buttons
+        document.querySelectorAll('.learn-more-btn').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                const act = this.getAttribute('data-act');
+                showPage('acts-page');
+                // Scroll to the specific act
+                setTimeout(() => {
+                    document.getElementById(act).scrollIntoView({ behavior: 'smooth' });
+                }, 100);
+            });
+        });
+        
+        document.querySelectorAll('.request-quote-btn').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                const act = this.getAttribute('data-act');
+                showPage('contact-page');
+                // Set the act type in the form
+                setTimeout(() => {
+                    document.getElementById('act-type').value = act;
+                }, 100);
+            });
+        });
+        
+        document.querySelectorAll('.footer-act-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const act = this.getAttribute('data-act');
+                showPage('acts-page');
+                // Scroll to the specific act
+                setTimeout(() => {
+                    document.getElementById(act).scrollIntoView({ behavior: 'smooth' });
+                }, 100);
+            });
+        });
+
+        // Add event listeners for gallery buttons
+        document.querySelectorAll('.view-gallery-btn').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const actId = this.getAttribute('data-act');
+                openGallery(actId);
+            });
+        });
+
+        // Add click event to act cards to open gallery
+        document.querySelectorAll('.act-card').forEach(card => {
+            card.addEventListener('click', function(e) {
+                if (!e.target.closest('.view-gallery-btn') && !e.target.closest('.request-quote-btn')) {
+                    const actId = this.id;
+                    openGallery(actId);
+                }
+            });
+        });
+    }
+
+    // Function to open gallery for an act
+    function openGallery(actId) {
+        const act = entertainmentActs.find(a => a.id === actId);
+        if (!act) return;
+
+        const galleryModal = document.getElementById('gallery-modal');
+        const galleryTitle = document.getElementById('gallery-title');
+        const galleryMainImage = document.getElementById('gallery-main-image');
+        const galleryThumbnails = document.getElementById('gallery-thumbnails');
+
+        // Set gallery title
+        galleryTitle.textContent = `${act.title} Gallery`;
+
+        // Clear existing thumbnails
+        galleryThumbnails.innerHTML = '';
+
+        // Add thumbnails
+        act.images.forEach((image, index) => {
+            const thumbnail = document.createElement('div');
+            thumbnail.className = 'gallery-thumbnail';
+            if (index === 0) thumbnail.classList.add('active');
+            thumbnail.style.backgroundImage = `url('${image}')`;
+            thumbnail.addEventListener('click', function() {
+                // Update main image
+                galleryMainImage.style.backgroundImage = `url('${image}')`;
+                
+                // Update active thumbnail
+                document.querySelectorAll('.gallery-thumbnail').forEach(thumb => {
+                    thumb.classList.remove('active');
+                });
+                this.classList.add('active');
+            });
+            galleryThumbnails.appendChild(thumbnail);
+        });
+
+        // Set initial main image
+        galleryMainImage.style.backgroundImage = `url('${act.images[0]}')`;
+
+        // Show gallery
+        galleryModal.classList.add('active');
+    }
+
+    // Function to load testimonials with slider
+    function loadTestimonials() {
+        const testimonialsSlider = document.getElementById('testimonials-slider');
+        const testimonialControls = document.getElementById('testimonial-controls');
+        
+        // Clear existing content
+        testimonialsSlider.innerHTML = '';
+        testimonialControls.innerHTML = '';
+        
+        // Group testimonials into slides (2 per slide)
+        const slides = [];
+        for (let i = 0; i < testimonials.length; i += 2) {
+            slides.push(testimonials.slice(i, i + 2));
+        }
+        
+        // Create slides
+        slides.forEach((slideTestimonials, index) => {
+            const slide = document.createElement('div');
+            slide.className = 'testimonial-slide';
+            
+            slideTestimonials.forEach(testimonial => {
+                const testimonialElement = document.createElement('div');
+                testimonialElement.className = 'testimonial';
+                testimonialElement.innerHTML = `
+                    <div class="testimonial-content">
+                        "${testimonial.content}"
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img" style="background-image: url('${testimonial.image}');"></div>
+                        <div>
+                            <h4>${testimonial.author}</h4>
+                            <p>${testimonial.role}</p>
+                        </div>
+                    </div>
+                `;
+                slide.appendChild(testimonialElement);
+            });
+            
+            testimonialsSlider.appendChild(slide);
+            
+            // Create dot for this slide
+            const dot = document.createElement('div');
+            dot.className = 'testimonial-dot';
+            if (index === 0) dot.classList.add('active');
+            dot.setAttribute('data-slide', index);
+            testimonialControls.appendChild(dot);
+            
+            // Add click event to dot
+            dot.addEventListener('click', function() {
+                goToSlide(index);
+            });
+        });
+        
+        // Auto slide functionality
+        let currentSlide = 0;
+        const totalSlides = slides.length;
+        
+        function goToSlide(slideIndex) {
+            currentSlide = slideIndex;
+            testimonialsSlider.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            // Update active dot
+            document.querySelectorAll('.testimonial-dot').forEach((dot, index) => {
+                if (index === currentSlide) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        }
+        
+        // Auto advance slides every 5 seconds
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            goToSlide(currentSlide);
+        }, 5000);
+    }
     </script>
 </body>
 </html>
