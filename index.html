@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Kumusha Events & Entertainment | Find Entertainment Acts</title>
+    <title>Kumusha Events & Entertainment | Find Entertainment Acts</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Reset and Base Styles */
@@ -19,7 +19,7 @@
             --secondary: #05ab11;
             --dark: #333;
             --light: #f8f9fa;
-            --accent:  #05ab11;
+            --accent: #05ab11;
         }
 
         body {
@@ -58,7 +58,7 @@
         }
 
         .btn:hover {
-            background-color:  #05ab11;
+            background-color: #05ab11;
             transform: translateY(-2px);
         }
 
@@ -67,7 +67,7 @@
         }
 
         .btn-secondary:hover {
-            background-color:  #05ab11;
+            background-color: #05ab11;
         }
 
         section {
@@ -601,6 +601,11 @@
             font-size: 2rem;
             cursor: pointer;
             padding: 5px;
+            transition: color 0.3s ease;
+        }
+
+        .close-gallery:hover {
+            color: var(--primary);
         }
 
         .gallery-main-image {
@@ -769,7 +774,6 @@
             margin-bottom: 15px;
         }
         
-
         /* Logo Image Base64 - Replace with your actual logo URL */
         .logo-placeholder {
             background-color: #f0f0f0;
@@ -860,6 +864,7 @@
                 transition: left 0.3s ease;
                 box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
                 z-index: 1000;
+                color: var(--dark); /* FIX: Added dark text color */
             }
             
             .nav-links.active {
@@ -876,6 +881,8 @@
                 padding: 12px 15px;
                 border-radius: 5px;
                 transition: all 0.3s ease;
+                color: var(--dark); /* FIX: Added dark text color */
+                width: 100%;
             }
             
             .nav-links a:hover {
@@ -1070,7 +1077,6 @@
                 <a href="#home" class="logo-container">
                     <!-- Logo Image - Replace the src with your actual logo image URL -->
                     <img src="./images/Kumusha logo white.png" alt="Kumusha Events & Entertainment Logo" class="logo-img">
-                    
                 </a>
                 <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
@@ -1334,7 +1340,8 @@
                             <div class="step-number">
                                 <i class="fas fa-map-marker-alt"></i>
                             </div>
-                            <h3>Visit Us</h3> </div>
+                            <h3>Visit Us</h3>
+                        </div>
                         <div class="step">
                             <div class="step-number">
                                 <i class="fas fa-phone"></i>
@@ -1354,99 +1361,99 @@
             </section>
         </div>
 
-  <!-- Join Our Team Page Content (Hidden by default) -->
-    <div id="join-page" class="page-content" style="display: none;">
-        <!-- Page Hero -->
-        <section class="page-hero" id="join">
-            <div class="container">
-                <h1>Join Our Team</h1>
-                <p>Are you a talented performer? Apply to join our network of entertainment acts</p>
-            </div>
-        </section>
-
-        <!-- Join Form -->
-        <section class="join-team">
-            <div class="container">
-                <div class="join-form">
-                    <h2 style="text-align: center; margin-bottom: 30px;">Performer Application</h2>
-                    <form id="joinForm">
-                        <div class="form-group">
-                            <label for="performer-name">Your Name *</label>
-                            <input type="text" id="performer-name" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="performer-email">Email Address *</label>
-                            <input type="email" id="performer-email" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="performer-phone">Phone Number *</label>
-                            <input type="tel" id="performer-phone" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="act-type-text">Type of Act *</label>
-                            <input type="text" id="act-type-text" class="form-control" placeholder="Describe your act (e.g., African drummer, fire dancer, singer, etc.)" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="experience">Years of Experience *</label>
-                            <input type="number" id="experience" class="form-control" min="0" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="portfolio-link">Facebook Page Link</label>
-                            <input type="url" id="portfolio-link" class="form-control" placeholder="https://facebook.com/your-page">
-                        </div>
-                        <div class="form-group">
-                            <label for="portfolio-link">Instagram Link </label>
-                            <input type="url" id="portfolio-link" class="form-control" placeholder="https://instagram.com/your-handle">
-                        </div>
-                        <div class="form-group">
-                            <label for="portfolio-link">Portfolio Link (Website, YouTube, etc.)</label>
-                            <input type="url" id="portfolio-link" class="form-control" placeholder="https://youtube.com/your-channel">
-                        </div>
-                        
-                        <!-- Video Upload Section -->
-                        <div class="form-group">
-                            <label>Upload Your Performance Video </label>
-                            <p class="form-note">Show us your talent! Upload a video of your performance (max 50MB, MP4, MOV, or AVI format)</p>
-                            
-                            <div class="upload-area" id="videoUploadArea">
-                                <div class="upload-icon">
-                                    <i class="fas fa-video"></i>
-                                </div>
-                                <h4>Drag & Drop Your Video Here</h4>
-                                <p>or click to browse files</p>
-                                <p class="upload-hint">Supported formats: MP4, MOV, AVI (Max 50MB)</p>
-                                <input type="file" id="video-upload" class="form-control" accept="video/*" style="display: none;">
-                                <div class="upload-progress" id="uploadProgress" style="display: none;">
-                                    <div class="progress-bar" id="progressBar"></div>
-                                </div>
-                            </div>
-                            
-                            <div class="file-list" id="fileList"></div>
-                        </div>
-                        
-                        <!-- Photo Upload Section (Optional) -->
-                        <div class="form-group">
-                            <label for="photo-upload">Upload Photos of Your Act (Optional)</label>
-                            <p class="form-note">You can upload up to 5 photos (JPEG or PNG, max 10MB each)</p>
-                            <input type="file" id="photo-upload" class="form-control" accept="image/*" multiple>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="performer-message">Tell us about yourself and your act *</label>
-                            <textarea id="performer-message" class="form-control" placeholder="Describe your performance style, previous experience, and what makes your act unique..." required></textarea>
-                        </div>
-                        
-                        <button type="submit" class="btn" style="width: 100%;" id="submitApplicationBtn">
-                            <span id="submitBtnText">Submit Application</span>
-                            <div id="submitSpinner" style="display: none;">
-                                <i class="fas fa-spinner fa-spin"></i> Sending...
-                            </div>
-                        </button>
-                    </form>
+        <!-- Join Our Team Page Content (Hidden by default) -->
+        <div id="join-page" class="page-content" style="display: none;">
+            <!-- Page Hero -->
+            <section class="page-hero" id="join">
+                <div class="container">
+                    <h1>Join Our Team</h1>
+                    <p>Are you a talented performer? Apply to join our network of entertainment acts</p>
                 </div>
-            </div>
-        </section>
-    </div>
+            </section>
+
+            <!-- Join Form -->
+            <section class="join-team">
+                <div class="container">
+                    <div class="join-form">
+                        <h2 style="text-align: center; margin-bottom: 30px;">Performer Application</h2>
+                        <form id="joinForm">
+                            <div class="form-group">
+                                <label for="performer-name">Your Name *</label>
+                                <input type="text" id="performer-name" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="performer-email">Email Address *</label>
+                                <input type="email" id="performer-email" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="performer-phone">Phone Number *</label>
+                                <input type="tel" id="performer-phone" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="act-type-text">Type of Act *</label>
+                                <input type="text" id="act-type-text" class="form-control" placeholder="Describe your act (e.g., African drummer, fire dancer, singer, etc.)" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="experience">Years of Experience *</label>
+                                <input type="number" id="experience" class="form-control" min="0" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="portfolio-link">Facebook Page Link</label>
+                                <input type="url" id="portfolio-link" class="form-control" placeholder="https://facebook.com/your-page">
+                            </div>
+                            <div class="form-group">
+                                <label for="portfolio-link">Instagram Link </label>
+                                <input type="url" id="portfolio-link" class="form-control" placeholder="https://instagram.com/your-handle">
+                            </div>
+                            <div class="form-group">
+                                <label for="portfolio-link">Portfolio Link (Website, YouTube, etc.)</label>
+                                <input type="url" id="portfolio-link" class="form-control" placeholder="https://youtube.com/your-channel">
+                            </div>
+                            
+                            <!-- Video Upload Section -->
+                            <div class="form-group">
+                                <label>Upload Your Performance Video </label>
+                                <p class="form-note">Show us your talent! Upload a video of your performance (max 50MB, MP4, MOV, or AVI format)</p>
+                                
+                                <div class="upload-area" id="videoUploadArea">
+                                    <div class="upload-icon">
+                                        <i class="fas fa-video"></i>
+                                    </div>
+                                    <h4>Drag & Drop Your Video Here</h4>
+                                    <p>or click to browse files</p>
+                                    <p class="upload-hint">Supported formats: MP4, MOV, AVI (Max 50MB)</p>
+                                    <input type="file" id="video-upload" class="form-control" accept="video/*" style="display: none;">
+                                    <div class="upload-progress" id="uploadProgress" style="display: none;">
+                                        <div class="progress-bar" id="progressBar"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="file-list" id="fileList"></div>
+                            </div>
+                            
+                            <!-- Photo Upload Section (Optional) -->
+                            <div class="form-group">
+                                <label for="photo-upload">Upload Photos of Your Act (Optional)</label>
+                                <p class="form-note">You can upload up to 5 photos (JPEG or PNG, max 10MB each)</p>
+                                <input type="file" id="photo-upload" class="form-control" accept="image/*" multiple>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="performer-message">Tell us about yourself and your act *</label>
+                                <textarea id="performer-message" class="form-control" placeholder="Describe your performance style, previous experience, and what makes your act unique..." required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn" style="width: 100%;" id="submitApplicationBtn">
+                                <span id="submitBtnText">Submit Application</span>
+                                <div id="submitSpinner" style="display: none;">
+                                    <i class="fas fa-spinner fa-spin"></i> Sending...
+                                </div>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
     </main>
 
     <!-- Gallery Modal -->
@@ -1466,12 +1473,12 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3> Kumusha Events  </h3>
-                    <p>Connecting event planners, companies, and individuals with exceptional entertainment acts across Cape Town and worldwide.</p>
+                    <h3>Kumusha Events</h3>
+                    <p>Connecting event planners, companies, and individuals with exceptional local and global acts, creating a world-class entertainment experience that feels like home.</p>
                     <div class="social-links">
                         <a href="https://web.facebook.com/kumushaevents/"><i class="fab fa-facebook-f"></i></a>
                         <a href="https://www.instagram.com/kumushaevents/"><i class="fab fa-instagram"></i></a>
-                        </div>
+                    </div>
                 </div>
                 <div class="footer-column">
                     <h3>Quick Links</h3>
@@ -1492,14 +1499,16 @@
                 </div>
                 <div class="footer-column">
                     <h3>Contact Info</h3>
-                    <ul class="footer-links"> <li><i class="fas fa-phone"></i> +27 68 077 9760</li>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-phone"></i> +27 68 077 9760</li>
                         <li><i class="fas fa-envelope"></i> info@kumushaevents.co.za</li>
                     </ul>
                 </div>
             </div>
             <div class="copyright">
-                <strong><p>&copy; 2025 Kumusha Events & Entertainment.</strong> All rights reserved. | Crafted by   <a href="https://www.shailendralm.co.za">
-                        <strong><span class="brand-name">Shailendra Visuals.</span> </strong>
+                <p><strong>&copy; 2025 Kumusha Events & Entertainment.</strong> All rights reserved. | Crafted by
+                    <a href="https://www.shailendralm.co.za">
+                        <strong><span class="brand-name">Shailendra Visuals.</span></strong>
                     </a>
                 </p>
             </div>
@@ -1514,7 +1523,7 @@
             title: "African Drummers",
             category: "music",
             description: "Traditional and contemporary African drumming performances that bring energy and rhythm to any event.",
-            image: "./images/Djembe-Drum-playing-1.jpg ",
+            image: "./images/Djembe-Drum-playing-1.jpg",
             images: [
                 "https://images.unsplash.com/photo-1516280440614-37939bbacd81?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
                 "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
@@ -1533,7 +1542,7 @@
             title: "Marimba Band",
             category: "music",
             description: "Vibrant marimba music that creates an uplifting and celebratory atmosphere for any occasion.",
-            image: "./images/marimba.png ",
+            image: "./images/marimba.png",
             images: [
                 "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
                 "https://images.unsplash.com/photo-1598485240910-890b8f166912?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1950&q=80"
@@ -1569,7 +1578,7 @@
             title: "Zulu Dancers",
             category: "dance",
             description: "Energetic traditional Zulu dancing showcasing rich cultural heritage and vibrant costumes.",
-            image: "./images/zulu dancers.jpg ",
+            image: "./images/zulu dancers.jpg",
             images: [
                 "https://images.unsplash.com/photo-1547153760-18fc86324498?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80",
                 "https://images.unsplash.com/photo-1545154782-8db0a2f0e5b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1950&q=80"
@@ -1587,7 +1596,7 @@
             title: "Models",
             category: "other",
             description: "Inspiring gospel music that brings spiritual upliftment and powerful harmonies to your event.",
-            image: "./images/cee.jpg ",
+            image: "./images/cee.jpg",
             images: [
                 "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
             ],
@@ -1621,72 +1630,72 @@
             title: "Vintage Cars",
             category: "other",
             description: "Classic vintage cars for special occasions.",
-            image: "./images/vintage cars.jpg ",
+            image: "./images/vintage cars.jpg",
             images: [
                 "https://images.unsplash.com/photo-1554048612-b6a482bc67e5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
             ],
             features: [
                 "Birthdays, matric dance, weddings etc.",
-                "Professional drivers available", 
+                "Professional drivers available",
             ],
             icon: "fas fa-camera"
         },
-          {
+        {
             id: "art",
             title: "Caricature Artist",
             category: "other",
             description: "Bring memorable humor to your event with our caricature artists.",
-            image: "./images/caricature artists.jpg ",
+            image: "./images/caricature artists.jpg",
             images: [
                 "https://images.unsplash.com/photo-1554048612-b6a482bc67e5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
             ],
             features: [
-                "Perfect Birthdays, office events, weddings etc.", 
+                "Perfect Birthdays, office events, weddings etc.",
             ],
             icon: "fas fa-camera"
         },
-         {
-            id: "art",
+        {
+            id: "portrait-artist",
             title: "Portrait Artist",
             category: "other",
             description: "Perfect gift for every occasions.",
-            image: "./images/portrait artist.jpeg ",
+            image: "./images/portrait artist.jpeg",
             images: [
                 "https://images.unsplash.com/photo-1554048612-b6a482bc67e5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
             ],
             features: [
                 "Perfect Birthdays, matric dance, weddings etc.",
-                "Delivery available", 
+                "Delivery available",
             ],
             icon: "fas fa-camera"
         },
-         {
-            id: "art",
+        {
+            id: "poets",
             title: "Poets",
             category: "other",
             description: "Perfect gift for every occasions.",
-            image: "./images/article-act-out-a-poem.jpg ",
+            image: "./images/article-act-out-a-poem.jpg",
             images: [
                 "https://images.unsplash.com/photo-1554048612-b6a482bc67e5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
             ],
             features: [
                 "Perfect Birthdays, matric dance, weddings etc.",
-                "Delivery available", 
+                "Delivery available",
             ],
             icon: "fas fa-camera"
         },
-          {
+        {
             id: "accessories",
             title: "African Accessories",
             category: "other",
             description: "African beaded accessories.",
-            image: "./images/beaded accesories.jpg ",
+            image: "./images/beaded accesories.jpg",
             images: [
                 "https://images.unsplash.com/photo-1554048612-b6a482bc67e5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
             ],
             features: [
                 "Perfect Birthdays, matric dance, weddings etc.",
-                "Delivery available", 
+                "Delivery available",
             ],
             icon: "fas fa-camera"
         }
@@ -2024,6 +2033,30 @@
         // Show home page by default
         showPage('home-page');
     });
+
+    // Gallery close functionality - FIXED
+    document.getElementById('close-gallery').addEventListener('click', closeGallery);
+
+    // Close gallery when clicking outside content
+    document.getElementById('gallery-modal').addEventListener('click', function(e) {
+        if (e.target === this) {
+            closeGallery();
+        }
+    });
+
+    // Close gallery with escape key
+    document.addEventListener('keydown', function(e) {
+        const galleryModal = document.getElementById('gallery-modal');
+        if (e.key === 'Escape' && galleryModal.classList.contains('active')) {
+            closeGallery();
+        }
+    });
+
+    function closeGallery() {
+        const galleryModal = document.getElementById('gallery-modal');
+        galleryModal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
 
     // Function to validate join form
     function validateJoinForm() {
@@ -2383,7 +2416,7 @@ Please respond to the applicant within 48 hours.
         });
     }
 
-    // Function to open gallery for an act
+    // Function to open gallery for an act - UPDATED with scroll prevention
     function openGallery(actId) {
         const act = entertainmentActs.find(a => a.id === actId);
         if (!act) return;
@@ -2421,8 +2454,9 @@ Please respond to the applicant within 48 hours.
         // Set initial main image
         galleryMainImage.style.backgroundImage = `url('${act.images[0]}')`;
 
-        // Show gallery
+        // Show gallery and prevent body scroll
         galleryModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
     }
 
     // Function to load testimonials with slider
