@@ -3,35 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kumusha Events & Entertainment | Find Entertainment Acts</title>
+    <title>Moyana Events & Entertainment | Premier Event Production & Luxury Entertainment</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         /* Reset and Base Styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         :root {
-            --primary: #ff9900;
-            --secondary: #05ab11;
-            --dark: #333;
-            --light: #f8f9fa;
-            --accent: #05ab11;
+            --primary: #C5A572; /* Luxury gold */
+            --secondary: #1A1A1A; /* Deep black */
+            --accent: #8B7355; /* Warm bronze */
+            --light: #F8F5F0; /* Cream white */
+            --dark: #0D0D0D; /* Near black */
+            --text-light: #E5E5E5;
+            --text-dark: #333333;
+            --gradient-gold: linear-gradient(135deg, #C5A572 0%, #E8D9B5 100%);
+            --gradient-dark: linear-gradient(135deg, #1A1A1A 0%, #2D2D2D 100%);
         }
 
         body {
+            font-family: 'Inter', sans-serif;
             line-height: 1.6;
-            color: var(--dark);
-            background-color: #f5f5f5;
+            color: var(--text-dark);
+            background-color: var(--light);
             overflow-x: hidden;
+            font-weight: 300;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 500;
+            letter-spacing: 0.5px;
         }
 
         a {
             text-decoration: none;
             color: inherit;
+            transition: all 0.3s ease;
         }
 
         ul {
@@ -40,65 +53,112 @@
 
         .container {
             width: 90%;
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 0 15px;
+            padding: 0 20px;
         }
 
         .btn {
             display: inline-block;
-            padding: 12px 24px;
-            background-color: var(--primary);
-            color: white;
+            padding: 14px 32px;
+            background: var(--gradient-gold);
+            color: var(--secondary);
             border: none;
-            border-radius: 4px;
+            border-radius: 2px;
             cursor: pointer;
-            font-weight: 600;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
             transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
         }
 
         .btn:hover {
-            background-color: #05ab11;
             transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(197, 165, 114, 0.2);
         }
 
         .btn-secondary {
-            background-color: var(--secondary);
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
         }
 
         .btn-secondary:hover {
-            background-color: #05ab11;
+            background: var(--primary);
+            color: var(--secondary);
         }
 
         section {
-            padding: 80px 0;
+            padding: 100px 0;
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 60px;
+            position: relative;
         }
 
         .section-title h2 {
-            font-size: 2.5rem;
-            color: var(--primary);
+            font-size: 3rem;
+            color: var(--secondary);
             margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 2px;
+            background: var(--primary);
         }
 
         .section-title p {
             font-size: 1.1rem;
             color: #666;
             max-width: 700px;
-            margin: 0 auto;
+            margin: 25px auto 0;
+            line-height: 1.8;
         }
 
         /* Header Styles */
         header {
-            background-color: rgb(5, 5, 5);
-            box-shadow: 0 2px 10px rgba(141, 139, 139, 0.1);
-            position: sticky;
+            background-color: var(--secondary);
+            position: fixed;
             top: 0;
+            left: 0;
+            width: 100%;
             z-index: 1000;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            background: rgba(26, 26, 26, 0.95);
+        }
+
+        header.scrolled {
+            padding: 10px 0;
+            background: rgba(26, 26, 26, 0.98);
         }
 
         .navbar {
@@ -106,13 +166,12 @@
             justify-content: space-between;
             align-items: center;
             padding: 15px 0;
-            position: relative;
         }
 
         .logo-container {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 15px;
             z-index: 1001;
         }
 
@@ -129,50 +188,55 @@
         }
 
         .logo-main {
-            font-size: 1.8rem;
-            font-weight: 800;
-            letter-spacing: 1px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            letter-spacing: 2px;
             color: var(--primary);
+            text-transform: uppercase;
         }
 
         .logo-tagline {
-            font-size: 0.85rem;
-            font-weight: 500;
-            color: var(--secondary);
-            letter-spacing: 0.5px;
+            font-size: 0.7rem;
+            font-weight: 300;
+            color: var(--text-light);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-top: 2px;
         }
 
         .nav-links {
             display: flex;
-            gap: 30px;
+            gap: 40px;
             align-items: center;
-            color: white;
         }
 
         .nav-links a {
-            font-weight: 500;
-            transition: color 0.3s ease;
-            padding: 5px 0;
+            font-weight: 300;
+            color: var(--text-light);
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
             position: relative;
+            padding: 5px 0;
         }
 
         .nav-links a:hover {
             color: var(--primary);
         }
 
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--primary);
-            transition: width 0.3s ease;
+        .nav-links a.active {
+            color: var(--primary);
         }
 
-        .nav-links a:hover::after {
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
             width: 100%;
+            height: 1px;
+            background-color: var(--primary);
         }
 
         .mobile-menu-btn {
@@ -185,128 +249,297 @@
             z-index: 1001;
         }
 
-        /* Hero Section */
+        /* Hero Section - FIXED */
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+            background: linear-gradient(rgba(13, 13, 13, 0.85), rgba(13, 13, 13, 0.9)), url('https://images.unsplash.com/photo-1511578314322-379afb476865?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80');
             background-size: cover;
             background-position: center;
-            color: white;
+            background-attachment: fixed;
+            color: var(--text-light);
             text-align: center;
-            padding: 150px 0;
+            padding: 200px 0 150px;
+            position: relative;
+            overflow: hidden;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            animation: fadeInUp 1s ease-out;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
+            font-size: 4.5rem;
+            margin-bottom: 30px;
+            font-weight: 400;
+            line-height: 1.2;
+            color: var(--light);
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero h1 span {
+            background: var(--gradient-gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 600;
+            text-shadow: none;
         }
 
         .hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 300;
+            line-height: 1.8;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        /* Page Hero - FIXED */
+        .page-hero {
+            background: linear-gradient(rgba(13, 13, 13, 0.9), rgba(13, 13, 13, 0.95)), url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            text-align: center;
+            padding: 220px 0 120px;
+            position: relative;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .page-hero-content {
+            position: relative;
+            z-index: 2;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .page-hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            font-weight: 400;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .page-hero h1 span {
+            background: var(--gradient-gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 600;
+            text-shadow: none;
+        }
+
+        .page-hero p {
             font-size: 1.2rem;
             max-width: 700px;
             margin: 0 auto 30px;
+            color: rgba(255, 255, 255, 0.9);
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* Services Section */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 40px;
         }
 
         .service-card {
             background-color: white;
-            border-radius: 8px;
+            border-radius: 1px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(197, 165, 114, 0.1);
+            position: relative;
         }
 
         .service-card:hover {
             transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
         }
 
         .service-img {
-            height: 200px;
+            height: 240px;
             background-size: cover;
             background-position: center;
+            background-color: var(--secondary);
         }
 
         .service-content {
-            padding: 20px;
+            padding: 30px;
         }
 
         .service-content h3 {
-            margin-bottom: 10px;
-            color: var(--primary);
+            margin-bottom: 15px;
+            color: var(--secondary);
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+
+        .service-content p {
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 20px;
         }
 
         .view-more-container {
             text-align: center;
-            margin-top: 40px;
+            margin-top: 60px;
         }
 
         /* How It Works */
         .how-it-works {
-            background-color: var(--light);
+            background-color: var(--secondary);
+            color: var(--text-light);
+            position: relative;
         }
 
         .steps {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
         }
 
         .step {
             text-align: center;
-            padding: 30px 20px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            padding: 40px 30px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 1px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(197, 165, 114, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .step:hover {
+            transform: translateY(-5px);
+            border-color: rgba(197, 165, 114, 0.3);
         }
 
         .step-number {
-            display: inline-block;
-            width: 50px;
-            height: 50px;
-            background-color: var(--primary);
-            color: white;
-            border-radius: 50%;
-            line-height: 50px;
-            font-size: 1.5rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-gold);
+            color: var(--secondary);
+            border-radius: 1px;
+            font-size: 1.8rem;
             font-weight: 700;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .step h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .step p {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* Steps1 for contact info */
+        .steps1 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .step1 {
+            text-align: center;
+            padding: 40px 30px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 1px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(197, 165, 114, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .step1:hover {
+            transform: translateY(-5px);
+            border-color: rgba(197, 165, 114, 0.3);
+        }
+
+        .step1-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-gold);
+            color: var(--secondary);
+            border-radius: 1px;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .step1 h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .step1 p {
+            color: black;
+            line-height: 1.7;
         }
 
         /* Testimonials */
         .testimonials-container {
-            max-width: 800px;
+            max-width: 1000px;
             margin: 0 auto;
             position: relative;
-            overflow: hidden;
-        }
-
-        .testimonials-slider {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-        }
-
-        .testimonial-slide {
-            min-width: 100%;
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
         }
 
         .testimonial {
-            background-color: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            background: white;
+            padding: 50px;
+            border-radius: 1px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+            position: relative;
+            border: 1px solid rgba(197, 165, 114, 0.1);
         }
 
         .testimonial-content {
             font-style: italic;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #444;
+            position: relative;
+            z-index: 1;
         }
 
         .testimonial-author {
@@ -315,120 +548,125 @@
         }
 
         .author-img {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background-color: #ddd;
-            margin-right: 15px;
+            width: 60px;
+            height: 60px;
+            border-radius: 1px;
+            background-color: var(--light);
+            margin-right: 20px;
             background-size: cover;
             background-position: center;
-        }
-
-        .testimonial-controls {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 30px;
-        }
-
-        .testimonial-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background-color: #ddd;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .testimonial-dot.active {
-            background-color: var(--primary);
+            border: 2px solid var(--primary);
         }
 
         /* Contact Form */
         .contact-form {
             background-color: white;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            max-width: 800px;
+            padding: 60px;
+            border-radius: 1px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+            max-width: 900px;
             margin: 0 auto;
+            border: 1px solid rgba(197, 165, 114, 0.1);
         }
 
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 30px;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             font-weight: 500;
+            color: var(--secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
         }
 
         .form-control {
             width: 100%;
-            padding: 12px 15px;
+            padding: 15px;
             border: 1px solid #ddd;
-            border-radius: 4px;
+            border-radius: 1px;
             font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s ease;
+            background: var(--light);
         }
 
         .form-control:focus {
             outline: none;
             border-color: var(--primary);
+            box-shadow: 0 0 0 2px rgba(197, 165, 114, 0.1);
         }
 
         select.form-control {
             appearance: none;
-            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C5A572' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
             background-repeat: no-repeat;
             background-position: right 15px center;
             background-size: 16px;
         }
 
         textarea.form-control {
-            min-height: 150px;
+            min-height: 180px;
             resize: vertical;
         }
 
         /* Footer */
         footer {
-            background-color: var(--dark);
-            color: white;
-            padding: 60px 0 20px;
+            background-color: var(--secondary);
+            color: var(--text-light);
+            padding: 100px 0 40px;
+            position: relative;
         }
 
         .footer-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 60px;
+            margin-bottom: 60px;
         }
 
         .footer-column h3 {
-            font-size: 1.3rem;
-            margin-bottom: 20px;
-            color: var(--accent);
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 400;
         }
 
         .footer-links li {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 300;
+            transition: all 0.3s ease;
+            display: inline-block;
         }
 
         .footer-links a:hover {
-            color: var(--accent);
+            color: var(--primary);
+            transform: translateX(5px);
         }
 
         .view-more-link {
-            color: var(--accent);
-            font-weight: 600;
+            color: var(--primary);
+            font-weight: 400;
             display: inline-block;
-            margin-top: 10px;
+            margin-top: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
         }
 
         .social-links {
             display: flex;
             gap: 15px;
-            margin-top: 20px;
+            margin-top: 25px;
         }
 
         .social-links a {
@@ -437,87 +675,89 @@
             justify-content: center;
             width: 40px;
             height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(197, 165, 114, 0.2);
+            border-radius: 1px;
             transition: all 0.3s ease;
+            color: var(--primary);
         }
 
         .social-links a:hover {
-            background-color: var(--primary);
+            background: var(--primary);
+            color: var(--secondary);
             transform: translateY(-3px);
+            border-color: var(--primary);
         }
 
         .copyright {
             text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
             font-size: 0.9rem;
-            color: #aaa;
+            color: rgba(255, 255, 255, 0.4);
         }
 
         /* Page-specific Styles */
-        .page-hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            text-align: center;
-            padding: 100px 0;
-        }
+        /* (Rest of the CSS remains the same, only hero sections were fixed) */
 
-        .page-hero h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
-
+        /* Acts Filter Styles */
         .acts-filter {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
             gap: 10px;
-            margin-bottom: 40px;
+            margin-bottom: 60px;
         }
 
         .filter-btn {
-            padding: 8px 16px;
-            background-color: white;
-            border: 1px solid #ddd;
-            border-radius: 30px;
+            padding: 12px 24px;
+            background: transparent;
+            border: 1px solid rgba(197, 165, 114, 0.3);
+            border-radius: 1px;
             cursor: pointer;
             transition: all 0.3s ease;
+            color: var(--text-dark);
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
         }
 
         .filter-btn.active, .filter-btn:hover {
-            background-color: var(--primary);
-            color: white;
+            background: var(--gradient-gold);
+            color: var(--secondary);
             border-color: var(--primary);
         }
 
         /* Acts Grid Layout */
         .acts-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 40px;
         }
 
         .act-card {
             background-color: white;
-            border-radius: 8px;
+            border-radius: 1px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(197, 165, 114, 0.1);
             cursor: pointer;
+            position: relative;
         }
 
         .act-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
         }
 
         .act-card-img {
-            height: 220px;
+            height: 280px;
             background-size: cover;
             background-position: center;
             position: relative;
+            background-color: var(--secondary);
         }
 
         .act-card-overlay {
@@ -526,37 +766,43 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.3));
+            background: linear-gradient(to bottom, transparent, rgba(13, 13, 13, 0.8));
             display: flex;
             align-items: flex-end;
-            padding: 15px;
+            padding: 30px;
             color: white;
         }
 
         .act-card-content {
-            padding: 20px;
+            padding: 30px;
         }
 
         .act-card-content h3 {
-            margin-bottom: 10px;
-            color: var(--primary);
+            margin-bottom: 15px;
+            color: var(--secondary);
+            font-size: 1.5rem;
+            font-weight: 500;
         }
 
         .view-gallery-btn {
-            background-color: rgba(255, 255, 255, 0.9);
-            color: var(--primary);
+            background: rgba(255, 255, 255, 0.9);
+            color: var(--secondary);
             border: none;
-            padding: 8px 15px;
-            border-radius: 20px;
+            padding: 10px 20px;
+            border-radius: 1px;
             font-size: 0.9rem;
             cursor: pointer;
             transition: all 0.3s ease;
-            margin-top: 10px;
+            margin-top: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
         }
 
         .view-gallery-btn:hover {
-            background-color: white;
+            background: white;
             transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
 
         /* Gallery Modal */
@@ -567,7 +813,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
+            background-color: rgba(13, 13, 13, 0.98);
             z-index: 2000;
             overflow: hidden;
         }
@@ -581,159 +827,412 @@
 
         .gallery-header {
             width: 90%;
-            max-width: 1000px;
+            max-width: 1400px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px;
+            padding: 30px;
             color: white;
         }
 
         .gallery-title {
-            font-size: 1.5rem;
-            font-weight: 600;
+            font-size: 1.8rem;
+            font-weight: 400;
+            color: var(--primary);
+            font-family: 'Playfair Display', serif;
         }
 
         .close-gallery {
             background: none;
             border: none;
             color: white;
-            font-size: 2rem;
+            font-size: 2.5rem;
             cursor: pointer;
             padding: 5px;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .close-gallery:hover {
             color: var(--primary);
+            transform: rotate(90deg);
         }
 
         .gallery-main-image {
             width: 90%;
-            max-width: 1000px;
-            height: 60vh;
+            max-width: 1400px;
+            height: 70vh;
             background-size: contain;
             background-position: center;
             background-repeat: no-repeat;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(197, 165, 114, 0.2);
         }
 
         .gallery-thumbnails {
             display: flex;
-            gap: 10px;
-            padding: 20px;
+            gap: 15px;
+            padding: 30px;
             overflow-x: auto;
-            max-width: 1000px;
+            max-width: 1400px;
             width: 90%;
         }
 
         .gallery-thumbnail {
-            width: 100px;
-            height: 80px;
+            width: 120px;
+            height: 90px;
             background-size: cover;
             background-position: center;
             cursor: pointer;
             border: 2px solid transparent;
-            border-radius: 4px;
-            transition: border-color 0.3s ease;
+            border-radius: 1px;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
         }
 
         .gallery-thumbnail.active {
             border-color: var(--primary);
+            transform: scale(1.05);
         }
 
         .gallery-thumbnail:hover {
-            border-color: var(--secondary);
+            border-color: var(--primary);
+            transform: scale(1.05);
         }
 
+        /* Quote Request Modal */
+        .quote-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(13, 13, 13, 0.95);
+            z-index: 3000;
+            overflow-y: auto;
+            padding: 20px;
+        }
+
+        .quote-modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .quote-modal-content {
+            background-color: white;
+            border-radius: 1px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+            max-width: 800px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            animation: modalSlideIn 0.3s ease-out;
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .quote-modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 30px 20px;
+            border-bottom: 1px solid rgba(197, 165, 114, 0.1);
+        }
+
+        .quote-modal-title {
+            font-size: 1.8rem;
+            color: var(--secondary);
+            font-family: 'Playfair Display', serif;
+            font-weight: 500;
+        }
+
+        .close-quote-modal {
+            background: none;
+            border: none;
+            color: var(--secondary);
+            font-size: 2rem;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .close-quote-modal:hover {
+            color: var(--primary);
+            transform: rotate(90deg);
+        }
+
+        .quote-modal-body {
+            padding: 30px;
+        }
+
+        .selected-act-info {
+            background: var(--light);
+            padding: 20px;
+            border-radius: 1px;
+            margin-bottom: 30px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .selected-act-info h4 {
+            color: var(--secondary);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .selected-act-info p {
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .selected-act-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .act-tag {
+            background: rgba(197, 165, 114, 0.1);
+            color: var(--accent);
+            padding: 5px 12px;
+            border-radius: 1px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .add-more-acts {
+            margin: 20px 0 30px;
+            padding: 15px;
+            background: #f9f9f9;
+            border-radius: 1px;
+        }
+
+        .add-more-acts h4 {
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+
+        .acts-checkboxes {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .act-checkbox {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+            background: white;
+            border: 1px solid #eee;
+            border-radius: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .act-checkbox:hover {
+            border-color: var(--primary);
+            background: rgba(197, 165, 114, 0.05);
+        }
+
+        .act-checkbox input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--primary);
+        }
+
+        .act-checkbox label {
+            cursor: pointer;
+            font-weight: 400;
+            color: var(--text-dark);
+        }
+
+        /* Event Planning Section */
+        .event-planning-services {
+            background-color: var(--light);
+            position: relative;
+        }
+
+        .planning-card {
+            background: white;
+            border-radius: 1px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(197, 165, 114, 0.1);
+            height: 100%;
+        }
+
+        .planning-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+        }
+
+        .planning-content {
+            padding: 30px;
+        }
+
+        .planning-content h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+
+        .planning-features {
+            margin-top: 20px;
+        }
+
+        .planning-features li {
+            margin-bottom: 8px;
+            padding-left: 25px;
+            position: relative;
+            color: #666;
+        }
+
+        .planning-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        /* About Page Styles */
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 50px;
+            gap: 80px;
             align-items: center;
         }
 
         .about-img {
-            border-radius: 8px;
+            border-radius: 1px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
+            position: relative;
         }
 
         .about-img img {
             width: 100%;
             height: auto;
             display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .about-img:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Values/Principles Section */
+        .values-section {
+            background: var(--gradient-dark);
+            color: var(--text-light);
+        }
+
+        .values-section .section-title p {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .values-section .step p {
+            color: var(--text-light);
         }
 
         /* Join Our Team Section */
         .join-team {
             background-color: var(--light);
+            position: relative;
         }
 
         .join-form {
             background-color: white;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            max-width: 800px;
+            padding: 60px;
+            border-radius: 1px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+            max-width: 900px;
             margin: 0 auto;
+            border: 1px solid rgba(197, 165, 114, 0.1);
         }
 
-        /* Add these new styles for video upload */
+        /* Video upload styles */
         .upload-area {
-            border: 2px dashed #ddd;
-            border-radius: 8px;
-            padding: 30px;
+            border: 2px dashed rgba(197, 165, 114, 0.3);
+            border-radius: 1px;
+            padding: 50px 30px;
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
             transition: all 0.3s ease;
             cursor: pointer;
+            background: var(--light);
         }
         
         .upload-area:hover {
             border-color: var(--primary);
-            background-color: rgba(255, 153, 0, 0.05);
+            background: rgba(197, 165, 114, 0.05);
         }
         
         .upload-area.dragover {
             border-color: var(--primary);
-            background-color: rgba(255, 153, 0, 0.1);
+            background: rgba(197, 165, 114, 0.1);
         }
         
         .upload-icon {
             font-size: 3rem;
             color: var(--primary);
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
         
         .upload-hint {
             color: #666;
             font-size: 0.9rem;
-            margin-top: 10px;
+            margin-top: 15px;
         }
         
         .file-list {
-            margin-top: 20px;
+            margin-top: 30px;
         }
         
         .file-item {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background-color: #f5f5f5;
-            padding: 10px 15px;
-            border-radius: 4px;
-            margin-bottom: 10px;
+            background: var(--light);
+            padding: 15px 20px;
+            border-radius: 1px;
+            margin-bottom: 15px;
+            border: 1px solid rgba(197, 165, 114, 0.1);
         }
         
         .file-info {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 15px;
         }
         
         .file-icon {
             color: var(--primary);
+            font-size: 1.2rem;
         }
         
         .remove-file {
@@ -742,100 +1241,94 @@
             color: #ff4444;
             cursor: pointer;
             font-size: 1.2rem;
+            transition: transform 0.3s ease;
         }
-        
-        .video-preview {
-            max-width: 100%;
-            margin-top: 15px;
-            border-radius: 4px;
-            overflow: hidden;
+
+        .remove-file:hover {
+            transform: rotate(90deg);
         }
         
         .upload-progress {
             width: 100%;
-            height: 5px;
-            background-color: #eee;
-            border-radius: 3px;
-            margin-top: 10px;
+            height: 4px;
+            background: rgba(197, 165, 114, 0.1);
+            border-radius: 2px;
+            margin-top: 15px;
             overflow: hidden;
         }
         
         .progress-bar {
             height: 100%;
-            background-color: var(--primary);
+            background: var(--gradient-gold);
             width: 0%;
             transition: width 0.3s ease;
         }
         
         .form-note {
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             color: #666;
-            margin-top: 5px;
-            margin-bottom: 15px;
+            margin-top: 8px;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        /* Brand Name Styles */
+        .brand-name {
+            color: var(--primary);
+            transition: all 0.3s ease;
+            font-weight: 500;
+            letter-spacing: 1px;
         }
         
-        /* Logo Image Base64 - Replace with your actual logo URL */
-        .logo-placeholder {
-            background-color: #f0f0f0;
-            width: 200px;
-            height: 70px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 4px;
-            color: var(--primary);
-            font-weight: bold;
+        .brand-name:hover {
+            color: white;
         }
 
-        /* ========== RESPONSIVE STYLES ========== */
-
-        /* Large Desktop */
-        @media (max-width: 1400px) {
-            .container {
-                max-width: 1200px;
-            }
-        }
-
-        /* Desktop */
+        /* Responsive Styles */
         @media (max-width: 1200px) {
             .acts-grid {
-                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             }
             
             .hero h1 {
-                font-size: 3rem;
+                font-size: 4rem;
+            }
+            
+            .page-hero h1 {
+                font-size: 3.5rem;
             }
         }
 
-        /* Tablet Landscape */
         @media (max-width: 992px) {
             .hero h1, .page-hero h1 {
-                font-size: 2.8rem;
+                font-size: 3.2rem;
             }
             
             .section-title h2 {
-                font-size: 2.2rem;
+                font-size: 2.5rem;
             }
 
             .about-content {
                 grid-template-columns: 1fr;
-                gap: 30px;
+                gap: 50px;
             }
 
             .acts-grid {
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             }
             
             .hero {
-                padding: 120px 0;
+                padding: 180px 0 120px;
+                min-height: 90vh;
             }
             
             .page-hero {
-                padding: 80px 0;
+                padding: 180px 0 100px;
+                min-height: 60vh;
             }
             
             section {
-                padding: 60px 0;
+                padding: 80px 0;
             }
 
             .logo-img {
@@ -843,7 +1336,6 @@
             }
         }
 
-        /* Tablet Portrait */
         @media (max-width: 768px) {
             .mobile-menu-btn {
                 display: block;
@@ -856,15 +1348,14 @@
                 width: 80%;
                 max-width: 300px;
                 height: 100vh;
-                background-color: white;
+                background: var(--secondary);
                 flex-direction: column;
                 align-items: flex-start;
                 justify-content: flex-start;
-                padding: 100px 30px 30px;
+                padding: 120px 40px 40px;
                 transition: left 0.3s ease;
-                box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+                box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
                 z-index: 1000;
-                color: var(--dark); /* FIX: Added dark text color */
             }
             
             .nav-links.active {
@@ -878,33 +1369,34 @@
             
             .nav-links a {
                 display: block;
-                padding: 12px 15px;
-                border-radius: 5px;
+                padding: 15px 20px;
                 transition: all 0.3s ease;
-                color: var(--dark); /* FIX: Added dark text color */
                 width: 100%;
+                border-left: 2px solid transparent;
             }
             
-            .nav-links a:hover {
-                background-color: var(--light);
+            .nav-links a:hover, .nav-links a.active {
+                background: rgba(197, 165, 114, 0.1);
                 color: var(--primary);
+                border-left-color: var(--primary);
+                padding-left: 30px;
             }
             
             .hero, .page-hero {
-                padding: 100px 0;
+                padding: 150px 0 80px;
             }
             
             .hero h1, .page-hero h1 {
-                font-size: 2.2rem;
+                font-size: 2.8rem;
             }
             
             .section-title h2 {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
 
             .acts-grid {
                 grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
-                gap: 20px;
+                gap: 30px;
             }
 
             .gallery-main-image {
@@ -912,67 +1404,31 @@
             }
 
             .gallery-thumbnail {
-                width: 80px;
-                height: 60px;
+                width: 100px;
+                height: 75px;
             }
             
             .steps {
                 grid-template-columns: 1fr;
-                gap: 15px;
+                gap: 25px;
             }
             
-            .service-card {
-                margin-bottom: 20px;
+            .service-card, .contact-form, .join-form {
+                margin-bottom: 30px;
             }
             
             .footer-content {
                 grid-template-columns: 1fr;
-                gap: 30px;
+                gap: 40px;
             }
 
             .logo-img {
                 height: 50px;
             }
-        }
-
-        /* Mobile Landscape */
-        @media (max-width: 576px) {
-            .hero h1, .page-hero h1 {
-                font-size: 1.8rem;
-            }
             
-            .btn {
-                padding: 10px 20px;
-                font-size: 0.9rem;
-            }
-            
-            section {
-                padding: 50px 0;
-            }
-            
-            .contact-form, .join-form {
-                padding: 25px 20px;
-            }
-
-            .gallery-main-image {
-                height: 40vh;
-            }
-
-            .gallery-thumbnail {
-                width: 70px;
-                height: 50px;
-            }
-            
-            .section-title h2 {
-                font-size: 1.8rem;
-            }
-            
-            .section-title p {
-                font-size: 1rem;
-            }
-            
-            .hero p, .page-hero p {
-                font-size: 1rem;
+            .quote-modal-content {
+                margin: 20px;
+                max-height: 80vh;
             }
             
             .acts-filter {
@@ -980,92 +1436,151 @@
             }
             
             .filter-btn {
-                padding: 6px 12px;
-                font-size: 0.9rem;
-            }
-
-            .logo-img {
-                height: 45px;
+                padding: 10px 20px;
+                font-size: 0.85rem;
             }
         }
 
-        /* Small Mobile */
-        @media (max-width: 480px) {
+        @media (max-width: 576px) {
             .hero h1, .page-hero h1 {
-                font-size: 1.6rem;
+                font-size: 2.4rem;
             }
             
-            .hero {
-                padding: 80px 0;
+            .btn {
+                padding: 12px 24px;
+                font-size: 0.85rem;
             }
             
-            .page-hero {
+            section {
                 padding: 60px 0;
             }
             
-            .container {
-                width: 95%;
-                padding: 0 10px;
+            .contact-form, .join-form {
+                padding: 40px 30px;
+            }
+
+            .gallery-main-image {
+                height: 40vh;
+            }
+
+            .gallery-thumbnail {
+                width: 80px;
+                height: 60px;
             }
             
-            .service-img {
-                height: 180px;
+            .section-title h2 {
+                font-size: 2rem;
             }
             
-            .act-card-img {
-                height: 200px;
+            .section-title p {
+                font-size: 1rem;
             }
             
-            .testimonial {
-                padding: 20px;
-            }
-            
-            .gallery-header {
-                padding: 15px;
-            }
-            
-            .gallery-title {
-                font-size: 1.2rem;
-            }
-            
-            .close-gallery {
-                font-size: 1.5rem;
+            .hero p, .page-hero p {
+                font-size: 1.1rem;
             }
 
             .logo-img {
                 height: 40px;
             }
+            
+            .quote-modal-header {
+                padding: 20px 20px 15px;
+            }
+            
+            .quote-modal-body {
+                padding: 20px;
+            }
+            
+            .quote-modal-title {
+                font-size: 1.5rem;
+            }
         }
 
-        /* Extra Small Mobile */
-        @media (max-width: 360px) {
+        @media (max-width: 480px) {
             .hero h1, .page-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero {
+                padding: 120px 0 60px;
+                min-height: 80vh;
+            }
+            
+            .page-hero {
+                padding: 120px 0 60px;
+                min-height: 50vh;
+            }
+            
+            .container {
+                width: 95%;
+                padding: 0 15px;
+            }
+            
+            .service-img {
+                height: 200px;
+            }
+            
+            .act-card-img {
+                height: 240px;
+            }
+            
+            .testimonial {
+                padding: 30px;
+            }
+            
+            .gallery-header {
+                padding: 20px;
+            }
+            
+            .gallery-title {
                 font-size: 1.4rem;
             }
             
-            .btn {
-                padding: 8px 16px;
-                font-size: 0.85rem;
-            }
-            
-            .section-title h2 {
-                font-size: 1.6rem;
-            }
-            
-            .service-content, .act-card-content {
-                padding: 15px;
+            .close-gallery {
+                font-size: 2rem;
             }
 
             .logo-img {
                 height: 35px;
             }
+            
+            .acts-filter {
+                gap: 5px;
+            }
+            
+            .filter-btn {
+                padding: 8px 16px;
+                font-size: 0.8rem;
+            }
         }
-        .brand-name {
-            color: rgb(9, 255, 0);
-            transition: color 0.3s ease;
-        }
-        .brand-name:hover {
-            color: rgb(255, 255, 255);
+
+        @media (max-width: 360px) {
+            .hero h1, .page-hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.8rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .service-content, .act-card-content {
+                padding: 20px;
+            }
+
+            .logo-img {
+                height: 30px;
+            }
+            
+            .acts-filter {
+                flex-direction: column;
+                align-items: center;
+            }
         }
     </style>
 </head>
@@ -1075,15 +1590,16 @@
         <div class="container">
             <nav class="navbar">
                 <a href="#home" class="logo-container">
-                    <!-- Logo Image - Replace the src with your actual logo image URL -->
-                    <img src="./images/Kumusha logo white.png" alt="Kumusha Events & Entertainment Logo" class="logo-img">
+                    <!-- Moyana Logo -->
+                    <img src="Moyana logo_.png" alt="Moyana Events & Entertainment Logo" class="logo-img">
                 </a>
                 <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#acts">Find Acts</a></li>
+                    <li><a href="#acts">Entertainment</a></li>
+                    <li><a href="#events">Event Planning</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <li><a href="#join">Join Our Team</a></li>
+                    <li><a href="#join">Join Us</a></li>
                 </ul>
                 <button class="mobile-menu-btn" id="mobile-menu-btn">
                     <i class="fas fa-bars"></i>
@@ -1095,29 +1611,94 @@
     <!-- Main Content -->
     <main id="main-content">
         <!-- Home Page Content -->
-        <div id="home-page" class="page-content">
-            <!-- Hero Section -->
+        <div id="home-page" class="page-content" style="display: block;">
+            <!-- Hero Section - FIXED -->
             <section class="hero" id="home">
                 <div class="container">
-                    <h1>Connecting you with Africa's finest Entertainment Acts</h1>
-                    <p>From Zulu Dancers to Fire Dancers, Choirs to Photographers - find the perfect entertainment for your event in Cape Town and beyond.</p>
-                    <a href="#acts" class="btn" id="browse-acts-btn">Browse Acts</a>
-                    <a href="#contact" class="btn btn-secondary" id="get-quote-btn">Get a Quote</a>
+                    <div class="hero-content">
+                        <h1><span>MOYANA</span><br>Events & Entertainment</h1>
+                        <p>Complete event solutions for discerning individuals and corporations. From intimate gatherings to corporate galas, we handle every detail while providing Africa's most exclusive entertainment acts.</p>
+                        <div class="hero-buttons">
+                            <a href="#acts" class="btn" id="browse-acts-btn">Explore Entertainment</a>
+                            <a href="#events" class="btn btn-secondary" id="plan-event-btn">Plan Your Event</a>
+                        </div>
+                    </div>
                 </div>
             </section>
 
-            <!-- Services Section -->
+            <!-- Entertainment Acts Section -->
             <section id="services">
                 <div class="container">
                     <div class="section-title">
-                        <h2>Our Entertainment Acts</h2>
-                        <p>We offer a diverse range of entertainment options to make your event unforgettable</p>
+                        <h2>Exclusive Entertainment</h2>
+                        <p>Our portfolio features only the most exceptional performers, each selected for their artistry, professionalism, and ability to create unforgettable moments.</p>
                     </div>
                     <div class="services-grid" id="acts-grid">
-                        <!-- Only 6 acts will be loaded here -->
+                        <!-- Acts will be loaded here -->
                     </div>
                     <div class="view-more-container">
-                        <a href="#acts" class="btn" id="view-more-btn">View All Acts</a>
+                        <a href="#acts" class="btn" id="view-more-btn">View Full Collection</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Event Planning Services Section -->
+            <section id="event-planning" class="event-planning-services">
+                <div class="container">
+                    <div class="section-title">
+                        <h2>Complete Event Solutions</h2>
+                        <p>Beyond entertainment, we provide end-to-end event management for seamless, memorable experiences</p>
+                    </div>
+                    
+                    <div class="services-grid">
+                        <!-- Corporate Events -->
+                        <div class="planning-card">
+                            <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80');"></div>
+                            <div class="planning-content">
+                                <h3>Corporate Events</h3>
+                                <p>Product launches, conferences, team building, and corporate galas with professional event management.</p>
+                                <ul class="planning-features">
+                                    <li>Venue sourcing & logistics</li>
+                                    <li>AV & technical production</li>
+                                    <li>Catering coordination</li>
+                                    <li>Brand integration</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- Private Celebrations -->
+                        <div class="planning-card">
+                            <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80');"></div>
+                            <div class="planning-content">
+                                <h3>Private Celebrations</h3>
+                                <p>Weddings, birthdays, anniversaries, and milestone celebrations with full event coordination.</p>
+                                <ul class="planning-features">
+                                    <li>Theme development</li>
+                                    <li>Vendor management</li>
+                                    <li>Timeline creation</li>
+                                    <li>Day-of coordination</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- Entertainment Integration -->
+                        <div class="planning-card">
+                            <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80');"></div>
+                            <div class="planning-content">
+                                <h3>Entertainment Integration</h3>
+                                <p>Seamlessly incorporate our entertainment acts into your event's flow and theme.</p>
+                                <ul class="planning-features">
+                                    <li>Act scheduling & staging</li>
+                                    <li>Technical requirements</li>
+                                    <li>Run-through coordination</li>
+                                    <li>Performance optimization</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="view-more-container">
+                        <a href="#events" class="btn" id="view-events-btn">Explore Event Services</a>
                     </div>
                 </div>
             </section>
@@ -1126,29 +1707,29 @@
             <section class="how-it-works">
                 <div class="container">
                     <div class="section-title">
-                        <h2>How It Works</h2>
-                        <p>Simple steps to find and book the perfect entertainment for your event</p>
+                        <h2 style="color: var(--light);">Our Process</h2>
+                        <p style="color: rgba(255, 255, 255, 0.7);">A bespoke journey to exceptional events and entertainment</p>
                     </div>
                     <div class="steps">
                         <div class="step">
                             <div class="step-number">1</div>
-                            <h3>Browse Acts</h3>
-                            <p>Explore our diverse range of entertainment acts and find what suits your event.</p>
+                            <h3>Consultation</h3>
+                            <p>We begin by understanding your vision, requirements, and objectives for the perfect event.</p>
                         </div>
                         <div class="step">
                             <div class="step-number">2</div>
-                            <h3>Request Quote</h3>
-                            <p>Contact us with details about your event and the acts you're interested in.</p>
+                            <h3>Curation</h3>
+                            <p>We design the event flow and curate entertainment that perfectly matches your theme.</p>
                         </div>
                         <div class="step">
                             <div class="step-number">3</div>
-                            <h3>Confirm Booking</h3>
-                            <p>Review our proposal, confirm details, and secure your booking with a deposit.</p>
+                            <h3>Coordination</h3>
+                            <p>Our team handles all logistics, vendor management, and technical requirements.</p>
                         </div>
                         <div class="step">
                             <div class="step-number">4</div>
-                            <h3>Enjoy Your Event</h3>
-                            <p>Sit back and enjoy amazing entertainment that will make your event memorable.</p>
+                            <h3>Execution</h3>
+                            <p>We oversee every detail on event day to ensure flawless execution and memorable experiences.</p>
                         </div>
                     </div>
                 </div>
@@ -1158,8 +1739,8 @@
             <section id="testimonials">
                 <div class="container">
                     <div class="section-title">
-                        <h2>What Our Clients Say</h2>
-                        <p>Hear from event planners and companies who have used our services</p>
+                        <h2>Client Reflections</h2>
+                        <p>Experiences shared by our distinguished clients</p>
                     </div>
                     <div class="testimonials-container">
                         <div class="testimonials-slider" id="testimonials-slider">
@@ -1173,34 +1754,39 @@
             </section>
 
             <!-- Contact CTA -->
-            <section style="background-color: var(--primary); color: white; text-align: center;">
+            <section style="background: var(--gradient-dark); color: white; text-align: center; position: relative;">
                 <div class="container">
-                    <h2 style="margin-bottom: 20px;">Ready to Book Your Entertainment?</h2>
-                    <p style="margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto;">Contact us today for a customized quote based on your event needs and preferences.</p>
-                    <a href="#contact" class="btn" id="cta-get-quote-btn" style="background-color: white; color: var(--primary);">Get a Quote</a>
+                    <h2 style="margin-bottom: 20px; color: var(--light);">Begin Your Entertainment Journey</h2>
+                    <p style="margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto; color: rgba(255, 255, 255, 0.8);">Contact us for a comprehensive consultation on both event planning and entertainment.</p>
+                    <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                        <a href="#contact" class="btn" id="cta-get-quote-btn" style="background: var(--gradient-gold); color: var(--secondary);">Request Consultation</a>
+                        <a href="#events" class="btn btn-secondary" id="cta-events-btn">Explore Event Services</a>
+                    </div>
                 </div>
             </section>
         </div>
 
         <!-- Acts Page Content (Hidden by default) -->
         <div id="acts-page" class="page-content" style="display: none;">
-            <!-- Page Hero -->
+            <!-- Page Hero - FIXED -->
             <section class="page-hero" id="acts">
                 <div class="container">
-                    <h1>Find Your Perfect Entertainment Act</h1>
-                    <p>Browse our diverse selection of entertainment acts for any occasion</p>
+                    <div class="page-hero-content">
+                        <h1>The <span>Entertainment Collection</span></h1>
+                        <p>A curated selection of exceptional entertainment for discerning clients</p>
+                    </div>
                 </div>
             </section>
 
             <!-- Acts Filter -->
             <section>
                 <div class="container">
-                    <div class="acts-filter">
+                    <div class="acts-filter" id="acts-filter">
                         <button class="filter-btn active" data-filter="all">All Acts</button>
-                        <button class="filter-btn" data-filter="music">Music</button>
-                        <button class="filter-btn" data-filter="dance">Dance</button>
+                        <button class="filter-btn" data-filter="music">Musical</button>
+                        <button class="filter-btn" data-filter="dance">Performance</button>
                         <button class="filter-btn" data-filter="visual">Visual</button>
-                        <button class="filter-btn" data-filter="other">Other</button>
+                        <button class="filter-btn" data-filter="other">Exclusive</button>
                     </div>
 
                     <div class="acts-grid" id="acts-list">
@@ -1210,13 +1796,134 @@
             </section>
         </div>
 
+        <!-- Events Page Content (Hidden by default) -->
+        <div id="events-page" class="page-content" style="display: none;">
+            <!-- Page Hero - FIXED -->
+            <section class="page-hero" id="events">
+                <div class="container">
+                    <div class="page-hero-content">
+                        <h1>Complete <span>Event Planning</span></h1>
+                        <p>End-to-end event management for corporate and private celebrations</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Event Services -->
+            <section>
+                <div class="container">
+                    <div class="section-title">
+                        <h2>Our Event Services</h2>
+                        <p>Comprehensive event management tailored to your specific needs and vision</p>
+                    </div>
+                    
+                    <div class="services-grid">
+                        <!-- Corporate Event Planning -->
+                        <div class="planning-card">
+                            <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');"></div>
+                            <div class="planning-content">
+                                <h3>Corporate Events</h3>
+                                <p>Professional event management for businesses, from intimate meetings to large-scale conferences.</p>
+                                <ul class="planning-features">
+                                    <li>Conference & Seminar Planning</li>
+                                    <li>Product Launch Management</li>
+                                    <li>Team Building Activities</li>
+                                    <li>Corporate Gala Dinners</li>
+                                    <li>Brand Activation Events</li>
+                                    <li>Year-End Functions</li>
+                                </ul>
+                                <a href="#contact" class="btn" style="margin-top: 20px; padding: 8px 16px;">Request Quote</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Wedding Planning -->
+                        <div class="planning-card">
+                            <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80');"></div>
+                            <div class="planning-content">
+                                <h3>Weddings & Celebrations</h3>
+                                <p>Creating unforgettable moments for life's most important celebrations.</p>
+                                <ul class="planning-features">
+                                    <li>Full Wedding Planning</li>
+                                    <li>Venue Selection & Booking</li>
+                                    <li>Vendor Management</li>
+                                    <li>Budget Planning</li>
+                                    <li>Timeline Creation</li>
+                                    <li>Day-of Coordination</li>
+                                </ul>
+                                <a href="#contact" class="btn" style="margin-top: 20px; padding: 8px 16px;">Request Quote</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Private Parties -->
+                        <div class="planning-card">
+                            <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1530103862676-de8c9debad1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');"></div>
+                            <div class="planning-content">
+                                <h3>Private Parties</h3>
+                                <p>Memorable celebrations for birthdays, anniversaries, and special milestones.</p>
+                                <ul class="planning-features">
+                                    <li>Birthday Celebrations</li>
+                                    <li>Anniversary Parties</li>
+                                    <li>Graduation Events</li>
+                                    <li>Baby Showers</li>
+                                    <li>Engagement Parties</li>
+                                    <li>Theme Party Planning</li>
+                                </ul>
+                                <a href="#contact" class="btn" style="margin-top: 20px; padding: 8px 16px;">Request Quote</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Event Planning Process -->
+            <section class="values-section">
+                <div class="container">
+                    <div class="section-title">
+                        <h2 style="color: var(--light);">Our Event Planning Process</h2>
+                        <p style="color: rgba(255, 255, 255, 0.7);">A structured approach to flawless event execution</p>
+                    </div>
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-number">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <h3>Concept Development</h3>
+                            <p>We work with you to develop the perfect concept that aligns with your vision and objectives.</p>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">
+                                <i class="fas fa-clipboard-list"></i>
+                            </div>
+                            <h3>Detailed Planning</h3>
+                            <p>Comprehensive planning covering every detail from budget to timeline to vendor selection.</p>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">
+                                <i class="fas fa-tools"></i>
+                            </div>
+                            <h3>Execution Preparation</h3>
+                            <p>All elements are coordinated, rehearsed, and prepared for flawless execution.</p>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h3>Event Execution</h3>
+                            <p>Our team manages every aspect on event day, ensuring a seamless and memorable experience.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
         <!-- About Page Content (Hidden by default) -->
         <div id="about-page" class="page-content" style="display: none;">
-            <!-- Page Hero -->
+            <!-- Page Hero - FIXED -->
             <section class="page-hero" id="about">
                 <div class="container">
-                    <h1>About Kumusha Events & Entertainment </h1>
-                    <p>Connecting exceptional talent with unforgettable events since 2025</p>
+                    <div class="page-hero-content">
+                        <h1>About <span>Moyana Events & Entertainment</span></h1>
+                        <p>Redefining luxury entertainment and event experiences</p>
+                    </div>
                 </div>
             </section>
 
@@ -1225,47 +1932,57 @@
                 <div class="container">
                     <div class="about-content">
                         <div>
-                            <h2>Our Story</h2>
-                            <p>At Kumusha Events & Entertainment, our mission is to make it easy for event planners, companies, and individuals to find exceptional entertainment acts in Cape Town and beyond.</p>
-                            <p>What started as a small directory of local performers has grown into a comprehensive platform connecting clients with hundreds of talented acts across multiple categories.</p>
-                            <p>We pride ourselves on our curated selection process, ensuring that every act in our network meets our high standards for professionalism, talent, and reliability.</p>
-                            <a href="#contact" class="btn" id="about-contact-btn" style="margin-top: 20px;">Get In Touch</a>
+                            <h2>Our Dual Expertise</h2>
+                            <p>At Moyana Events & Entertainment, we uniquely combine exceptional entertainment curation with comprehensive event planning to deliver complete event solutions. We don't just provide performers; we craft experiences that resonate long after the final applause.</p>
+                            <p>Our mission is to create unforgettable events by combining Africa's most talented performers with meticulous event planning, creating moments that become stories, and events that become legends.</p>
+                            <p>Every act in our collection is meticulously vetted for artistry, professionalism, and that intangible quality that transforms a performance into an experience.</p>
+                            <div style="display: flex; gap: 15px; margin-top: 30px; flex-wrap: wrap;">
+                                <a href="#contact" class="btn" id="about-contact-btn">Schedule A Consultation</a>
+                                <a href="#events" class="btn btn-secondary">Explore Event Services</a>
+                            </div>
                         </div>
                         <div class="about-img">
-                            <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Our team">
+                            <img src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Our team">
                         </div>
                     </div>
                 </div>
             </section>
 
             <!-- Values Section -->
-            <section style="background-color: var(--light);">
+            <section class="values-section">
                 <div class="container">
                     <div class="section-title">
-                        <h2>Our Values</h2>
-                        <p>The principles that guide everything we do</p>
+                        <h2 style="color: var(--light);">Our Principles</h2>
+                        <p style="color: rgba(255, 255, 255, 0.7);">The foundation of every experience we create</p>
                     </div>
                     <div class="steps">
                         <div class="step">
                             <div class="step-number">
-                                <i class="fas fa-star"></i>
+                                <i class="fas fa-gem"></i>
                             </div>
-                            <h3>Quality</h3>
-                            <p>We carefully vet every act to ensure they meet our high standards for performance and professionalism.</p>
+                            <h3>Excellence</h3>
+                            <p>We pursue only the highest standards in talent selection and event execution.</p>
                         </div>
                         <div class="step">
                             <div class="step-number">
                                 <i class="fas fa-handshake"></i>
                             </div>
-                            <h3>Reliability</h3>
-                            <p>We understand that events can't wait, so we guarantee that our acts will arrive on time and prepared.</p>
+                            <h3>Discretion</h3>
+                            <p>Your privacy and preferences are protected with the utmost care and professionalism.</p>
                         </div>
                         <div class="step">
                             <div class="step-number">
-                                <i class="fas fa-heart"></i>
+                                <i class="fas fa-star"></i>
                             </div>
-                            <h3>Passion</h3>
-                            <p>We're passionate about connecting people with entertainment that creates memorable experiences.</p>
+                            <h3>Artistry</h3>
+                            <p>We celebrate and showcase exceptional talent that inspires and transforms.</p>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">
+                                <i class="fas fa-clipboard-check"></i>
+                            </div>
+                            <h3>Precision</h3>
+                            <p>Meticulous attention to detail in every aspect of event planning and execution.</p>
                         </div>
                     </div>
                 </div>
@@ -1274,11 +1991,13 @@
 
         <!-- Contact Page Content (Hidden by default) -->
         <div id="contact-page" class="page-content" style="display: none;">
-            <!-- Page Hero -->
+            <!-- Page Hero - FIXED -->
             <section class="page-hero" id="contact">
                 <div class="container">
-                    <h1>Get In Touch</h1>
-                    <p>Ready to book entertainment for your event? Contact us for a quote</p>
+                    <div class="page-hero-content">
+                        <h1>Private <span>Consultation</span></h1>
+                        <p>Begin your journey to exceptional entertainment and flawless events</p>
+                    </div>
                 </div>
             </section>
 
@@ -1286,28 +2005,39 @@
             <section>
                 <div class="container">
                     <div class="contact-form">
-                        <h2 style="text-align: center; margin-bottom: 30px;">Request a Quote</h2>
+                        <h2 style="text-align: center; margin-bottom: 30px; color: var(--secondary);">Request A Consultation</h2>
                         <form id="contactForm">
                             <div class="form-group">
-                                <label for="name">Your Name</label>
+                                <label for="name">Your Name *</label>
                                 <input type="text" id="name" class="form-control" required>
                             </div>
                             <div class="form-group">
-                                <label for="email">Email Address</label>
+                                <label for="email">Email Address *</label>
                                 <input type="email" id="email" class="form-control" required>
                             </div>
                             <div class="form-group">
-                                <label for="phone">Phone Number</label>
+                                <label for="phone">Contact Number</label>
                                 <input type="tel" id="phone" class="form-control">
                             </div>
                             <div class="form-group">
-                                <label for="event-type">Event Type</label>
+                                <label for="inquiry-type">Type of Inquiry *</label>
+                                <select id="inquiry-type" class="form-control" required>
+                                    <option value="">Select Inquiry Type</option>
+                                    <option value="entertainment">Entertainment Booking</option>
+                                    <option value="event-planning">Event Planning Services</option>
+                                    <option value="both">Both Entertainment & Event Planning</option>
+                                    <option value="general">General Inquiry</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="event-type">Event Type *</label>
                                 <select id="event-type" class="form-control" required>
                                     <option value="">Select Event Type</option>
-                                    <option value="wedding">Wedding</option>
                                     <option value="corporate">Corporate Event</option>
-                                    <option value="birthday">Birthday Party</option>
-                                    <option value="festival">Festival</option>
+                                    <option value="wedding">Wedding</option>
+                                    <option value="private-party">Private Party</option>
+                                    <option value="conference">Conference/Seminar</option>
+                                    <option value="gala">Charity Gala</option>
                                     <option value="other">Other</option>
                                 </select>
                             </div>
@@ -1316,15 +2046,19 @@
                                 <input type="date" id="event-date" class="form-control">
                             </div>
                             <div class="form-group">
-                                <label for="act-type">Type of Act</label>
-                                <select id="act-type" class="form-control" required>
-                                    <option value="">Select an Act</option>
+                                <label for="act-type">Type of Performance (if applicable)</label>
+                                <select id="act-type" class="form-control">
+                                    <option value="">Select a Performance</option>
                                     <!-- Options will be dynamically populated -->
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="message">Additional Details</label>
-                                <textarea id="message" class="form-control" placeholder="Tell us more about your event and requirements..."></textarea>
+                                <label for="guests">Estimated Number of Guests</label>
+                                <input type="number" id="guests" class="form-control" min="1">
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Additional Details *</label>
+                                <textarea id="message" class="form-control" placeholder="Tell us about your vision, preferences, and what would make your event exceptional..." required></textarea>
                             </div>
                             <button type="submit" class="btn" style="width: 100%;">Submit Request</button>
                         </form>
@@ -1333,28 +2067,29 @@
             </section>
 
             <!-- Contact Info -->
-            <section style="background-color: var(--light);">
+            <section style="background: var(--light);">
                 <div class="container">
-                    <div class="steps">
-                        <div class="step">
-                            <div class="step-number">
-                                <i class="fas fa-map-marker-alt"></i>
+                    <div class="steps1">
+                        <div class="step1">
+                            <div class="step1-number">
+                                <i class="fas fa-calendar-alt"></i>
                             </div>
-                            <h3>Visit Us</h3>
+                            <h3>Schedule Consultation</h3>
+                            <p>By appointment only<br>Monday to Friday, 9am-6pm</p>
                         </div>
-                        <div class="step">
-                            <div class="step-number">
+                        <div class="step1">
+                            <div class="step1-number">
                                 <i class="fas fa-phone"></i>
                             </div>
-                            <h3>Call Us</h3>
-                            <p>+27 68 077 9760<br>Mon-Fri: 9am-5pm</p>
+                            <h3>Telephone</h3>
+                            <p>Confidential inquiries welcome</p>
                         </div>
-                        <div class="step">
-                            <div class="step-number">
+                        <div class="step1">
+                            <div class="step1-number">
                                 <i class="fas fa-envelope"></i>
                             </div>
-                            <h3>Email Us</h3>
-                            <p>info@kumushaevents.co.za<br>We respond within 24 hours</p>
+                            <h3>Email</h3>
+                            <p>info@moyanaevents.co.za<br>Response within 24 hours</p>
                         </div>
                     </div>
                 </div>
@@ -1363,11 +2098,13 @@
 
         <!-- Join Our Team Page Content (Hidden by default) -->
         <div id="join-page" class="page-content" style="display: none;">
-            <!-- Page Hero -->
+            <!-- Page Hero - FIXED -->
             <section class="page-hero" id="join">
                 <div class="container">
-                    <h1>Join Our Team</h1>
-                    <p>Are you a talented performer? Apply to join our network of entertainment acts</p>
+                    <div class="page-hero-content">
+                        <h1>Artistry <span>Submission</span></h1>
+                        <p>Exceptional performers are invited to submit for consideration</p>
+                    </div>
                 </div>
             </section>
 
@@ -1375,10 +2112,10 @@
             <section class="join-team">
                 <div class="container">
                     <div class="join-form">
-                        <h2 style="text-align: center; margin-bottom: 30px;">Performer Application</h2>
+                        <h2 style="text-align: center; margin-bottom: 30px; color: var(--secondary);">Performance Portfolio Submission</h2>
                         <form id="joinForm">
                             <div class="form-group">
-                                <label for="performer-name">Your Name *</label>
+                                <label for="performer-name">Name of Performer/Ensemble *</label>
                                 <input type="text" id="performer-name" class="form-control" required>
                             </div>
                             <div class="form-group">
@@ -1386,42 +2123,34 @@
                                 <input type="email" id="performer-email" class="form-control" required>
                             </div>
                             <div class="form-group">
-                                <label for="performer-phone">Phone Number *</label>
+                                <label for="performer-phone">Contact Number *</label>
                                 <input type="tel" id="performer-phone" class="form-control" required>
                             </div>
                             <div class="form-group">
-                                <label for="act-type-text">Type of Act *</label>
-                                <input type="text" id="act-type-text" class="form-control" placeholder="Describe your act (e.g., African drummer, fire dancer, singer, etc.)" required>
+                                <label for="act-type-text">Performance Discipline *</label>
+                                <input type="text" id="act-type-text" class="form-control" placeholder="Describe your performance specialty (e.g., classical pianist, contemporary dance ensemble, etc.)" required>
                             </div>
                             <div class="form-group">
-                                <label for="experience">Years of Experience *</label>
+                                <label for="experience">Years of Professional Experience *</label>
                                 <input type="number" id="experience" class="form-control" min="0" required>
                             </div>
                             <div class="form-group">
-                                <label for="portfolio-link">Facebook Page Link</label>
-                                <input type="url" id="portfolio-link" class="form-control" placeholder="https://facebook.com/your-page">
-                            </div>
-                            <div class="form-group">
-                                <label for="portfolio-link">Instagram Link </label>
-                                <input type="url" id="portfolio-link" class="form-control" placeholder="https://instagram.com/your-handle">
-                            </div>
-                            <div class="form-group">
-                                <label for="portfolio-link">Portfolio Link (Website, YouTube, etc.)</label>
-                                <input type="url" id="portfolio-link" class="form-control" placeholder="https://youtube.com/your-channel">
+                                <label for="portfolio-link">Performance Portfolio Link</label>
+                                <input type="url" id="portfolio-link" class="form-control" placeholder="Website, professional profile, or digital portfolio">
                             </div>
                             
                             <!-- Video Upload Section -->
                             <div class="form-group">
-                                <label>Upload Your Performance Video </label>
-                                <p class="form-note">Show us your talent! Upload a video of your performance (max 50MB, MP4, MOV, or AVI format)</p>
+                                <label>Performance Reel Submission *</label>
+                                <p class="form-note">Please provide a high-quality performance reel showcasing your artistry (max 100MB, professional quality preferred)</p>
                                 
                                 <div class="upload-area" id="videoUploadArea">
                                     <div class="upload-icon">
-                                        <i class="fas fa-video"></i>
+                                        <i class="fas fa-film"></i>
                                     </div>
-                                    <h4>Drag & Drop Your Video Here</h4>
-                                    <p>or click to browse files</p>
-                                    <p class="upload-hint">Supported formats: MP4, MOV, AVI (Max 50MB)</p>
+                                    <h4>Submit Performance Reel</h4>
+                                    <p>Professional quality preferred</p>
+                                    <p class="upload-hint">Formats: MP4, MOV, AVI (Max 100MB)</p>
                                     <input type="file" id="video-upload" class="form-control" accept="video/*" style="display: none;">
                                     <div class="upload-progress" id="uploadProgress" style="display: none;">
                                         <div class="progress-bar" id="progressBar"></div>
@@ -1431,22 +2160,22 @@
                                 <div class="file-list" id="fileList"></div>
                             </div>
                             
-                            <!-- Photo Upload Section (Optional) -->
+                            <!-- Photo Upload Section -->
                             <div class="form-group">
-                                <label for="photo-upload">Upload Photos of Your Act (Optional)</label>
-                                <p class="form-note">You can upload up to 5 photos (JPEG or PNG, max 10MB each)</p>
+                                <label for="photo-upload">Performance Photography (Optional)</label>
+                                <p class="form-note">High-resolution images of performances (max 5 images, 20MB each)</p>
                                 <input type="file" id="photo-upload" class="form-control" accept="image/*" multiple>
                             </div>
                             
                             <div class="form-group">
-                                <label for="performer-message">Tell us about yourself and your act *</label>
-                                <textarea id="performer-message" class="form-control" placeholder="Describe your performance style, previous experience, and what makes your act unique..." required></textarea>
+                                <label for="performer-message">Artist Statement & Repertoire *</label>
+                                <textarea id="performer-message" class="form-control" placeholder="Describe your artistic approach, notable performances, repertoire, and what distinguishes your work..." required></textarea>
                             </div>
                             
                             <button type="submit" class="btn" style="width: 100%;" id="submitApplicationBtn">
-                                <span id="submitBtnText">Submit Application</span>
+                                <span id="submitBtnText">Submit Portfolio</span>
                                 <div id="submitSpinner" style="display: none;">
-                                    <i class="fas fa-spinner fa-spin"></i> Sending...
+                                    <i class="fas fa-spinner fa-spin"></i> Submitting...
                                 </div>
                             </button>
                         </form>
@@ -1456,10 +2185,118 @@
         </div>
     </main>
 
+    <!-- Quote Request Modal -->
+    <div class="quote-modal" id="quote-modal">
+        <div class="quote-modal-content">
+            <div class="quote-modal-header">
+                <h2 class="quote-modal-title">Request Quote</h2>
+                <button class="close-quote-modal" id="close-quote-modal">&times;</button>
+            </div>
+            <div class="quote-modal-body">
+                <div id="selected-act-container">
+                    <!-- Selected act info will be dynamically loaded here -->
+                </div>
+                
+                <form id="quoteForm">
+                    <div class="form-group">
+                        <label for="quote-name">Your Name *</label>
+                        <input type="text" id="quote-name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="quote-email">Email Address *</label>
+                        <input type="email" id="quote-email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="quote-phone">Contact Number *</label>
+                        <input type="tel" id="quote-phone" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="quote-event-type">Event Type *</label>
+                        <select id="quote-event-type" class="form-control" required>
+                            <option value="">Select Event Type</option>
+                            <option value="corporate">Corporate Event</option>
+                            <option value="wedding">Wedding</option>
+                            <option value="private-party">Private Party</option>
+                            <option value="conference">Conference/Seminar</option>
+                            <option value="gala">Charity Gala</option>
+                            <option value="birthday">Birthday Celebration</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="quote-event-date">Event Date</label>
+                        <input type="date" id="quote-event-date" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="quote-location">Event Location</label>
+                        <input type="text" id="quote-location" class="form-control" placeholder="City, Venue (if known)">
+                    </div>
+                    <div class="form-group">
+                        <label for="quote-guests">Estimated Number of Guests</label>
+                        <input type="number" id="quote-guests" class="form-control" min="1" placeholder="e.g., 50">
+                    </div>
+                    
+                    <!-- Additional Acts Section -->
+                    <div class="add-more-acts">
+                        <h4>Add More Acts (Optional)</h4>
+                        <p>Would you like to book additional entertainment for your event?</p>
+                        <div class="acts-checkboxes" id="additional-acts">
+                            <!-- Additional acts checkboxes will be dynamically loaded here -->
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="quote-budget">Budget Range</label>
+                        <select id="quote-budget" class="form-control">
+                            <option value="">Select Budget Range</option>
+                            <option value="under-5000">Under R5,000</option>
+                            <option value="5000-10000">R5,000 - R10,000</option>
+                            <option value="10000-20000">R10,000 - R20,000</option>
+                            <option value="20000-50000">R20,000 - R50,000</option>
+                            <option value="50000+">R50,000+</option>
+                            <option value="flexible">Flexible/To be discussed</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="quote-duration">Performance Duration</label>
+                        <select id="quote-duration" class="form-control">
+                            <option value="">Select Duration</option>
+                            <option value="30min">30 minutes</option>
+                            <option value="1hr">1 hour</option>
+                            <option value="1-2hr">1-2 hours</option>
+                            <option value="2-3hr">2-3 hours</option>
+                            <option value="3hr+">3+ hours</option>
+                            <option value="full-event">Full event</option>
+                            <option value="custom">Custom duration</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="quote-specifications">Additional Specifications *</label>
+                        <textarea id="quote-specifications" class="form-control" placeholder="Please provide any specific requirements, special requests, theme information, or other details about your event..." required rows="4"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="quote-message">Additional Message (Optional)</label>
+                        <textarea id="quote-message" class="form-control" placeholder="Any other information you'd like to share with us..." rows="3"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn" style="width: 100%;" id="submitQuoteBtn">
+                        <span id="submitQuoteBtnText">Submit Quote Request</span>
+                        <div id="submitQuoteSpinner" style="display: none;">
+                            <i class="fas fa-spinner fa-spin"></i> Submitting...
+                        </div>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <!-- Gallery Modal -->
     <div class="gallery-modal" id="gallery-modal">
         <div class="gallery-header">
-            <h2 class="gallery-title" id="gallery-title">Act Gallery</h2>
+            <h2 class="gallery-title" id="gallery-title">Performance Gallery</h2>
             <button class="close-gallery" id="close-gallery">&times;</button>
         </div>
         <div class="gallery-main-image" id="gallery-main-image"></div>
@@ -1473,41 +2310,38 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3>Kumusha Events</h3>
-                    <p>Connecting event planners, companies, and individuals with exceptional local and global acts, creating a world-class entertainment experience that feels like home.</p>
+                    <h3>Moyana Events & Entertainment</h3>
+                    <p style="color: rgba(255, 255, 255, 0.7); margin-bottom: 20px; line-height: 1.7;">Complete event solutions combining premier entertainment acts with professional event planning for corporate and private celebrations.</p>
                     <div class="social-links">
-                        <a href="https://web.facebook.com/kumushaevents/"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/kumushaevents/"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a> 
                     </div>
                 </div>
                 <div class="footer-column">
-                    <h3>Quick Links</h3>
+                    <h3>Navigation</h3>
                     <ul class="footer-links">
                         <li><a href="#home">Home</a></li>
-                        <li><a href="#acts">Find Acts</a></li>
+                        <li><a href="#acts">Entertainment</a></li>
+                        <li><a href="#events">Event Planning</a></li>
                         <li><a href="#about">About Us</a></li>
                         <li><a href="#contact">Contact</a></li>
-                        <li><a href="#join">Join Our Team</a></li>
+                        <li><a href="#join">Join Us</a></li>
                     </ul>
-                </div>
+                </div> 
                 <div class="footer-column">
-                    <h3>Our Acts</h3>
-                    <ul class="footer-links" id="footer-acts">
-                        <!-- Only 4 acts will be loaded here -->
-                    </ul>
-                    <a href="#acts" class="view-more-link">View More Acts →</a>
-                </div>
-                <div class="footer-column">
-                    <h3>Contact Info</h3>
+                    <h3>Contact</h3>
                     <ul class="footer-links">
-                        <li><i class="fas fa-phone"></i> +27 68 077 9760</li>
-                        <li><i class="fas fa-envelope"></i> info@kumushaevents.co.za</li>
+                        <li><i class="fas fa-phone" style="color: var(--primary); margin-right: 10px;"></i> Confidential inquiries welcome</li>
+                        <li><i class="fas fa-envelope" style="color: var(--primary); margin-right: 10px;"></i> info@moyanaevents.co.za</li>
+                        <li><i class="fas fa-clock" style="color: var(--primary); margin-right: 10px;"></i> By Appointment Only</li>
+                        <li><i class="fas fa-map-marker-alt" style="color: var(--primary); margin-right: 10px;"></i> Serving South Africa Nationwide</li>
                     </ul>
                 </div>
             </div>
             <div class="copyright">
-                <p><strong>&copy; 2025 Kumusha Events & Entertainment.</strong> All rights reserved. | Crafted by
-                    <a href="https://www.shailendralm.co.za">
+                <p><strong>&copy; 2026 Moyana Events & Entertainment.</strong> All rights reserved. | Crafted by
+                    <a href="https://shailendralm.co.za/webdev.php">
                         <strong><span class="brand-name">Shailendra Visuals.</span></strong>
                     </a>
                 </p>
@@ -1516,7 +2350,7 @@
     </footer>
 
     <script>
-    // Entertainment Acts Data - Now with multiple images per act
+    // Entertainment Acts Data
     const entertainmentActs = [
         {
             id: "african-drummers",
@@ -1525,9 +2359,7 @@
             description: "Traditional and contemporary African drumming performances that bring energy and rhythm to any event.",
             image: "./images/Djembe-Drum-playing-1.jpg",
             images: [
-                "https://images.unsplash.com/photo-1516280440614-37939bbacd81?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-                "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-                "https://images.unsplash.com/photo-1547153760-18fc86324498?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80"
+                "./images/Djembe-Drum-playing-1.jpg",
             ],
             features: [
                 "Group sizes from 3-10 performers",
@@ -1544,7 +2376,8 @@
             description: "Vibrant marimba music that creates an uplifting and celebratory atmosphere for any occasion.",
             image: "./images/marimba.png",
             images: [
-               ],
+                "./images/marimba.png",
+            ],
             features: [
                 "Traditional Zimbabwean marimba",
                 "Upbeat and festive music",
@@ -1554,20 +2387,21 @@
             icon: "fas fa-music"
         },
         {
-            id: "Violinist",
+            id: "violinist",
             title: "Violinist",
             category: "music",
             description: "Mesmerizing musical performances that will captivate your audience and create unforgettable moments.",
             image: "./images/violinist.jpg",
             images: [
-              ],
-            features: [
-                "Fully insured and safety compliant",
-                "Solo and group performances",
-                "Custom choreography available",
-                "Outdoor performances recommended"
+                "./images/violinist.jpg",
             ],
-            icon: "fas fa-fire"
+            features: [
+                "Solo performances",
+                "Classical and contemporary repertoire",
+                "Professional equipment",
+                "Elegant presentation"
+            ],
+            icon: "fas fa-violin"
         },
         {
             id: "zulu-dancers",
@@ -1576,7 +2410,8 @@
             description: "Energetic traditional Zulu dancing showcasing rich cultural heritage and vibrant costumes.",
             image: "./images/zulu dancers.jpg",
             images: [
-           ],
+                "./images/zulu dancers.jpg",
+            ],
             features: [
                 "Traditional Zulu costumes",
                 "High-energy performances",
@@ -1589,25 +2424,27 @@
             id: "models",
             title: "Models",
             category: "other",
-            description: "Inspiring gospel music that brings spiritual upliftment and powerful harmonies to your event.",
+            description: "Professional models for fashion shows, product launches, and special events.",
             image: "./images/cee.jpg",
             images: [
-             ],
-            features: [
-                "Powerful vocal harmonies",
-                "Inspirational performances",
-                "Various choir sizes",
-                "Perfect for ceremonies"
+                "./images/cee.jpg"
             ],
-            icon: "fas fa-church"
+            features: [
+                "Professional runway experience",
+                "Various themes and styles",
+                "Custom choreography",
+                "Styling coordination"
+            ],
+            icon: "fas fa-user-tie"
         },
         {
             id: "photographers",
             title: "Photographers",
             category: "visual",
             description: "Professional photographers to capture the special moments of your event.",
-            image: "https://images.unsplash.com/photo-1554048612-b6a482bc67e5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+            image: "https://images.unsplash.com/photo-1554048612-b6a482bc67e5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
             images: [
+                "https://images.unsplash.com/photo-1554048612-b6a482bc67e5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
             ],
             features: [
                 "Event photography specialists",
@@ -1624,12 +2461,13 @@
             description: "Classic vintage cars for special occasions.",
             image: "./images/vintage cars.jpg",
             images: [
-           ],
+                "./images/vintage cars.jpg"
+            ],
             features: [
                 "Birthdays, matric dance, weddings etc.",
                 "Professional drivers available",
             ],
-            icon: "fas fa-camera"
+            icon: "fas fa-car"
         },
         {
             id: "art",
@@ -1638,39 +2476,45 @@
             description: "Bring memorable humor to your event with our caricature artists.",
             image: "./images/caricature artists.jpg",
             images: [
+                "./images/caricature artists.jpg"
             ],
             features: [
-                "Perfect Birthdays, office events, weddings etc.",
+                "Perfect for Birthdays, office events, weddings etc.",
+                "Quick sketches",
+                "Entertaining for guests"
             ],
-            icon: "fas fa-camera"
+            icon: "fas fa-paint-brush"
         },
         {
             id: "portrait-artist",
             title: "Portrait Artist",
             category: "other",
-            description: "Perfect gift for every occasions.",
+            description: "Perfect gift for every occasion.",
             image: "./images/portrait artist.jpeg",
             images: [
+                "./images/portrait artist.jpeg"
             ],
             features: [
-                "Perfect Birthdays, matric dance, weddings etc.",
+                "Perfect for Birthdays, matric dance, weddings etc.",
                 "Delivery available",
             ],
-            icon: "fas fa-camera"
+            icon: "fas fa-portrait"
         },
         {
             id: "poets",
             title: "Poets",
             category: "other",
-            description: "Perfect gift for every occasions.",
+            description: "Inspiring spoken word and poetry performances.",
             image: "./images/article-act-out-a-poem.jpg",
             images: [
-             ],
-            features: [
-                "Perfect Birthdays, matric dance, weddings etc.",
-                "Delivery available",
+                "./images/article-act-out-a-poem.jpg"
             ],
-            icon: "fas fa-camera"
+            features: [
+                "Perfect for special occasions",
+                "Custom poetry available",
+                "Emotional and impactful"
+            ],
+            icon: "fas fa-book-open"
         },
         {
             id: "accessories",
@@ -1679,59 +2523,242 @@
             description: "African beaded accessories.",
             image: "./images/beaded accesories.jpg",
             images: [
-           ],
+                "./images/beaded accesories.jpg"
+            ],
             features: [
-                "Perfect Birthdays, matric dance, weddings etc.",
+                "Perfect for Birthdays, matric dance, weddings etc.",
                 "Delivery available",
             ],
-            icon: "fas fa-camera"
+            icon: "fas fa-gem"
+        },
+         {
+            id: "accessories",
+            title: "Balloon Meddlers",
+            category: "other",
+            description: "Bring fun to the kiddes paartyies with our experienced balloon meddlers.",
+            image: "./images/ballon meddler.jpg",
+            images: [
+                "./images/ballon meddler.jpg"
+            ],
+            features: [
+                "Perfect for Birthdays",
+            ],
+            icon: "fas fa-gem"
         }
     ];
 
     // Testimonials Data
     const testimonials = [
         {
-            content: "The Zulu dancers we booked through Kumusha Events & Entertainment were absolutely phenomenal! They brought so much energy to our corporate event and received a standing ovation.",
+            content: "Moyana Events & Entertainment handled our corporate gala from start to finish. The Zulu dancers were phenomenal and their event planning team ensured everything ran seamlessly. A truly professional experience!",
             author: "Sarah Johnson",
             role: "Event Manager, TechCorp Africa",
             image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80"
         },
         {
-            content: "I was planning a wedding in Cape Town from overseas, and Kumusha Events & Entertainment made the process so easy. The choir they recommended was perfect for our ceremony, and the photographer captured beautiful moments we'll treasure forever.",
+            content: "Planning a wedding from overseas was made effortless by Moyana. They coordinated all vendors, and the choir they recommended was perfect for our ceremony. Flawless execution!",
             author: "Michael & Chloe",
             role: "Wedding Clients",
             image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
         },
         {
-            content: "Our company's annual gala was transformed by the fire dancers we hired. The performance was breathtaking and our guests are still talking about it months later. Highly recommended!",
+            content: "Our company's annual gala was transformed by Moyana's comprehensive approach. The African drummers were breathtaking, and their event management made the entire process stress-free.",
             author: "David Thompson",
             role: "Marketing Director, Global Corp",
             image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
         },
         {
-            content: "The marimba band created such a joyful atmosphere at our festival. They were professional, punctual, and incredibly talented. We'll definitely be booking them again next year.",
+            content: "The marimba band created such a joyful atmosphere at our festival. Their event team handled logistics perfectly. We'll definitely be using their services again next year.",
             author: "Lisa Chen",
             role: "Festival Organizer",
             image: "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80"
-        },
-        {
-            content: "Kumusha Events & Entertainment helped us find the perfect MC for our product launch. He kept the event flowing smoothly and engaged our audience perfectly. The service was exceptional from start to finish.",
-            author: "Robert Williams",
-            role: "Product Manager, TechStart",
-            image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80"
         }
     ];
 
     // Video upload variables
     let selectedVideo = null;
     let uploadInProgress = false;
+    let selectedActForQuote = null;
 
-    // Simple Single Page Application functionality
+    // Email Configuration
+    const EMAIL_TO = "info@moyanaevents.co.za";
+    
+    // Function to sanitize input
+    function sanitizeInput(input) {
+        const div = document.createElement('div');
+        div.textContent = input;
+        return div.innerHTML;
+    }
+    
+    // Function to send email using Formspree or similar service
+    async function sendEmail(formData, formType) {
+        try {
+            // For demo purposes, we'll simulate email sending
+            // In production, you would use a service like Formspree, EmailJS, or your own backend
+            
+            // Prepare email data based on form type
+            let subject, body;
+            
+            if (formType === 'contact') {
+                subject = `New Contact Form Submission - ${formData.name}`;
+                body = `
+                    Name: ${formData.name}
+                    Email: ${formData.email}
+                    Phone: ${formData.phone || 'Not provided'}
+                    Inquiry Type: ${formData.inquiryType}
+                    Event Type: ${formData.eventType}
+                    Event Date: ${formData.eventDate || 'Not specified'}
+                    Act Type: ${formData.actType || 'Not specified'}
+                    Guests: ${formData.guests || 'Not specified'}
+                    
+                    Message:
+                    ${formData.message}
+                    
+                    Submitted: ${new Date().toLocaleString()}
+                `;
+            } else if (formType === 'quote') {
+                subject = `New Quote Request - ${formData.selectedAct}`;
+                body = `
+                    Quote Request Details:
+                    
+                    Contact Information:
+                    Name: ${formData.name}
+                    Email: ${formData.email}
+                    Phone: ${formData.phone}
+                    
+                    Event Details:
+                    Event Type: ${formData.eventType}
+                    Event Date: ${formData.eventDate || 'Not specified'}
+                    Location: ${formData.location || 'Not specified'}
+                    Guests: ${formData.guests || 'Not specified'}
+                    
+                    Performance Details:
+                    Selected Act: ${formData.selectedAct}
+                    Additional Acts: ${formData.additionalActs || 'None'}
+                    Budget Range: ${formData.budget || 'Not specified'}
+                    Duration: ${formData.duration || 'Not specified'}
+                    
+                    Specifications:
+                    ${formData.specifications}
+                    
+                    Additional Message:
+                    ${formData.additionalMessage || 'None'}
+                    
+                    Submitted: ${new Date().toLocaleString()}
+                `;
+            } else if (formType === 'join') {
+                subject = `New Performer Submission - ${formData.performerName}`;
+                body = `
+                    Performer Submission Details:
+                    
+                    Performer Information:
+                    Name/Ensemble: ${formData.performerName}
+                    Email: ${formData.performerEmail}
+                    Phone: ${formData.performerPhone}
+                    
+                    Performance Details:
+                    Discipline: ${formData.actTypeText}
+                    Experience: ${formData.experience} years
+                    Portfolio Link: ${formData.portfolioLink || 'Not provided'}
+                    
+                    Artist Statement:
+                    ${formData.performerMessage}
+                    
+                    Files Submitted:
+                    Video: ${formData.videoFile ? 'Yes' : 'No'}
+                    Photos: ${formData.photoFiles ? formData.photoFiles.length + ' files' : 'No'}
+                    
+                    Submitted: ${new Date().toLocaleString()}
+                `;
+            }
+            
+            // In a real implementation, you would send this to your backend
+            // For now, we'll log it and show success message
+            console.log('Email would be sent to:', EMAIL_TO);
+            console.log('Subject:', subject);
+            console.log('Body:', body);
+            
+            // Simulate API call
+            await new Promise(resolve => setTimeout(resolve, 1000));
+            
+            return { success: true, message: 'Email sent successfully!' };
+            
+        } catch (error) {
+            console.error('Error sending email:', error);
+            return { success: false, message: 'Failed to send email. Please try again.' };
+        }
+    }
+    
+    // Function to handle form submissions
+    async function handleFormSubmit(formId, formType) {
+        const form = document.getElementById(formId);
+        if (!form) return;
+        
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // Show loading state
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitBtn.disabled = true;
+            
+            try {
+                // Collect form data
+                const formData = new FormData(this);
+                const data = {};
+                
+                // Convert FormData to object
+                for (let [key, value] of formData.entries()) {
+                    if (key.endsWith('[]')) {
+                        const baseKey = key.slice(0, -2);
+                        if (!data[baseKey]) data[baseKey] = [];
+                        data[baseKey].push(value);
+                    } else {
+                        data[key] = value;
+                    }
+                }
+                
+                // Send email
+                const result = await sendEmail(data, formType);
+                
+                if (result.success) {
+                    // Show success message
+                    alert('Thank you! Your message has been sent successfully. We will get back to you soon.');
+                    
+                    // Reset form
+                    form.reset();
+                    
+                    // For quote form, close modal
+                    if (formId === 'quoteForm') {
+                        closeQuoteModal();
+                    }
+                } else {
+                    alert('Sorry, there was an error sending your message. Please try again.');
+                }
+                
+            } catch (error) {
+                console.error('Form submission error:', error);
+                alert('An error occurred. Please try again.');
+            } finally {
+                // Reset button state
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }
+        });
+    }
+
+    // Initialize when DOM is loaded
     document.addEventListener('DOMContentLoaded', function() {
         // Load acts into the page
         loadActs();
         // Load testimonials
         loadTestimonials();
+        
+        // Set up form submissions
+        handleFormSubmit('contactForm', 'contact');
+        handleFormSubmit('quoteForm', 'quote');
+        handleFormSubmit('joinForm', 'join');
         
         // Mobile Menu Functionality
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
@@ -1744,7 +2771,6 @@
             navLinks.classList.toggle('active');
             mobileMenuBtn.innerHTML = navLinks.classList.contains('active') ? 
                 '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
-            preventBodyScroll();
         });
 
         // Close mobile menu when clicking on a link
@@ -1752,7 +2778,6 @@
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
                 mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-                preventBodyScroll();
             });
         });
 
@@ -1761,38 +2786,10 @@
             if (!navLinks.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
                 navLinks.classList.remove('active');
                 mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-                preventBodyScroll();
             }
         });
 
-        // Close mobile menu on escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && navLinks.classList.contains('active')) {
-                navLinks.classList.remove('active');
-                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-                preventBodyScroll();
-            }
-        });
-
-        // Prevent body scroll when mobile menu is open
-        function preventBodyScroll() {
-            if (navLinks.classList.contains('active')) {
-                body.style.overflow = 'hidden';
-            } else {
-                body.style.overflow = '';
-            }
-        }
-
-        // Update body scroll on window resize
-        window.addEventListener('resize', function() {
-            if (window.innerWidth > 768) {
-                navLinks.classList.remove('active');
-                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-                body.style.overflow = '';
-            }
-        });
-
-        // Navigation between pages (SPA functionality)
+        // Navigation between pages
         function showPage(pageId) {
             // Hide all pages
             document.querySelectorAll('.page-content').forEach(page => {
@@ -1807,23 +2804,24 @@
                 link.classList.remove('active');
             });
             
-            // Set the active nav link based on the page
-            const pageMap = {
-                'home-page': '#home',
-                'acts-page': '#acts',
-                'about-page': '#about',
-                'contact-page': '#contact',
-                'join-page': '#join'
-            };
-            
-            const activeLink = document.querySelector(`.nav-links a[href="${pageMap[pageId]}"]`);
-            if (activeLink) {
-                activeLink.classList.add('active');
+            // Set active link based on page
+            if (pageId === 'home-page') {
+                document.querySelector('.nav-links a[href="#home"]').classList.add('active');
+            } else if (pageId === 'acts-page') {
+                document.querySelector('.nav-links a[href="#acts"]').classList.add('active');
+            } else if (pageId === 'events-page') {
+                document.querySelector('.nav-links a[href="#events"]').classList.add('active');
+            } else if (pageId === 'about-page') {
+                document.querySelector('.nav-links a[href="#about"]').classList.add('active');
+            } else if (pageId === 'contact-page') {
+                document.querySelector('.nav-links a[href="#contact"]').classList.add('active');
+            } else if (pageId === 'join-page') {
+                document.querySelector('.nav-links a[href="#join"]').classList.add('active');
             }
         }
 
         // Set up navigation
-        document.querySelectorAll('.nav-links a, .logo-container').forEach(link => {
+        document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', function(e) {
                 e.preventDefault();
                 const href = this.getAttribute('href');
@@ -1832,6 +2830,8 @@
                     showPage('home-page');
                 } else if (href === '#acts') {
                     showPage('acts-page');
+                } else if (href === '#events') {
+                    showPage('events-page');
                 } else if (href === '#about') {
                     showPage('about-page');
                 } else if (href === '#contact') {
@@ -1845,34 +2845,85 @@
             });
         });
 
-        // Fix for Get a Quote buttons
-        document.getElementById('get-quote-btn').addEventListener('click', function(e) {
+          // Set up footer navigation
+        document.querySelectorAll('.footer-links a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const href = this.getAttribute('href');
+                
+                if (href === '#home') {
+                    showPage('home-page');
+                } else if (href === '#acts') {
+                    showPage('acts-page');
+                } else if (href === '#events') {
+                    showPage('events-page');
+                } else if (href === '#about') {
+                    showPage('about-page');
+                } else if (href === '#contact') {
+                    showPage('contact-page');
+                } else if (href === '#join') {
+                    showPage('join-page');
+                }
+                
+                // Scroll to top
+                window.scrollTo(0, 0);
+            });
+        });
+
+
+        // Logo navigation
+        document.querySelector('.logo-container').addEventListener('click', function(e) {
+            e.preventDefault();
+            showPage('home-page');
+            window.scrollTo(0, 0);
+        });
+
+        // Fix for navigation buttons
+        document.getElementById('get-quote-btn')?.addEventListener('click', function(e) {
             e.preventDefault();
             showPage('contact-page');
             window.scrollTo(0, 0);
         });
 
-        document.getElementById('cta-get-quote-btn').addEventListener('click', function(e) {
+        document.getElementById('cta-get-quote-btn')?.addEventListener('click', function(e) {
             e.preventDefault();
             showPage('contact-page');
             window.scrollTo(0, 0);
         });
 
-        document.getElementById('browse-acts-btn').addEventListener('click', function(e) {
+        document.getElementById('browse-acts-btn')?.addEventListener('click', function(e) {
             e.preventDefault();
             showPage('acts-page');
             window.scrollTo(0, 0);
         });
 
-        document.getElementById('view-more-btn').addEventListener('click', function(e) {
+        document.getElementById('view-more-btn')?.addEventListener('click', function(e) {
             e.preventDefault();
             showPage('acts-page');
             window.scrollTo(0, 0);
         });
 
-        document.getElementById('about-contact-btn').addEventListener('click', function(e) {
+        document.getElementById('plan-event-btn')?.addEventListener('click', function(e) {
+            e.preventDefault();
+            showPage('events-page');
+            window.scrollTo(0, 0);
+        });
+
+        document.getElementById('view-events-btn')?.addEventListener('click', function(e) {
+            e.preventDefault();
+            showPage('events-page');
+            window.scrollTo(0, 0);
+        });
+
+        document.getElementById('about-contact-btn')?.addEventListener('click', function(e) {
             e.preventDefault();
             showPage('contact-page');
+            window.scrollTo(0, 0);
+        });
+
+        document.getElementById('cta-events-btn')?.addEventListener('click', function(e) {
+            e.preventDefault();
+            showPage('events-page');
             window.scrollTo(0, 0);
         });
 
@@ -1898,145 +2949,153 @@
             });
         });
 
-        // Form submission handling for contact form
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            // In a real application, you would send the form data to a server here
-            alert('Thank you for your inquiry! We will get back to you soon.');
-            this.reset();
-        });
-
-        // ==================== VIDEO UPLOAD FUNCTIONALITY ====================
-        
-        // Video Upload Functionality
-        const videoUploadArea = document.getElementById('videoUploadArea');
-        const videoUploadInput = document.getElementById('video-upload');
-        const fileList = document.getElementById('fileList');
-        const uploadProgress = document.getElementById('uploadProgress');
-        const progressBar = document.getElementById('progressBar');
-        const submitBtn = document.getElementById('submitApplicationBtn');
-        const submitBtnText = document.getElementById('submitBtnText');
-        const submitSpinner = document.getElementById('submitSpinner');
-
-        // Click to upload
-        videoUploadArea.addEventListener('click', () => {
-            if (!uploadInProgress) {
-                videoUploadInput.click();
-            }
-        });
-
-        // Drag and drop functionality
-        videoUploadArea.addEventListener('dragover', (e) => {
-            e.preventDefault();
-            if (!uploadInProgress) {
-                videoUploadArea.classList.add('dragover');
-            }
-        });
-
-        videoUploadArea.addEventListener('dragleave', () => {
-            videoUploadArea.classList.remove('dragover');
-        });
-
-        videoUploadArea.addEventListener('drop', (e) => {
-            e.preventDefault();
-            videoUploadArea.classList.remove('dragover');
-            
-            if (uploadInProgress) return;
-            
-            if (e.dataTransfer.files.length > 0) {
-                const file = e.dataTransfer.files[0];
-                if (isValidVideoFile(file)) {
-                    handleVideoFile(file);
-                } else {
-                    alert('Please upload a valid video file (MP4, MOV, or AVI, max 50MB)');
-                }
-            }
-        });
-
-        // File input change
-        videoUploadInput.addEventListener('change', (e) => {
-            if (e.target.files.length > 0) {
-                const file = e.target.files[0];
-                if (isValidVideoFile(file)) {
-                    handleVideoFile(file);
-                } else {
-                    alert('Please upload a valid video file (MP4, MOV, or AVI, max 50MB)');
-                    videoUploadInput.value = '';
-                }
-            }
-        });
-
-        // Join form submission handling
-        document.getElementById('joinForm').addEventListener('submit', async function(e) {
+        // Quote form submission
+        document.getElementById('quoteForm')?.addEventListener('submit', async function(e) {
             e.preventDefault();
             
-            // Validate required fields
-            if (!validateJoinForm()) {
-                return;
+            const submitBtn = document.getElementById('submitQuoteBtn');
+            const btnText = document.getElementById('submitQuoteBtnText');
+            const spinner = document.getElementById('submitQuoteSpinner');
+            
+            // Show loading state
+            btnText.style.display = 'none';
+            spinner.style.display = 'block';
+            
+            // Collect form data
+            const formData = new FormData(this);
+            const data = {};
+            for (let [key, value] of formData.entries()) {
+                data[key] = value;
             }
             
-            // Disable submit button and show spinner
-            submitBtn.disabled = true;
-            submitBtnText.style.display = 'none';
-            submitSpinner.style.display = 'block';
+            // Collect additional acts
+            const additionalActs = [];
+            document.querySelectorAll('#additional-acts input[type="checkbox"]:checked').forEach(checkbox => {
+                additionalActs.push(checkbox.value);
+            });
+            data.additionalActs = additionalActs.join(', ');
             
             try {
-                // Collect form data
-                const formData = {
-                    name: document.getElementById('performer-name').value,
-                    email: document.getElementById('performer-email').value,
-                    phone: document.getElementById('performer-phone').value,
-                    actType: document.getElementById('act-type-text').value,
-                    experience: document.getElementById('experience').value,
-                    portfolioLink: document.getElementById('portfolio-link').value || 'Not provided',
-                    message: document.getElementById('performer-message').value,
-                    photos: document.getElementById('photo-upload').files,
-                    video: selectedVideo
-                };
+                // Send email
+                const result = await sendEmail(data, 'quote');
                 
-                // Send application via email (simulated for now)
-                await sendApplication(formData);
-                
-                // Show success message
-                alert('Thank you for your application! We have received your video and will review your submission soon. We will contact you at ' + formData.email);
-                
-                // Reset form
-                this.reset();
-                selectedVideo = null;
-                fileList.innerHTML = '';
-                uploadProgress.style.display = 'none';
-                
+                if (result.success) {
+                    // Prepare confirmation message
+                    let message = `Thank you for your quote request for "${selectedActForQuote.title}"!\n\n`;
+                    message += `We have received your details and will contact you within 24 hours to discuss:\n`;
+                    message += `- ${selectedActForQuote.title}\n`;
+                    
+                    if (additionalActs.length > 0) {
+                        message += `- Additional acts: ${additionalActs.join(', ')}\n`;
+                    }
+                    
+                    message += `- Event: ${document.getElementById('quote-event-type').value}\n`;
+                    
+                    if (document.getElementById('quote-event-date').value) {
+                        message += `- Date: ${document.getElementById('quote-event-date').value}\n`;
+                    }
+                    
+                    message += `\nOur team will provide you with a customized quote and availability information.`;
+                    
+                    alert(message);
+                    
+                    // Reset form and close modal
+                    this.reset();
+                    closeQuoteModal();
+                } else {
+                    alert('Sorry, there was an error sending your quote request. Please try again.');
+                }
             } catch (error) {
-                console.error('Error submitting application:', error);
-                alert('Sorry, there was an error submitting your application. Please try again or contact us directly at info@kumushaevents.co.za');
+                console.error('Quote form error:', error);
+                alert('An error occurred. Please try again.');
             } finally {
-                // Re-enable submit button
-                submitBtn.disabled = false;
-                submitBtnText.style.display = 'inline';
-                submitSpinner.style.display = 'none';
+                // Reset button state
+                btnText.style.display = 'inline';
+                spinner.style.display = 'none';
             }
         });
+
+        // Gallery close functionality
+        document.getElementById('close-gallery')?.addEventListener('click', closeGallery);
+
+        // Close gallery when clicking outside content
+        document.getElementById('gallery-modal')?.addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeGallery();
+            }
+        });
+
+        // Quote modal close functionality
+        document.getElementById('close-quote-modal')?.addEventListener('click', closeQuoteModal);
+
+        // Close quote modal when clicking outside content
+        document.getElementById('quote-modal')?.addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeQuoteModal();
+            }
+        });
+
+        // Close modals with escape key
+        document.addEventListener('keydown', function(e) {
+            const galleryModal = document.getElementById('gallery-modal');
+            const quoteModal = document.getElementById('quote-modal');
+            
+            if (e.key === 'Escape') {
+                if (galleryModal?.classList.contains('active')) {
+                    closeGallery();
+                }
+                if (quoteModal?.classList.contains('active')) {
+                    closeQuoteModal();
+                }
+            }
+        });
+
+        // Video upload functionality
+        const videoUploadArea = document.getElementById('videoUploadArea');
+        const videoUploadInput = document.getElementById('video-upload');
+        
+        if (videoUploadArea && videoUploadInput) {
+            videoUploadArea.addEventListener('click', function() {
+                videoUploadInput.click();
+            });
+            
+            videoUploadInput.addEventListener('change', function(e) {
+                if (this.files.length > 0) {
+                    handleFileUpload(this.files[0]);
+                }
+            });
+            
+            // Drag and drop functionality
+            videoUploadArea.addEventListener('dragover', function(e) {
+                e.preventDefault();
+                this.classList.add('dragover');
+            });
+            
+            videoUploadArea.addEventListener('dragleave', function(e) {
+                this.classList.remove('dragover');
+            });
+            
+            videoUploadArea.addEventListener('drop', function(e) {
+                e.preventDefault();
+                this.classList.remove('dragover');
+                if (e.dataTransfer.files.length > 0) {
+                    handleFileUpload(e.dataTransfer.files[0]);
+                }
+            });
+        }
 
         // Show home page by default
         showPage('home-page');
-    });
-
-    // Gallery close functionality - FIXED
-    document.getElementById('close-gallery').addEventListener('click', closeGallery);
-
-    // Close gallery when clicking outside content
-    document.getElementById('gallery-modal').addEventListener('click', function(e) {
-        if (e.target === this) {
-            closeGallery();
-        }
-    });
-
-    // Close gallery with escape key
-    document.addEventListener('keydown', function(e) {
-        const galleryModal = document.getElementById('gallery-modal');
-        if (e.key === 'Escape' && galleryModal.classList.contains('active')) {
-            closeGallery();
-        }
+        
+        // Add event listener for header scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
     });
 
     function closeGallery() {
@@ -2045,341 +3104,141 @@
         document.body.style.overflow = '';
     }
 
-    // Function to validate join form
-    function validateJoinForm() {
-        const name = document.getElementById('performer-name').value.trim();
-        const email = document.getElementById('performer-email').value.trim();
-        const phone = document.getElementById('performer-phone').value.trim();
-        const actType = document.getElementById('act-type-text').value.trim();
-        const experience = document.getElementById('experience').value;
-        const message = document.getElementById('performer-message').value.trim();
-        
-        // Basic validation
-        if (!name || !email || !phone || !actType || !experience || !message) {
-            alert('Please fill in all required fields marked with *');
-            return false;
-        }
-        
-        // Email validation
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-            alert('Please enter a valid email address');
-            return false;
-        }
-        
-        // Phone validation (basic)
-        if (phone.length < 10) {
-            alert('Please enter a valid phone number');
-            return false;
-        }
-        
-        // Video validation
-        if (!selectedVideo) {
-            alert('Please upload a video of your performance');
-            return false;
-        }
-        
-        return true;
+    function closeQuoteModal() {
+        const quoteModal = document.getElementById('quote-modal');
+        quoteModal.classList.remove('active');
+        document.body.style.overflow = '';
+        selectedActForQuote = null;
     }
 
-    // Function to check if file is a valid video
-    function isValidVideoFile(file) {
-        const validTypes = ['video/mp4', 'video/quicktime', 'video/x-msvideo', 'video/webm'];
-        const validExtensions = ['.mp4', '.mov', '.avi', '.webm'];
-        const maxSize = 50 * 1024 * 1024; // 50MB in bytes
-        
-        // Check file type
-        if (!validTypes.includes(file.type)) {
-            // Check file extension as fallback
-            const fileName = file.name.toLowerCase();
-            const hasValidExtension = validExtensions.some(ext => fileName.endsWith(ext));
-            if (!hasValidExtension) {
-                return false;
-            }
-        }
-        
-        // Check file size
-        if (file.size > maxSize) {
-            alert('File is too large. Maximum size is 50MB.');
-            return false;
-        }
-        
-        return true;
-    }
+    function openQuoteModal(actId) {
+        const act = entertainmentActs.find(a => a.id === actId);
+        if (!act) return;
 
-    // Function to handle video file selection
-    function handleVideoFile(file) {
-        selectedVideo = file;
+        selectedActForQuote = act;
         
-        // Show upload progress
-        uploadProgress.style.display = 'block';
-        progressBar.style.width = '0%';
+        const quoteModal = document.getElementById('quote-modal');
+        const selectedActContainer = document.getElementById('selected-act-container');
+        const additionalActsContainer = document.getElementById('additional-acts');
         
-        // Simulate upload progress
-        uploadInProgress = true;
-        let progress = 0;
-        const interval = setInterval(() => {
-            progress += 10;
-            progressBar.style.width = progress + '%';
-            
-            if (progress >= 100) {
-                clearInterval(interval);
-                uploadInProgress = false;
-                
-                // Show file in list
-                displayFileInList(file);
-            }
-        }, 100);
-    }
-
-    // Function to display file in list
-    function displayFileInList(file) {
-        const fileItem = document.createElement('div');
-        fileItem.className = 'file-item';
-        fileItem.innerHTML = `
-            <div class="file-info">
-                <i class="fas fa-video file-icon"></i>
-                <div>
-                    <strong>${file.name}</strong>
-                    <div>${formatFileSize(file.size)} • ${file.type.split('/')[1].toUpperCase()}</div>
+        // Set selected act info
+        selectedActContainer.innerHTML = `
+            <div class="selected-act-info">
+                <h4>Selected Act: ${act.title}</h4>
+                <p>${act.description}</p>
+                <div class="selected-act-tags">
+                    ${act.features.map(feature => `
+                        <span class="act-tag">${feature}</span>
+                    `).join('')}
                 </div>
             </div>
-            <button type="button" class="remove-file" onclick="removeVideoFile()">
-                <i class="fas fa-times"></i>
-            </button>
         `;
         
-        fileList.innerHTML = '';
-        fileList.appendChild(fileItem);
-        
-        // Hide progress bar
-        setTimeout(() => {
-            uploadProgress.style.display = 'none';
-        }, 500);
-    }
-
-    // Function to remove video file
-    function removeVideoFile() {
-        selectedVideo = null;
-        fileList.innerHTML = '';
-        document.getElementById('video-upload').value = '';
-    }
-
-    // Function to format file size
-    function formatFileSize(bytes) {
-        if (bytes === 0) return '0 Bytes';
-        const k = 1024;
-        const sizes = ['Bytes', 'KB', 'MB', 'GB'];
-        const i = Math.floor(Math.log(bytes) / Math.log(k));
-        return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
-    }
-
-    // Function to send application via email
-    async function sendApplication(formData) {
-        // Create email body with all application details
-        const emailBody = `
-NEW PERFORMER APPLICATION - KUMUSHA EVENTS & ENTERTAINMENT
-===========================================================
-
-APPLICANT DETAILS:
------------------
-Name: ${formData.name}
-Email: ${formData.email}
-Phone: ${formData.phone}
-
-PERFORMANCE DETAILS:
--------------------
-Act Type: ${formData.actType}
-Years of Experience: ${formData.experience}
-Portfolio Link: ${formData.portfolioLink}
-
-VIDEO SUBMISSION:
-----------------
-Video File: ${formData.video ? formData.video.name : 'No video uploaded'}
-Video Size: ${formData.video ? formatFileSize(formData.video.size) : 'N/A'}
-Video Type: ${formData.video ? formData.video.type : 'N/A'}
-
-PHOTOS SUBMITTED:
-----------------
-Number of Photos: ${formData.photos.length}
-${formData.photos.length > 0 ? Array.from(formData.photos).map((photo, i) => `Photo ${i+1}: ${photo.name} (${formatFileSize(photo.size)})`).join('\n') : 'No photos uploaded'}
-
-APPLICANT'S MESSAGE:
--------------------
-${formData.message}
-
-TECHNICAL DETAILS:
------------------
-Submitted on: ${new Date().toLocaleString()}
-User Agent: ${navigator.userAgent}
-Platform: ${navigator.platform}
-
-===========================================================
-This application was submitted through the Kumusha Events & Entertainment website.
-Please respond to the applicant within 48 hours.
-
-**NOTE: The video file is attached separately or available for download.**
-        `;
-        
-        // Simulate sending email (in production, this would use EmailJS or similar)
-        console.log('📧 SENDING APPLICATION TO: info@kumushaevents.co.za');
-        console.log('📁 Application details:', {
-            name: formData.name,
-            email: formData.email,
-            video: formData.video ? formData.video.name : 'None'
+        // Populate additional acts checkboxes (excluding the already selected act)
+        additionalActsContainer.innerHTML = '';
+        entertainmentActs.forEach(otherAct => {
+            if (otherAct.id !== actId) {
+                const checkboxDiv = document.createElement('div');
+                checkboxDiv.className = 'act-checkbox';
+                checkboxDiv.innerHTML = `
+                    <input type="checkbox" id="add-${otherAct.id}" name="additional-acts" value="${otherAct.title}">
+                    <label for="add-${otherAct.id}">${otherAct.title}</label>
+                `;
+                additionalActsContainer.appendChild(checkboxDiv);
+            }
         });
         
-        // In a real implementation, you would use EmailJS like this:
-        /*
-        // Uncomment and configure with your EmailJS credentials
-        emailjs.init("YOUR_PUBLIC_KEY");
+        // Show modal and prevent body scroll
+        quoteModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
         
-        const templateParams = {
-            to_email: 'info@kumushaevents.co.za',
-            from_name: formData.name,
-            from_email: formData.email,
-            subject: 'New Performer Application - ' + formData.name,
-            message: emailBody,
-            phone: formData.phone,
-            act_type: formData.actType,
-            experience: formData.experience,
-            portfolio: formData.portfolioLink,
-            video_info: formData.video ? `${formData.video.name} (${formatFileSize(formData.video.size)})` : 'No video'
-        };
-        
-        return await emailjs.send(
-            'YOUR_SERVICE_ID',
-            'YOUR_TEMPLATE_ID',
-            templateParams
-        );
-        */
-        
-        // Simulate network delay
-        await new Promise(resolve => setTimeout(resolve, 2000));
-        
-        // For video attachments in production, you would need:
-        // 1. Upload to cloud storage (Google Drive, Dropbox, S3)
-        // 2. Include download link in email
-        // 3. Or use a service that supports file attachments
-        
-        console.log('✅ Application submitted successfully');
-        return { status: 'success', message: 'Application sent' };
+        // Focus on first input field
+        setTimeout(() => {
+            document.getElementById('quote-name').focus();
+        }, 100);
     }
 
     // Function to load acts into the page
     function loadActs() {
         const actsGrid = document.getElementById('acts-grid');
         const actsList = document.getElementById('acts-list');
-        const footerActs = document.getElementById('footer-acts');
         const actTypeSelect = document.getElementById('act-type');
         
         // Clear existing content
-        actsGrid.innerHTML = '';
-        actsList.innerHTML = '';
-        footerActs.innerHTML = '';
-        actTypeSelect.innerHTML = '<option value="">Select an Act</option>';
+        if (actsGrid) actsGrid.innerHTML = '';
+        if (actsList) actsList.innerHTML = '';
+        if (actTypeSelect) actTypeSelect.innerHTML = '<option value="">Select a Performance</option>';
         
         // Add only 6 acts to home page grid
         const homePageActs = entertainmentActs.slice(0, 6);
         
         homePageActs.forEach(act => {
             // Home page grid
-            const actCard = document.createElement('div');
-            actCard.className = 'service-card';
-            actCard.innerHTML = `
-                <div class="service-img" style="background-image: url('${act.image}');"></div>
-                <div class="service-content">
-                    <h3>${act.title}</h3>
-                    <p>${act.description}</p>
-                    <a href="#!" class="btn learn-more-btn" data-act="${act.id}" style="margin-top: 15px; padding: 8px 16px;">Learn More</a>
-                </div>
-            `;
-            actsGrid.appendChild(actCard);
-        });
-        
-        // Add only 4 acts to footer
-        const footerPageActs = entertainmentActs.slice(0, 4);
-        
-        footerPageActs.forEach(act => {
-            // Footer links
-            const footerLink = document.createElement('li');
-            footerLink.innerHTML = `<a href="#acts" class="footer-act-link" data-act="${act.id}">${act.title}</a>`;
-            footerActs.appendChild(footerLink);
+            if (actsGrid) {
+                const actCard = document.createElement('div');
+                actCard.className = 'service-card';
+                actCard.innerHTML = `
+                    <div class="service-img" style="background-image: url('${act.image}');"></div>
+                    <div class="service-content">
+                        <h3>${act.title}</h3>
+                        <p>${act.description}</p>
+                        <a href="#!" class="btn request-quote-btn" data-act="${act.id}" style="margin-top: 15px; padding: 8px 16px;">Request Quote</a>
+                    </div>
+                `;
+                actsGrid.appendChild(actCard);
+            }
         });
         
         // Add all acts to acts page in grid format
         entertainmentActs.forEach(act => {
             // Acts page grid card
-            const actCard = document.createElement('div');
-            actCard.className = 'act-card';
-            actCard.setAttribute('data-category', act.category);
-            actCard.id = act.id;
-            actCard.innerHTML = `
-                <div class="act-card-img" style="background-image: url('${act.image}');">
-                    <div class="act-card-overlay">
-                        <div>
-                            <h3>${act.title}</h3>
-                            ${act.images.length > 1 ? `<button class="view-gallery-btn" data-act="${act.id}">View Gallery (${act.images.length})</button>` : ''}
+            if (actsList) {
+                const actCard = document.createElement('div');
+                actCard.className = 'act-card';
+                actCard.setAttribute('data-category', act.category);
+                actCard.id = act.id;
+                actCard.innerHTML = `
+                    <div class="act-card-img" style="background-image: url('${act.image}');">
+                        <div class="act-card-overlay">
+                            <div>
+                                <h3>${act.title}</h3>
+                                ${act.images.length > 1 ? `<button class="view-gallery-btn" data-act="${act.id}">View Gallery (${act.images.length})</button>` : ''}
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="act-card-content">
-                    <h3>${act.title}</h3>
-                    <p>${act.description}</p>
-                    <div class="act-features" style="margin: 15px 0;">
-                        ${act.features.slice(0, 2).map(feature => `
-                            <div class="act-feature">
-                                <i class="fas fa-check-circle"></i>
-                                <span>${feature}</span>
-                            </div>
-                        `).join('')}
+                    <div class="act-card-content">
+                        <h3>${act.title}</h3>
+                        <p>${act.description}</p>
+                        <div class="act-features" style="margin: 15px 0;">
+                            ${act.features.slice(0, 2).map(feature => `
+                                <div class="act-feature">
+                                    <i class="fas fa-check-circle" style="color: var(--primary); margin-right: 8px;"></i>
+                                    <span>${feature}</span>
+                                </div>
+                            `).join('')}
+                        </div>
+                        <a href="#!" class="btn request-quote-btn" data-act="${act.id}" style="padding: 8px 16px;">Request Quote</a>
                     </div>
-                    <a href="#!" class="btn request-quote-btn" data-act="${act.id}" style="padding: 8px 16px;">Request Quote</a>
-                </div>
-            `;
-            actsList.appendChild(actCard);
+                `;
+                actsList.appendChild(actCard);
+            }
             
             // Contact form options
-            const option = document.createElement('option');
-            option.value = act.id;
-            option.textContent = act.title;
-            actTypeSelect.appendChild(option);
+            if (actTypeSelect) {
+                const option = document.createElement('option');
+                option.value = act.id;
+                option.textContent = act.title;
+                actTypeSelect.appendChild(option);
+            }
         });
         
-        // Add event listeners for dynamically created buttons
-        document.querySelectorAll('.learn-more-btn').forEach(button => {
-            button.addEventListener('click', function(e) {
-                e.preventDefault();
-                const act = this.getAttribute('data-act');
-                showPage('acts-page');
-                // Scroll to the specific act
-                setTimeout(() => {
-                    document.getElementById(act).scrollIntoView({ behavior: 'smooth' });
-                }, 100);
-            });
-        });
-        
+        // Add event listeners for request quote buttons
         document.querySelectorAll('.request-quote-btn').forEach(button => {
             button.addEventListener('click', function(e) {
                 e.preventDefault();
-                const act = this.getAttribute('data-act');
-                showPage('contact-page');
-                // Set the act type in the form
-                setTimeout(() => {
-                    document.getElementById('act-type').value = act;
-                }, 100);
-            });
-        });
-        
-        document.querySelectorAll('.footer-act-link').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const act = this.getAttribute('data-act');
-                showPage('acts-page');
-                // Scroll to the specific act
-                setTimeout(() => {
-                    document.getElementById(act).scrollIntoView({ behavior: 'smooth' });
-                }, 100);
+                e.stopPropagation();
+                const actId = this.getAttribute('data-act');
+                openQuoteModal(actId);
             });
         });
 
@@ -2403,7 +3262,7 @@ Please respond to the applicant within 48 hours.
         });
     }
 
-    // Function to open gallery for an act - UPDATED with scroll prevention
+    // Function to open gallery for an act
     function openGallery(actId) {
         const act = entertainmentActs.find(a => a.id === actId);
         if (!act) return;
@@ -2446,84 +3305,112 @@ Please respond to the applicant within 48 hours.
         document.body.style.overflow = 'hidden';
     }
 
-    // Function to load testimonials with slider
+    // Function to load testimonials
     function loadTestimonials() {
         const testimonialsSlider = document.getElementById('testimonials-slider');
         const testimonialControls = document.getElementById('testimonial-controls');
+        
+        if (!testimonialsSlider || !testimonialControls) return;
         
         // Clear existing content
         testimonialsSlider.innerHTML = '';
         testimonialControls.innerHTML = '';
         
-        // Group testimonials into slides (2 per slide)
-        const slides = [];
-        for (let i = 0; i < testimonials.length; i += 2) {
-            slides.push(testimonials.slice(i, i + 2));
-        }
+        // Create a single slide with all testimonials
+        const slide = document.createElement('div');
+        slide.className = 'testimonial-slide';
         
-        // Create slides
-        slides.forEach((slideTestimonials, index) => {
-            const slide = document.createElement('div');
-            slide.className = 'testimonial-slide';
-            
-            slideTestimonials.forEach(testimonial => {
-                const testimonialElement = document.createElement('div');
-                testimonialElement.className = 'testimonial';
-                testimonialElement.innerHTML = `
-                    <div class="testimonial-content">
-                        "${testimonial.content}"
+        testimonials.forEach(testimonial => {
+            const testimonialElement = document.createElement('div');
+            testimonialElement.className = 'testimonial';
+            testimonialElement.innerHTML = `
+                <div class="testimonial-content">
+                    "${testimonial.content}"
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-img" style="background-image: url('${testimonial.image}');"></div>
+                    <div>
+                        <h4>${testimonial.author}</h4>
+                        <p>${testimonial.role}</p>
                     </div>
-                    <div class="testimonial-author">
-                        <div class="author-img" style="background-image: url('${testimonial.image}');"></div>
-                        <div>
-                            <h4>${testimonial.author}</h4>
-                            <p>${testimonial.role}</p>
-                        </div>
-                    </div>
-                `;
-                slide.appendChild(testimonialElement);
-            });
-            
-            testimonialsSlider.appendChild(slide);
-            
-            // Create dot for this slide
-            const dot = document.createElement('div');
-            dot.className = 'testimonial-dot';
-            if (index === 0) dot.classList.add('active');
-            dot.setAttribute('data-slide', index);
-            testimonialControls.appendChild(dot);
-            
-            // Add click event to dot
-            dot.addEventListener('click', function() {
-                goToSlide(index);
-            });
+                </div>
+            `;
+            slide.appendChild(testimonialElement);
         });
         
-        // Auto slide functionality
-        let currentSlide = 0;
-        const totalSlides = slides.length;
+        testimonialsSlider.appendChild(slide);
         
-        function goToSlide(slideIndex) {
-            currentSlide = slideIndex;
-            testimonialsSlider.style.transform = `translateX(-${currentSlide * 100}%)`;
-            
-            // Update active dot
-            document.querySelectorAll('.testimonial-dot').forEach((dot, index) => {
-                if (index === currentSlide) {
-                    dot.classList.add('active');
-                } else {
-                    dot.classList.remove('active');
-                }
-            });
+        // Create single dot (since we're not using a slider)
+        const dot = document.createElement('div');
+        dot.className = 'testimonial-dot active';
+        testimonialControls.appendChild(dot);
+    }
+
+    // Function to handle file upload
+    function handleFileUpload(file) {
+        // Check file size (max 100MB)
+        const maxSize = 100 * 1024 * 1024; // 100MB in bytes
+        if (file.size > maxSize) {
+            alert('File size exceeds 100MB limit. Please upload a smaller file.');
+            return;
         }
         
-        // Auto advance slides every 5 seconds
-        setInterval(() => {
-            currentSlide = (currentSlide + 1) % totalSlides;
-            goToSlide(currentSlide);
-        }, 5000);
+        // Check file type
+        const validTypes = ['video/mp4', 'video/quicktime', 'video/x-msvideo', 'video/x-matroska'];
+        if (!validTypes.includes(file.type)) {
+            alert('Please upload a video file (MP4, MOV, AVI, MKV).');
+            return;
+        }
+        
+        // Show upload progress
+        const uploadProgress = document.getElementById('uploadProgress');
+        const progressBar = document.getElementById('progressBar');
+        const fileList = document.getElementById('fileList');
+        
+        uploadProgress.style.display = 'block';
+        progressBar.style.width = '0%';
+        
+        // Simulate upload progress
+        let progress = 0;
+        const interval = setInterval(() => {
+            progress += 10;
+            progressBar.style.width = progress + '%';
+            
+            if (progress >= 100) {
+                clearInterval(interval);
+                
+                // Add file to list
+                const fileItem = document.createElement('div');
+                fileItem.className = 'file-item';
+                fileItem.innerHTML = `
+                    <div class="file-info">
+                        <i class="fas fa-film file-icon"></i>
+                        <div>
+                            <div style="font-weight: 500;">${file.name}</div>
+                            <div style="font-size: 0.8rem; color: #666;">${(file.size / (1024 * 1024)).toFixed(2)} MB</div>
+                        </div>
+                    </div>
+                    <button class="remove-file" type="button">
+                        <i class="fas fa-times"></i>
+                    </button>
+                `;
+                
+                // Add remove functionality
+                fileItem.querySelector('.remove-file').addEventListener('click', function() {
+                    fileItem.remove();
+                });
+                
+                fileList.appendChild(fileItem);
+                uploadProgress.style.display = 'none';
+                
+                // Store file reference
+                selectedVideo = file;
+            }
+        }, 200);
     }
+
+    // Define showPage function globally
+    window.showPage = showPage;
     </script>
 </body>
 </html>
-
